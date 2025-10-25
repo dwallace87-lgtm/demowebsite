@@ -6,7 +6,38 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge' />
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <title>Prospect Schools in Brooklyn, New York</title>
-	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+        <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+        <style>
+          .fl-node-85nmyjw1qt0f .custom-hero-slideshow {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+          }
+
+          .fl-node-85nmyjw1qt0f .fl-row-content-wrap {
+            position: relative;
+          }
+
+          .fl-node-85nmyjw1qt0f .custom-hero-slideshow .custom-hero-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+          }
+
+          .fl-node-85nmyjw1qt0f .custom-hero-slideshow .custom-hero-slide.is-active {
+            opacity: 1;
+          }
+
+          .fl-node-85nmyjw1qt0f .fl-row-content {
+            position: relative;
+            z-index: 3;
+          }
+        </style>
 	<meta name="dc.title" content="Prospect Schools in Brooklyn, New York">
 <meta name="dc.description" content="Prospect Schools in Brooklyn is a tuition-free K-12 charter school network preparing students for lifelong learning.">
 <meta name="dc.relation" content="https://www.brooklynprospect.org/">
@@ -1741,7 +1772,11 @@ src="https://www.facebook.com/tr?id=360901681009076&ev=PageView
 			<div class="fl-post-content clearfix" itemprop="text">
 		<div class="fl-builder-content fl-builder-content-7 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="7"><div class="fl-row fl-row-full-width fl-row-bg-slideshow fl-node-85nmyjw1qt0f fl-row-full-height fl-row-align-bottom fl-row-bg-overlay" data-node="85nmyjw1qt0f">
 	<div class="fl-row-content-wrap">
-		<div class="fl-bg-slideshow"></div>				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		<div class="fl-bg-slideshow custom-hero-slideshow">
+		  <div class="custom-hero-slide is-active" style="background-image: url('https://lh3.googleusercontent.com/d/1Oyg6ITEZGHptiiRfIBzqY7ImBIecLX27');"></div>
+		  <div class="custom-hero-slide" style="background-image: url('https://lh3.googleusercontent.com/d/12C2LngUjIE6oXvk7nCVIkA1rCIvbzOGV');"></div>
+		  <div class="custom-hero-slide" style="background-image: url('https://lh3.googleusercontent.com/d/1bpe1kQDWsID37zzJzKBhjCWWL_6QXRwt');"></div>
+		</div>				<div class="fl-row-content fl-row-fixed-width fl-node-content">
 		
 <div class="fl-col-group fl-node-4jnda68ex57m fl-col-group-custom-width" data-node="4jnda68ex57m">
 			<div class="fl-col fl-node-3me4a1f0jbxn fl-col-bg-color fl-col-small-custom-width" data-node="3me4a1f0jbxn">
@@ -2889,5 +2924,27 @@ var themeopts = {"medium_breakpoint":"992","mobile_breakpoint":"768","lightbox":
 <script src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/14687-layout-partial.js?ver=503f3c0fb75f6cf1c175f7cf2c4a3c33" id="fl-builder-layout-14687-js"></script>
 <script id="gt_widget_script_11913312-js-before">
 window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['11913312'] = {"default_language":"en","languages":["en","es","ru","ja","zh-CN","ht","fr","ar","hi","it"],"url_structure":"sub_directory","native_language_names":1,"flag_style":"2d","wrapper_selector":"#gt-wrapper-11913312","alt_flags":{"en":"usa"},"float_switcher_open_direction":"top","switcher_horizontal_position":"left","switcher_vertical_position":"bottom","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
-</script><script src="https://www.brooklynprospect.org/wp-content/plugins/gtranslate/js/float.js?ver=6.8.3" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/" data-gt-orig-domain="www.brooklynprospect.org" data-gt-widget-id="11913312" defer></script><script></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98fbdf0e4d687a99',t:'MTc2MDY2Mjk1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.custom-hero-slideshow .custom-hero-slide');
+    if (!slides.length) {
+      return;
+    }
+
+    let currentIndex = 0;
+
+    const showSlide = (nextIndex) => {
+      slides[currentIndex].classList.remove('is-active');
+      currentIndex = nextIndex;
+      slides[currentIndex].classList.add('is-active');
+    };
+
+    setInterval(() => {
+      const nextIndex = (currentIndex + 1) % slides.length;
+      showSlide(nextIndex);
+    }, 5000);
+  });
+</script>
+<script src="https://www.brooklynprospect.org/wp-content/plugins/gtranslate/js/float.js?ver=6.8.3" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/" data-gt-orig-domain="www.brooklynprospect.org" data-gt-widget-id="11913312" defer></script><script></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98fbdf0e4d687a99',t:'MTc2MDY2Mjk1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
