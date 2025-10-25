@@ -1772,10 +1772,8 @@ src="https://www.facebook.com/tr?id=360901681009076&ev=PageView
 			<div class="fl-post-content clearfix" itemprop="text">
 		<div class="fl-builder-content fl-builder-content-7 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="7"><div class="fl-row fl-row-full-width fl-row-bg-slideshow fl-node-85nmyjw1qt0f fl-row-full-height fl-row-align-bottom fl-row-bg-overlay" data-node="85nmyjw1qt0f">
 	<div class="fl-row-content-wrap">
-		<div class="fl-bg-slideshow custom-hero-slideshow">
+		<div class="fl-bg-slideshow custom-hero-slideshow" data-slide-urls="https://lh3.googleusercontent.com/d/1Oyg6ITEZGHptiiRfIBzqY7ImBIecLX27,https://lh3.googleusercontent.com/d/12C2LngUjIE6oXvk7nCVIkA1rCIvbzOGV,https://lh3.googleusercontent.com/d/1bpe1kQDWsID37zzJzKBhjCWWL_6QXRwt">
 		  <div class="custom-hero-slide is-active" style="background-image: url('https://lh3.googleusercontent.com/d/1Oyg6ITEZGHptiiRfIBzqY7ImBIecLX27');"></div>
-		  <div class="custom-hero-slide" style="background-image: url('https://lh3.googleusercontent.com/d/12C2LngUjIE6oXvk7nCVIkA1rCIvbzOGV');"></div>
-		  <div class="custom-hero-slide" style="background-image: url('https://lh3.googleusercontent.com/d/1bpe1kQDWsID37zzJzKBhjCWWL_6QXRwt');"></div>
 		</div>				<div class="fl-row-content fl-row-fixed-width fl-node-content">
 		
 <div class="fl-col-group fl-node-4jnda68ex57m fl-col-group-custom-width" data-node="4jnda68ex57m">
@@ -2927,8 +2925,32 @@ window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {}
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const slides = document.querySelectorAll('.custom-hero-slideshow .custom-hero-slide');
-    if (!slides.length) {
+    const slideshow = document.querySelector('.custom-hero-slideshow');
+    if (!slideshow) {
+      return;
+    }
+
+    const slideUrlsAttr = slideshow.dataset.slideUrls || '';
+    const slideUrls = slideUrlsAttr
+      .split(',')
+      .map((url) => url.trim())
+      .filter(Boolean);
+
+    if (slideUrls.length) {
+      slideshow.innerHTML = '';
+      slideUrls.forEach((url, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'custom-hero-slide';
+        if (index === 0) {
+          slide.classList.add('is-active');
+        }
+        slide.style.backgroundImage = `url('${url}')`;
+        slideshow.appendChild(slide);
+      });
+    }
+
+    const slides = slideshow.querySelectorAll('.custom-hero-slide');
+    if (slides.length <= 1) {
       return;
     }
 
