@@ -17,9 +17,13 @@
 
           .fl-node-85nmyjw1qt0f .fl-row-content-wrap {
             position: relative;
-            min-height: clamp(340px, 58vh, 520px);
+            min-height: clamp(340px, 58vh, 520px) !important;
             padding-top: clamp(72px, 12vh, 140px);
             padding-bottom: clamp(48px, 10vh, 110px);
+          }
+
+          .fl-node-85nmyjw1qt0f.fl-row-full-height {
+            min-height: auto !important;
           }
 
           .fl-node-85nmyjw1qt0f .custom-hero-slideshow .custom-hero-slide {
@@ -71,6 +75,7 @@
 <link rel='dns-prefetch' href='//www.googletagmanager.com' />
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" />
 <link rel="alternate" type="application/rss+xml" title="Prospect Schools in Brooklyn, NY &raquo; Feed" href="https://www.brooklynprospect.org/feed/" />
 <script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Organization","name":"Prospect Schools in Brooklyn, NY","url":"https:\/\/www.brooklynprospect.org","alternateName":"Prospect Schools in Brooklyn, NY","description":"Prospect Schools in Brooklyn, NY","logo":"https:\/\/www.brooklynprospect.org\/wp-content\/uploads\/2025\/02\/prospect-schools-logo.png","sameAs":["https:\/\/www.facebook.com\/ProspectSchools.org\/","https:\/\/www.instagram.com\/prospect_schools","https:\/\/www.youtube.com\/@prospect_schools","https:\/\/www.linkedin.com\/school\/brooklyn-prospect-charter-school\/"]}</script>
 <link rel="preload" href="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -276,109 +281,752 @@ src="https://www.facebook.com/tr?id=360901681009076&ev=PageView
 
 <style>
 :root{
-  --northside-purple-600:#5b35a2;
-  --northside-purple-700:#492a98;
-  --northside-purple-500:#7b5cff;
-  --northside-glass-bg:rgba(255,255,255,.12);
-  --northside-glass-stroke:rgba(220,205,255,.45);
-  --northside-shadow-sm:0 6px 22px rgba(25,11,60,.35);
-  --northside-shadow-xl:0 24px 55px rgba(17,8,29,.55);
+  --northside-ink-900:#050312;
+  --northside-ink-800:#0c0a1f;
+  --northside-surface:rgba(31,22,68,.78);
+  --northside-surface-strong:rgba(20,12,45,.9);
+  --northside-surface-highlight:rgba(255,255,255,.12);
+  --northside-accent-a:#9f8cff;
+  --northside-accent-b:#59f4ff;
+  --northside-nav-muted:rgba(228,222,255,.72);
+  --northside-text-strong:#fbf9ff;
+  --northside-shadow-sm:0 18px 45px rgba(10,5,32,.55);
+  --northside-shadow-xl:0 55px 120px rgba(7,4,24,.72);
+  --northside-pill-shadow:0 28px 55px rgba(56,18,120,.48);
+  --northside-glass-stroke:rgba(177,156,255,.32);
+  --northside-sheen:rgba(255,255,255,.4);
+  --northside-font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
 }
 
+body{margin:0;}
+
 .northside-header,
-.northside-mobile-panel{font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-body{margin:0}
-.northside-header{position:sticky; top:0; z-index:1000; display:flex; justify-content:center; padding:.6rem; backdrop-filter:saturate(170%) blur(12px)}
+.northside-mobile-panel{font-family:var(--northside-font);}
+
+.northside-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:1.1rem 0 1.2rem;
+  background:linear-gradient(180deg, rgba(5,3,18,.88) 0%, rgba(5,3,18,.68) 38%, rgba(5,3,18,.32) 68%, rgba(5,3,18,0) 100%);
+  color:var(--northside-text-strong);
+}
+
+.northside-header::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(159,140,255,.45), transparent);
+  pointer-events:none;
+}
+
+@supports (backdrop-filter: blur(12px)){
+  .northside-header{
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+  }
+}
+
 .northside-header .northside-shell{
-  width:min(1120px,92vw); display:flex; align-items:center; gap:.6rem; padding:.45rem .75rem;
-  background:linear-gradient(125deg, rgba(103,70,206,.85), rgba(55,25,140,.92));
-  border:1px solid var(--northside-glass-stroke); border-radius:999px; box-shadow:var(--northside-shadow-sm); color:#f6f1ff;
+  position:relative;
+  width:min(1180px,92vw);
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:.95rem 1.6rem;
+  border-radius:28px;
+  color:var(--northside-text-strong);
+  border:1px solid var(--northside-glass-stroke);
+  background:linear-gradient(135deg, rgba(36,25,70,.78), rgba(17,10,44,.96));
+  box-shadow:0 26px 60px rgba(5,2,24,.55);
+  overflow:hidden;
+  isolation:isolate;
 }
-.northside-header .northside-brand{display:flex; align-items:center; gap:.55rem; padding:.3rem .65rem; background:linear-gradient(140deg, rgba(255,255,255,.16), rgba(255,255,255,.05)); border:1px solid rgba(255,255,255,.3); border-radius:999px; user-select:none; box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
-.northside-header .northside-brand img{width:34px; height:34px; object-fit:contain; filter:drop-shadow(0 6px 10px rgba(0,0,0,.32))}
-.northside-header .northside-brand b{font-weight:800; letter-spacing:.35px; font-size:.85rem; text-transform:uppercase}
-.northside-header .northside-brand .northside-muted{opacity:.8; font-weight:700; font-size:.72rem; letter-spacing:2.4px; text-transform:uppercase; display:block}
-.northside-header .northside-nav{display:flex; align-items:center; gap:.15rem; margin-left:.2rem}
-.northside-header .northside-nav>li{list-style:none; position:relative}
-.northside-header .northside-nav a{display:block; color:inherit; text-decoration:none; font-weight:800; font-size:.9rem; letter-spacing:.35px; padding:.6rem .95rem; border-radius:999px; transition:background .2s ease, color .2s ease}
-.northside-header .northside-nav a:hover{background:rgba(255,255,255,.14); color:#fff}
-.northside-header .northside-pills{margin-left:auto; display:flex; gap:.55rem}
-.northside-pill{border-radius:999px; padding:.58rem 1.05rem; font-weight:900; text-decoration:none; color:#fff; box-shadow:0 10px 25px rgba(33,12,94,.55); display:inline-flex; align-items:center; justify-content:center; gap:.35rem; letter-spacing:.4px}
-.northside-pill--violet{background:linear-gradient(135deg, var(--northside-purple-500), var(--northside-purple-600)); border:1px solid rgba(255,255,255,.28)}
-.northside-pill--outline{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.48); color:#f3ecff}
-.northside-header .northside-hamburger{display:none; margin-left:auto; background:transparent; border:0; color:inherit; font-size:28px; line-height:1; cursor:pointer}
-.northside-header .northside-mega-wrap{position:relative; width:100%}
+
+.northside-header .northside-shell::before{
+  content:"";
+  position:absolute;
+  inset:-140% -60% 10%;
+  background:radial-gradient(circle at 20% 10%, rgba(174,148,255,.36), transparent 60%),radial-gradient(circle at 85% 15%, rgba(89,244,255,.32), transparent 55%),radial-gradient(circle at 50% 95%, rgba(255,135,222,.28), transparent 65%);
+  opacity:.85;
+  animation:northsideAurora 22s linear infinite;
+  pointer-events:none;
+}
+
+.northside-header .northside-shell::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, rgba(255,255,255,.22), rgba(255,255,255,0) 45%);
+  mix-blend-mode:screen;
+  opacity:.35;
+  pointer-events:none;
+}
+
+.northside-header .northside-shell > *{position:relative; z-index:1;}
+
+.northside-header .northside-brand{
+  display:flex;
+  align-items:center;
+  gap:.85rem;
+  text-decoration:none;
+  color:inherit;
+  padding:.45rem .6rem;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(140deg, rgba(255,255,255,.14), rgba(255,255,255,.02));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 14px 35px rgba(14,8,40,.28);
+  transition:background .3s ease,border-color .3s ease,transform .3s ease;
+}
+
+.northside-header .northside-brand:hover,
+.northside-header .northside-brand:focus-visible{
+  background:linear-gradient(140deg, rgba(255,255,255,.22), rgba(255,255,255,.06));
+  border-color:rgba(255,255,255,.28);
+  transform:translateY(-1px);
+  outline:none;
+}
+
+.northside-logo-glass{
+  position:relative;
+  width:46px;
+  height:46px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.22);
+  background:linear-gradient(135deg, rgba(255,255,255,.26), rgba(255,255,255,.05));
+  display:grid;
+  place-items:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 10px 24px rgba(16,9,40,.35);
+  overflow:hidden;
+}
+
+.northside-logo-glass::after{
+  content:"";
+  position:absolute;
+  inset:-120% -80% 45%;
+  background:linear-gradient(120deg, rgba(255,255,255,.6), rgba(255,255,255,0));
+  opacity:.5;
+  transform:rotate(18deg);
+}
+
+.northside-header .northside-brand img{
+  width:26px;
+  height:26px;
+  object-fit:contain;
+  filter:drop-shadow(0 6px 12px rgba(0,0,0,.28));
+}
+
+.northside-brand-text{display:flex; flex-direction:column; gap:2px;}
+
+.northside-brand .northside-muted{
+  font-size:.62rem;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:rgba(237,233,255,.7);
+}
+
+.northside-title{font-weight:800; letter-spacing:.18em; text-transform:uppercase; font-size:1rem;}
+
+.northside-tagline{font-size:.64rem; letter-spacing:.28em; text-transform:uppercase; color:rgba(237,233,255,.58);}
+
+.northside-header .northside-nav{
+  display:flex;
+  align-items:center;
+  gap:.45rem;
+  margin-left:1.2rem;
+  padding:0;
+}
+
+.northside-header .northside-nav>li{
+  list-style:none;
+  position:relative;
+  --northside-link-accent-1:var(--northside-accent-a);
+  --northside-link-accent-2:var(--northside-accent-b);
+  --northside-link-accent-3:rgba(255,255,255,.6);
+}
+
+.northside-header .northside-nav>li[data-mega="why"]{--northside-link-accent-1:#b798ff; --northside-link-accent-2:#68d7ff; --northside-link-accent-3:#ff9adf;}
+.northside-header .northside-nav>li[data-mega="schools"]{--northside-link-accent-1:#63e0ff; --northside-link-accent-2:#9d87ff; --northside-link-accent-3:#7df9ff;}
+.northside-header .northside-nav>li[data-mega="enroll"]{--northside-link-accent-1:#7effd1; --northside-link-accent-2:#76b4ff; --northside-link-accent-3:#c0f3ff;}
+.northside-header .northside-nav>li[data-mega="careers"]{--northside-link-accent-1:#ff9fd6; --northside-link-accent-2:#ffa867; --northside-link-accent-3:#fff3b0;}
+.northside-header .northside-nav>li[data-mega="families"]{--northside-link-accent-1:#ffd36f; --northside-link-accent-2:#ff8fb9; --northside-link-accent-3:#ffe5a5;}
+.northside-header .northside-nav>li[data-mega="support"]{--northside-link-accent-1:#8ef8ff; --northside-link-accent-2:#9d87ff; --northside-link-accent-3:#b5f5ff;}
+
+.northside-header .northside-link{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:.35rem;
+  padding:.72rem 1.12rem;
+  border-radius:999px;
+  text-decoration:none;
+  color:var(--northside-nav-muted);
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:.78rem;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.05);
+  overflow:hidden;
+  transition:color .3s ease,border-color .3s ease,transform .3s ease,background .3s ease;
+}
+
+.northside-header .northside-link span{position:relative; z-index:2;}
+
+.northside-header .northside-link::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:linear-gradient(130deg,var(--northside-link-accent-1),var(--northside-link-accent-2) 55%,var(--northside-link-accent-3));
+  opacity:0;
+  transition:opacity .35s ease;
+  z-index:1;
+}
+
+.northside-header .northside-link::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% -45%, rgba(255,255,255,.65), transparent 64%);
+  opacity:0;
+  transform:translateY(32%) scale(.68);
+  transition:opacity .35s ease,transform .35s ease;
+  z-index:1;
+}
+
+.northside-header .northside-link:hover,
+.northside-header .northside-link:focus-visible{
+  color:var(--northside-text-strong);
+  border-color:rgba(255,255,255,.24);
+  background:rgba(255,255,255,.08);
+  transform:translateY(-1px);
+  outline:none;
+}
+
+.northside-header .northside-link:hover::before,
+.northside-header .northside-link:focus-visible::before{opacity:.92;}
+
+.northside-header .northside-link:hover::after,
+.northside-header .northside-link:focus-visible::after{
+  opacity:.55;
+  transform:translateY(0) scale(1);
+}
+
+.northside-header .northside-pills{margin-left:auto; display:flex; gap:.65rem;}
+
+.northside-pill{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.4rem;
+  padding:.7rem 1.3rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--northside-text-strong);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:var(--northside-pill-shadow);
+  background:linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.05));
+  overflow:hidden;
+  transition:transform .35s ease, border-color .35s ease, background .35s ease;
+}
+
+.northside-pill span{position:relative; z-index:1; letter-spacing:.18em;}
+
+.northside-pill::before{
+  content:"";
+  position:absolute;
+  inset:-140% -40% 40%;
+  background:linear-gradient(120deg, rgba(255,255,255,.45), rgba(255,255,255,0));
+  opacity:.45;
+  transform:rotate(18deg);
+  transition:opacity .35s ease;
+}
+
+.northside-pill:hover,
+.northside-pill:focus-visible{
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.32);
+  background:linear-gradient(135deg, rgba(255,255,255,.24), rgba(255,255,255,.08));
+  outline:none;
+}
+
+.northside-pill:hover::before,
+.northside-pill:focus-visible::before{opacity:.7;}
+
+.northside-pill--violet{
+  background:linear-gradient(135deg, rgba(157,136,255,.75), rgba(93,60,220,.82));
+  border-color:rgba(198,187,255,.55);
+}
+
+.northside-pill--outline{
+  background:linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,.02));
+  color:rgba(243,239,255,.92);
+}
+
+.northside-header .northside-hamburger{
+  display:none;
+  margin-left:auto;
+  width:48px;
+  height:48px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);
+  color:inherit;
+  cursor:pointer;
+  position:relative;
+  transition:background .3s ease,border-color .3s ease;
+}
+
+.northside-header .northside-hamburger:hover,
+.northside-header .northside-hamburger:focus-visible{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.28);
+  outline:none;
+}
+
+.northside-header .northside-hamburger span{
+  position:absolute;
+  left:50%;
+  width:22px;
+  height:2px;
+  background:var(--northside-text-strong);
+  border-radius:999px;
+  transform:translateX(-50%);
+  transition:transform .35s ease,opacity .3s ease;
+}
+
+.northside-header .northside-hamburger span:nth-child(1){top:16px;}
+.northside-header .northside-hamburger span:nth-child(2){top:23px;}
+.northside-header .northside-hamburger span:nth-child(3){top:30px;}
+
+.northside-header .northside-hamburger.is-active span:nth-child(1){transform:translate(-50%,7px) rotate(45deg);}
+.northside-header .northside-hamburger.is-active span:nth-child(2){opacity:0;}
+.northside-header .northside-hamburger.is-active span:nth-child(3){transform:translate(-50%,-7px) rotate(-45deg);}
+
+.northside-header .northside-mega-wrap{position:relative; width:100%;}
+
 .northside-header .northside-mega{
-  position:absolute; left:50%; transform:translateX(-50%);
-  top:58px; width:min(1080px,92vw);
-  background:linear-gradient(160deg, rgba(32,18,70,.97), rgba(24,10,55,.96));
-  border:1px solid rgba(214,200,255,.24);
-  border-radius:20px; box-shadow:var(--northside-shadow-xl); padding:26px; display:none;
+  position:absolute;
+  left:50%;
+  transform:translate(-50%,18px);
+  top:100%;
+  width:min(1080px,92vw);
+  background:linear-gradient(160deg, rgba(31,22,68,.9), rgba(18,11,46,.96));
+  border:1px solid rgba(175,155,255,.28);
+  border-radius:28px;
+  box-shadow:var(--northside-shadow-xl);
+  padding:32px;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .28s ease, transform .28s ease;
 }
-.northside-header .northside-mega.is-open{display:block}
-.northside-header .northside-mega-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:26px}
-.northside-header .northside-mega h3{margin:0 0 .4rem; color:#e4d8ff; letter-spacing:.3px; text-transform:uppercase; font-size:.82rem}
-.northside-header .northside-mega p{margin:.35rem 0 1rem; opacity:.85; font-size:.86rem; line-height:1.5}
-.northside-header .northside-mega ul{margin:0; padding:0; list-style:none}
-.northside-header .northside-mega li a{display:block; padding:.48rem 0; color:#faf6ff; text-decoration:none; font-weight:600}
-.northside-header .northside-mega li a:hover{color:#d5caff}
-.northside-mobile-nav{position:fixed; inset:0; display:none; z-index:1001; background:rgba(14,10,20,.78); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px)}
-.northside-mobile-nav.is-open{display:flex; align-items:flex-start; padding:24px}
-.northside-mobile-panel{max-width:560px; margin:0 auto; background:linear-gradient(180deg, rgba(65,33,134,.95), rgba(40,16,92,.92)); border:1px solid rgba(214,200,255,.28); border-radius:24px; padding:20px; width:100%; color:#fff; box-shadow:var(--northside-shadow-xl)}
-.northside-mobile-row{display:grid; gap:8px}
-.northside-mobile-row a{display:block; padding:14px 12px; color:inherit; font-weight:800; text-decoration:none; border-radius:14px; background:rgba(255,255,255,.06)}
-.northside-mobile-row a:hover{background:rgba(255,255,255,.12)}
-.northside-mobile-cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+
+.northside-header .northside-mega.is-open{opacity:1; visibility:visible; transform:translate(-50%,0);}
+
+.northside-header .northside-mega-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px;}
+
+.northside-header .northside-mega-grid > div{
+  background:linear-gradient(140deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:18px 20px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+.northside-header .northside-mega h3{margin:0 0 .65rem; color:#e4dcff; letter-spacing:.28em; text-transform:uppercase; font-size:.74rem;}
+
+.northside-header .northside-mega p{margin:0 0 1.1rem; opacity:.8; font-size:.88rem; line-height:1.5;}
+
+.northside-header .northside-mega ul{margin:0; padding:0; list-style:none; display:grid; gap:.4rem;}
+
+.northside-header .northside-mega li a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.48rem 0;
+  color:#fbf9ff;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:.78rem;
+  opacity:.85;
+  transition:opacity .25s ease, transform .25s ease;
+}
+
+.northside-header .northside-mega li a::after{content:'↗'; font-size:.85rem; opacity:.4;}
+
+.northside-header .northside-mega li a:hover,
+.northside-header .northside-mega li a:focus-visible{opacity:1; transform:translateX(4px); outline:none;}
+
+.northside-mobile-nav{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:32px 18px;
+  background:radial-gradient(circle at top, rgba(26,18,60,.86), rgba(9,6,22,.88));
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  z-index:1001;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .35s ease;
+}
+
+.northside-mobile-nav.is-open{opacity:1; pointer-events:auto;}
+
+.northside-mobile-panel{
+  width:100%;
+  max-width:520px;
+  background:linear-gradient(160deg, rgba(36,23,76,.94), rgba(20,12,52,.97));
+  border:1px solid rgba(174,153,255,.34);
+  border-radius:28px;
+  padding:26px 28px 32px;
+  color:var(--northside-text-strong);
+  box-shadow:var(--northside-shadow-xl);
+  transform:translateY(-18px);
+  opacity:0;
+  transition:transform .4s ease, opacity .35s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.northside-mobile-nav.is-open .northside-mobile-panel{transform:none; opacity:1;}
+
+.northside-mobile-panel::before{
+  content:"";
+  position:absolute;
+  inset:-160% -40% 20%;
+  background:radial-gradient(circle at 30% 10%, rgba(157,132,255,.35), transparent 55%),radial-gradient(circle at 85% 25%, rgba(95,244,255,.28), transparent 55%);
+  opacity:.9;
+  pointer-events:none;
+}
+
+.northside-mobile-header{display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;}
+
+.northside-mobile-title{font-size:.72rem; letter-spacing:.34em; text-transform:uppercase; color:rgba(237,233,255,.75);}
+
+.northside-mobile-close{
+  width:44px;
+  height:44px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  transition:background .3s ease,border-color .3s ease;
+}
+
+.northside-mobile-close:hover,
+.northside-mobile-close:focus-visible{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.28); outline:none;}
+
+.northside-mobile-close span{width:20px; height:2px; background:var(--northside-text-strong); border-radius:999px; display:block;}
+
+.northside-mobile-close span:first-child{transform:rotate(45deg);}
+.northside-mobile-close span:last-child{transform:rotate(-45deg);}
+
+.northside-mobile-row{display:grid; gap:12px;}
+
+.northside-mobile-row a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 18px;
+  border-radius:18px;
+  background:linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  color:inherit;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-size:.78rem;
+  transition:transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.northside-mobile-row a::after{content:'↗'; font-size:1rem; opacity:.45;}
+
+.northside-mobile-row a:hover,
+.northside-mobile-row a:focus-visible{transform:translateX(6px); background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.24); outline:none;}
+
+.northside-mobile-cta{display:grid; gap:14px; margin-top:24px;}
+
+.northside-mobile-panel .northside-pill{width:100%; justify-content:center;}
+
+@keyframes northsideAurora{
+  0%{transform:translate3d(-5%, -6%, 0) rotate(0deg);}
+  35%{transform:translate3d(3%, -2%, 0) rotate(6deg);}
+  70%{transform:translate3d(-2%, 4%, 0) rotate(-4deg);}
+  100%{transform:translate3d(-5%, -6%, 0) rotate(0deg);}
+}
+
+@media (max-width:1280px){.northside-header .northside-nav{margin-left:.6rem;}}
+
+@media (max-width:1100px){
+  .northside-header .northside-shell{padding:.85rem 1.2rem;}
+  .northside-header .northside-nav{gap:.35rem;}
+  .northside-header .northside-link{padding:.65rem .95rem; font-size:.75rem;}
+}
+
 @media (max-width:1024px){
   .northside-header .northside-nav,
-  .northside-header .northside-pills{display:none}
-  .northside-header .northside-hamburger{display:block}
-  .northside-header .northside-mega{display:none !important}
+  .northside-header .northside-pills{display:none;}
+  .northside-header .northside-hamburger{display:block;}
+  .northside-header .northside-mega{display:none !important;}
 }
+
+@media (max-width:720px){
+  .northside-header{padding:.9rem 0 1rem;}
+  .northside-header .northside-brand{padding:.35rem .55rem;}
+  .northside-title{font-size:.9rem;}
+  .northside-tagline{display:none;}
+}
+
+@media (max-width:520px){
+  .northside-header .northside-shell{gap:.7rem; padding:.75rem .95rem;}
+  .northside-logo-glass{width:42px; height:42px;}
+  .northside-mobile-panel{padding:24px 22px 28px;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .northside-header .northside-shell::before,
+  .northside-header .northside-shell::after,
+  .northside-pill::before{animation:none; transition:none;}
+  .northside-header .northside-link,
+  .northside-pill,
+  .northside-mobile-panel{transition:none;}
+}
+
 </style>
 
 <header class="northside-header">
   <div class="northside-shell northside-mega-wrap">
       <a class="northside-brand" href="#">
-        <img alt="Northside logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIzOCI+PHJlY3Qgd2lkdGg9IjM4IiBoZWlnaHQ9IjM4IiBmaWxsPSJub25lIi8+PC9zdmc+">
-        <div><div class="northside-muted">BROOKLYN</div><b>NORTHSIDE CHARTER HIGH</b></div>
+        <span class="northside-logo-glass">
+          <img alt="Northside logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIzOCI+PHJlY3Qgd2lkdGg9IjM4IiBoZWlnaHQ9IjM4IiBmaWxsPSJub25lIi8+PC9zdmc+">
+        </span>
+        <span class="northside-brand-text">
+          <span class="northside-muted">BROOKLYN</span>
+          <span class="northside-title">NORTHSIDE CHARTER HIGH</span>
+          <span class="northside-tagline">IB World School</span>
+        </span>
       </a>
 
     <ul class="northside-nav" id="northside-nav">
-      <li data-mega="why"><a href="#">Why Northside</a></li>
-      <li data-mega="schools"><a href="#">Schools</a></li>
-      <li data-mega="enroll"><a href="#">Enroll</a></li>
-      <li data-mega="careers"><a href="#">Careers</a></li>
-      <li data-mega="families"><a href="#">Families</a></li>
-      <li data-mega="support"><a href="#">Support</a></li>
+      <li data-mega="why"><a class="northside-link" href="#"><span>Why Northside</span></a></li>
+      <li data-mega="schools"><a class="northside-link" href="#"><span>Schools</span></a></li>
+      <li data-mega="enroll"><a class="northside-link" href="#"><span>Enroll</span></a></li>
+      <li data-mega="careers"><a class="northside-link" href="#"><span>Careers</span></a></li>
+      <li data-mega="families"><a class="northside-link" href="#"><span>Families</span></a></li>
+      <li data-mega="support"><a class="northside-link" href="#"><span>Support</span></a></li>
     </ul>
 
     <div class="northside-pills">
-      <a class="northside-pill northside-pill--violet" href="#">Apply</a>
-      <a class="northside-pill northside-pill--outline" href="#">Visit</a>
+      <a class="northside-pill northside-pill--violet" href="#"><span>Apply</span></a>
+      <a class="northside-pill northside-pill--outline" href="#"><span>Visit</span></a>
     </div>
 
-    <button class="northside-hamburger" id="northside-hamburger" aria-label="Open menu">☰</button>
+    <button class="northside-hamburger" id="northside-hamburger" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
     <!-- Mega menu panels -->
     <div class="northside-mega" id="northside-mega-why" role="dialog" aria-label="Why Northside">
       <div class="northside-mega-grid">
-        <div><h3>Why Northside</h3><p>One of NYC’s leading IB World Schools—rigor, belonging, purpose.</p>
-          <ul><li><a href="#">IB World Program</a></li><li><a href="#">Teaching & Learning</a></li><li><a href="#">Student Stories</a></li></ul></div>
-        <div><h3>Explore</h3><ul><li><a href="#">Clubs & Athletics</a></li><li><a href="#">College Counseling</a></li><li><a href="#">Arts</a></li></ul></div>
-        <div><h3>Take Action</h3><ul><li><a href="#">Enroll Today</a></li><li><a href="#">Visit a School</a></li><li><a href="#">Request Info</a></li></ul></div>
+        <div>
+          <h3>Why Northside</h3>
+          <p>One of NYC’s leading IB World Schools—rigor, belonging, and purpose in every classroom.</p>
+          <ul>
+            <li><a href="#">IB World Program</a></li>
+            <li><a href="#">Teaching & Learning</a></li>
+            <li><a href="#">Student Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Experience</h3>
+          <ul>
+            <li><a href="#">Clubs & Athletics</a></li>
+            <li><a href="#">College Counseling</a></li>
+            <li><a href="#">Arts & Design Labs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Take Action</h3>
+          <ul>
+            <li><a href="#">Enroll Today</a></li>
+            <li><a href="#">Visit a School</a></li>
+            <li><a href="#">Request Info</a></li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <!-- Clone this block for other tabs if needed -->
-    <div class="northside-mega" id="northside-mega-schools" aria-label="Schools">
+    <div class="northside-mega" id="northside-mega-schools" role="dialog" aria-label="Schools">
       <div class="northside-mega-grid">
-        <div><h3>Our Schools</h3><ul><li><a href="#">High School</a></li><li><a href="#">Middle Programs</a></li></ul></div>
-        <div><h3>Locations</h3><ul><li><a href="#">Downtown</a></li><li><a href="#">Clinton Hill</a></li></ul></div>
-        <div><h3>Calendars</h3><ul><li><a href="#">District</a></li><li><a href="#">Athletics</a></li></ul></div>
+        <div>
+          <h3>Our Schools</h3>
+          <p>IB pathways for every learner from elementary through high school.</p>
+          <ul>
+            <li><a href="#">High School</a></li>
+            <li><a href="#">Middle Programs</a></li>
+            <li><a href="#">Elementary Programs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Locations</h3>
+          <ul>
+            <li><a href="#">Downtown Brooklyn</a></li>
+            <li><a href="#">Clinton Hill</a></li>
+            <li><a href="#">Windsor Terrace</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Calendars</h3>
+          <ul>
+            <li><a href="#">District Calendar</a></li>
+            <li><a href="#">Athletics Calendar</a></li>
+            <li><a href="#">Assessment Dates</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="northside-mega" id="northside-mega-enroll" role="dialog" aria-label="Enroll">
+      <div class="northside-mega-grid">
+        <div>
+          <h3>Get Started</h3>
+          <p>Enrollment is 100% digital with bilingual support at every step.</p>
+          <ul>
+            <li><a href="#">Apply Online</a></li>
+            <li><a href="#">Application Checklist</a></li>
+            <li><a href="#">Lottery &amp; Key Dates</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Visit Us</h3>
+          <ul>
+            <li><a href="#">Virtual Info Sessions</a></li>
+            <li><a href="#">Campus Tours</a></li>
+            <li><a href="#">Shadow Days</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Need Support?</h3>
+          <ul>
+            <li><a href="#">Talk with Admissions</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Language Assistance</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="northside-mega" id="northside-mega-careers" role="dialog" aria-label="Careers">
+      <div class="northside-mega-grid">
+        <div>
+          <h3>Join the Team</h3>
+          <p>Bring your practice to a future-ready, inclusive learning community.</p>
+          <ul>
+            <li><a href="#">Featured Roles</a></li>
+            <li><a href="#">Why Teach Here</a></li>
+            <li><a href="#">Residency Program</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Professional Growth</h3>
+          <ul>
+            <li><a href="#">Learning &amp; Development</a></li>
+            <li><a href="#">Leadership Pathways</a></li>
+            <li><a href="#">Culture &amp; Belonging</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Benefits</h3>
+          <ul>
+            <li><a href="#">Compensation Overview</a></li>
+            <li><a href="#">Wellness &amp; Support</a></li>
+            <li><a href="#">How to Apply</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="northside-mega" id="northside-mega-families" role="dialog" aria-label="Families">
+      <div class="northside-mega-grid">
+        <div>
+          <h3>Family Hub</h3>
+          <p>Tools and resources for staying connected to every classroom.</p>
+          <ul>
+            <li><a href="#">Parent Portal</a></li>
+            <li><a href="#">Calendars &amp; Alerts</a></li>
+            <li><a href="#">Meal Program</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Get Involved</h3>
+          <ul>
+            <li><a href="#">Family Council</a></li>
+            <li><a href="#">Volunteer Opportunities</a></li>
+            <li><a href="#">Workshops &amp; Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Support Services</h3>
+          <ul>
+            <li><a href="#">Student Wellness</a></li>
+            <li><a href="#">Transportation</a></li>
+            <li><a href="#">Special Education</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="northside-mega" id="northside-mega-support" role="dialog" aria-label="Support">
+      <div class="northside-mega-grid">
+        <div>
+          <h3>Support Prospect</h3>
+          <p>Your partnership accelerates access, innovation, and equity for students.</p>
+          <ul>
+            <li><a href="#">Give Today</a></li>
+            <li><a href="#">Corporate Partnerships</a></li>
+            <li><a href="#">Sponsor a Program</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Ways to Engage</h3>
+          <ul>
+            <li><a href="#">Volunteer &amp; Mentor</a></li>
+            <li><a href="#">Alumni Network</a></li>
+            <li><a href="#">Community Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Impact Reports</h3>
+          <ul>
+            <li><a href="#">Annual Report</a></li>
+            <li><a href="#">Strategic Plan</a></li>
+            <li><a href="#">Financials</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+
 </header>
 
 <script>
@@ -395,33 +1043,67 @@ body{margin:0}
     families: document.getElementById('northside-mega-families'),
     support: document.getElementById('northside-mega-support'),
   };
-  let openKey = null, hideTimer;
+  const accentMap = {
+    default: ['#9f8cff', '#59f4ff'],
+    why: ['#b798ff', '#68d7ff'],
+    schools: ['#63e0ff', '#9d87ff'],
+    enroll: ['#7effd1', '#76b4ff'],
+    careers: ['#ff9fd6', '#ffa867'],
+    families: ['#ffd36f', '#ff8fb9'],
+    support: ['#8ef8ff', '#9d87ff'],
+  };
+  let openKey = null;
+  let hideTimer = null;
 
-  function openMega(key){
+  const setAccent = (key = 'default') => {
+    const [a, b] = accentMap[key] || accentMap.default;
+    shell.style.setProperty('--northside-accent-a', a);
+    shell.style.setProperty('--northside-accent-b', b);
+  };
+
+  function openMega(key) {
     clearTimeout(hideTimer);
-    if (openKey && megas[openKey]) megas[openKey].classList.remove('is-open');
+    if (openKey && megas[openKey]) {
+      megas[openKey].classList.remove('is-open');
+    }
     openKey = key;
-    if (megas[key]) megas[key].classList.add('is-open');
+    setAccent(key);
+    if (megas[key]) {
+      megas[key].classList.add('is-open');
+    }
   }
-  function scheduleHide(){
+
+  function scheduleHide() {
     clearTimeout(hideTimer);
     hideTimer = setTimeout(() => {
-      if (openKey && megas[openKey]) megas[openKey].classList.remove('is-open');
+      if (openKey && megas[openKey]) {
+        megas[openKey].classList.remove('is-open');
+      }
       openKey = null;
-    }, 120);
+      setAccent('default');
+    }, 140);
   }
 
   navItems.forEach(li => {
-    const key = li.getAttribute('data-mega');
+    const key = li.getAttribute('data-mega') || 'default';
     li.addEventListener('mouseenter', () => openMega(key));
-    li.addEventListener('focusin',   () => openMega(key));
+    li.addEventListener('focusin', () => openMega(key));
   });
+
   shell.addEventListener('mouseleave', scheduleHide);
-  Object.values(megas).forEach(m => {
-    if(!m) return;
-    m.addEventListener('mouseenter', () => clearTimeout(hideTimer));
-    m.addEventListener('mouseleave', scheduleHide);
+  shell.addEventListener('focusout', event => {
+    if (!shell.contains(event.relatedTarget)) {
+      scheduleHide();
+    }
   });
+
+  Object.values(megas).forEach(panel => {
+    if (!panel) return;
+    panel.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+    panel.addEventListener('mouseleave', scheduleHide);
+  });
+
+  setAccent('default');
 })();
 
 /* Mobile off-canvas open/close */
@@ -430,20 +1112,71 @@ body{margin:0}
   if (!btn) return;
   const sheet = document.createElement('div');
   sheet.className = 'northside-mobile-nav';
+  sheet.setAttribute('aria-hidden', 'true');
   sheet.innerHTML = `
-    <div class="northside-mobile-panel">
+    <div class="northside-mobile-panel" id="northside-mobile-menu" role="dialog" aria-modal="true" aria-label="Primary navigation" tabindex="-1">
+      <div class="northside-mobile-header">
+        <span class="northside-mobile-title">Menu</span>
+        <button class="northside-mobile-close" type="button" aria-label="Close menu"><span></span><span></span></button>
+      </div>
       <div class="northside-mobile-row">
-        <a href="#">Why Northside</a><a href="#">Schools</a><a href="#">Enroll</a>
-        <a href="#">Careers</a><a href="#">Families</a><a href="#">Support</a>
+        <a href="#">Why Northside</a>
+        <a href="#">Schools</a>
+        <a href="#">Enroll</a>
+        <a href="#">Careers</a>
+        <a href="#">Families</a>
+        <a href="#">Support</a>
       </div>
       <div class="northside-mobile-cta">
-        <a class="northside-pill northside-pill--violet" href="#">Apply</a>
-        <a class="northside-pill northside-pill--outline" href="#">Visit</a>
+        <a class="northside-pill northside-pill--violet" href="#"><span>Apply</span></a>
+        <a class="northside-pill northside-pill--outline" href="#"><span>Visit</span></a>
       </div>
     </div>`;
   document.body.appendChild(sheet);
-  btn.addEventListener('click', () => sheet.classList.add('is-open'));
-  sheet.addEventListener('click', e => { if (e.target === sheet) sheet.classList.remove('is-open'); });
+  btn.setAttribute('aria-controls', 'northside-mobile-menu');
+
+  const closeBtn = sheet.querySelector('.northside-mobile-close');
+
+  const toggle = show => {
+    const willOpen = typeof show === 'boolean' ? show : !sheet.classList.contains('is-open');
+    sheet.classList.toggle('is-open', willOpen);
+    sheet.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
+    btn.classList.toggle('is-active', willOpen);
+    btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    if (willOpen) {
+      requestAnimationFrame(() => {
+        const firstLink = sheet.querySelector('.northside-mobile-row a');
+        (firstLink || closeBtn)?.focus({ preventScroll: true });
+      });
+    } else {
+      btn.focus({ preventScroll: true });
+    }
+  };
+
+  btn.addEventListener('click', () => toggle());
+  closeBtn?.addEventListener('click', () => toggle(false));
+  sheet.addEventListener('click', event => {
+    if (event.target === sheet) toggle(false);
+  });
+  sheet.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      toggle(false);
+      return;
+    }
+    if (event.key === 'Tab' && sheet.classList.contains('is-open')) {
+      const focusables = sheet.querySelectorAll('a, button');
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
 })();
 </script>
       <div id="fl-main-content" class="fl-page-content" itemprop="mainContentOfPage" role="main">
@@ -465,9 +1198,9 @@ body{margin:0}
 			<div class="fl-col fl-node-3me4a1f0jbxn fl-col-bg-color fl-col-small-custom-width" data-node="3me4a1f0jbxn">
 	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-n13pg4smltvw" data-node="n13pg4smltvw">
 	<div class="fl-module-content fl-node-content">
-		<h1 class="fl-heading">
-		<span class="fl-heading-text">Welcome to <strong>Prospect.</strong></span>
-	</h1>
+                <h1 class="fl-heading">
+                <span class="fl-heading-text">At Northside, your child is <strong>known</strong>.<br />Our child is <strong>ready</strong>.</span>
+        </h1>
 	</div>
 </div>
 </div>
