@@ -44,6 +44,54 @@
             position: relative;
             z-index: 3;
           }
+
+          .northside-hero-badges {
+            position: absolute;
+            top: 50%;
+            right: clamp(24px, 9vw, 160px);
+            left: auto;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: clamp(18px, 3vw, 42px);
+            z-index: 2;
+          }
+
+          .northside-hero-badges img {
+            width: clamp(120px, 18vw, 220px);
+            height: auto;
+            filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.75))
+              drop-shadow(0 0 28px rgba(255, 255, 255, 0.55));
+          }
+
+          .fl-node-n13pg4smltvw .fl-heading .fl-heading-text {
+            font-size: clamp(1.85rem, 3.6vw, 2.8rem);
+            line-height: 1.12;
+          }
+
+          @media (max-width: 1024px) {
+            .northside-hero-badges {
+              right: clamp(18px, 6vw, 80px);
+              left: auto;
+              gap: clamp(14px, 4vw, 28px);
+            }
+
+            .northside-hero-badges img {
+              width: clamp(110px, 24vw, 180px);
+            }
+          }
+
+          @media (max-width: 768px) {
+            .northside-hero-badges {
+              position: relative;
+              top: auto;
+              right: auto;
+              left: auto;
+              transform: none;
+              margin: 0 auto clamp(16px, 4vw, 32px);
+              justify-content: center;
+            }
+          }
         </style>
 	<meta name="dc.title" content="Prospect Schools in Brooklyn, New York">
 <meta name="dc.description" content="Prospect Schools in Brooklyn is a tuition-free K-12 charter school network preparing students for lifelong learning.">
@@ -438,7 +486,7 @@ body{margin:0;}
 .northside-header .northside-nav{
   display:flex;
   align-items:center;
-  gap:.45rem;
+  gap:.7rem;
   margin-left:1.2rem;
   padding:0;
 }
@@ -463,59 +511,35 @@ body{margin:0;}
   display:flex;
   align-items:center;
   gap:.35rem;
-  padding:.72rem 1.12rem;
+  padding:.7rem 1.3rem;
   border-radius:999px;
   text-decoration:none;
-  color:var(--northside-nav-muted);
-  font-weight:700;
-  letter-spacing:.14em;
+  color:var(--northside-text-strong);
+  font-weight:800;
+  letter-spacing:.18em;
   text-transform:uppercase;
-  font-size:.78rem;
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.05);
+  font-size:.92rem;
+  background:linear-gradient(135deg, rgba(157,136,255,.75), rgba(93,60,220,.82));
+  border:1px solid rgba(198,187,255,.55);
+  box-shadow:var(--northside-pill-shadow);
   overflow:hidden;
-  transition:color .3s ease,border-color .3s ease,transform .3s ease,background .3s ease;
+  transition:transform .35s ease, border-color .35s ease, background .35s ease;
 }
 
 .northside-header .northside-link span{position:relative; z-index:2;}
 
-.northside-header .northside-link::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  background:linear-gradient(130deg,var(--northside-link-accent-1),var(--northside-link-accent-2) 55%,var(--northside-link-accent-3));
-  opacity:0;
-  transition:opacity .35s ease;
-  z-index:1;
-}
-
+.northside-header .northside-link::before,
 .northside-header .northside-link::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 50% -45%, rgba(255,255,255,.65), transparent 64%);
-  opacity:0;
-  transform:translateY(32%) scale(.68);
-  transition:opacity .35s ease,transform .35s ease;
-  z-index:1;
+  display:none;
 }
 
 .northside-header .northside-link:hover,
 .northside-header .northside-link:focus-visible{
   color:var(--northside-text-strong);
-  border-color:rgba(255,255,255,.24);
-  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.32);
+  background:linear-gradient(135deg, rgba(177,158,255,.88), rgba(105,74,230,.9));
   transform:translateY(-1px);
   outline:none;
-}
-
-.northside-header .northside-link:hover::before,
-.northside-header .northside-link:focus-visible::before{opacity:.92;}
-
-.northside-header .northside-link:hover::after,
-.northside-header .northside-link:focus-visible::after{
-  opacity:.55;
-  transform:translateY(0) scale(1);
 }
 
 .northside-header .northside-pills{margin-left:auto; display:flex; gap:.65rem;}
@@ -569,8 +593,9 @@ body{margin:0;}
 }
 
 .northside-pill--outline{
-  background:linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,.02));
-  color:rgba(243,239,255,.92);
+  background:linear-gradient(135deg, rgba(157,136,255,.75), rgba(93,60,220,.82));
+  border-color:rgba(198,187,255,.55);
+  color:var(--northside-text-strong);
 }
 
 .northside-header .northside-hamburger{
@@ -777,8 +802,8 @@ body{margin:0;}
 
 @media (max-width:1100px){
   .northside-header .northside-shell{padding:.85rem 1.2rem;}
-  .northside-header .northside-nav{gap:.35rem;}
-  .northside-header .northside-link{padding:.65rem .95rem; font-size:.75rem;}
+  .northside-header .northside-nav{gap:.55rem;}
+  .northside-header .northside-link{padding:.76rem 1.4rem; font-size:.86rem; letter-spacing:.18em;}
 }
 
 @media (max-width:1024px){
@@ -1192,48 +1217,25 @@ body{margin:0;}
 	<div class="fl-row-content-wrap">
 		<div class="fl-bg-slideshow custom-hero-slideshow" data-slide-urls="https://lh3.googleusercontent.com/d/1Oyg6ITEZGHptiiRfIBzqY7ImBIecLX27,https://lh3.googleusercontent.com/d/12C2LngUjIE6oXvk7nCVIkA1rCIvbzOGV,https://lh3.googleusercontent.com/d/1bpe1kQDWsID37zzJzKBhjCWWL_6QXRwt">
 		  <div class="custom-hero-slide is-active" style="background-image: url('https://lh3.googleusercontent.com/d/1Oyg6ITEZGHptiiRfIBzqY7ImBIecLX27');"></div>
-		</div>				<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
+		</div>
+		<div class="northside-hero-badges">
+		  <img src="https://lh3.googleusercontent.com/d/1SnF8XWZAAfEpvrCpiIXpuj6tM-eaQYlS" alt="Northside crest" />
+		  <img src="https://lh3.googleusercontent.com/d/1S2tZvg0fa7XacWwW_ERPOuWnOYySbr2n" alt="Community emblem" />
+		</div>
+		<div class="fl-row-content fl-row-fixed-width fl-node-content">
+
 <div class="fl-col-group fl-node-4jnda68ex57m fl-col-group-custom-width" data-node="4jnda68ex57m">
 			<div class="fl-col fl-node-3me4a1f0jbxn fl-col-bg-color fl-col-small-custom-width" data-node="3me4a1f0jbxn">
 	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-n13pg4smltvw" data-node="n13pg4smltvw">
 	<div class="fl-module-content fl-node-content">
                 <h1 class="fl-heading">
-                <span class="fl-heading-text">At Northside, your child is <strong>known</strong>.<br />Our child is <strong>ready</strong>.</span>
+                <span class="fl-heading-text">At Northside, your child is <strong>known</strong>.<br />Your children are <strong>ready</strong>.</span>
         </h1>
 	</div>
 </div>
 </div>
 </div>
-			<div class="fl-col fl-node-6a927xo5ec8p fl-col-bg-color fl-col-small fl-col-small-custom-width" data-node="6a927xo5ec8p">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-button-group fl-node-w6130lvs7mfj" data-node="w6130lvs7mfj">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-group fl-button-group-layout-horizontal fl-button-group-width-">
-	<div class="fl-button-group-buttons" role="group" aria-label="">
-		<div id="fl-button-group-button-w6130lvs7mfj-0" class="fl-button-group-button fl-button-group-button-w6130lvs7mfj-0"><div  class="fl-button-wrap fl-button-width-full fl-button-right" id="fl-node-w6130lvs7mfj-0">
-			<a href="https://www.brooklynprospect.org/enroll/" target="_self" class="fl-button">
-							<span class="fl-button-text">Enroll</span>
-					</a>
-	</div>
-</div><div id="fl-button-group-button-w6130lvs7mfj-1" class="fl-button-group-button fl-button-group-button-w6130lvs7mfj-1"><div  class="fl-button-wrap fl-button-width-full fl-button-right" id="fl-node-w6130lvs7mfj-1">
-			<a href="https://www.brooklynprospect.org/careers/" target="_self" class="fl-button">
-							<span class="fl-button-text">Work</span>
-					</a>
-	</div>
-</div><div id="fl-button-group-button-w6130lvs7mfj-2" class="fl-button-group-button fl-button-group-button-w6130lvs7mfj-2"><div  class="fl-button-wrap fl-button-width-full fl-button-right" id="fl-node-w6130lvs7mfj-2">
-			<a href="https://www.brooklynprospect.org/support/" target="_self" class="fl-button">
-							<span class="fl-button-text">Donate</span>
-					</a>
-	</div>
-</div>	</div>
-</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-
-<div class="fl-col-group fl-node-5otjkdb7ymwv" data-node="5otjkdb7ymwv">
+			<div class="fl-col-group fl-node-5otjkdb7ymwv" data-node="5otjkdb7ymwv">
 			<div class="fl-col fl-node-lfcpzrn307ho fl-col-bg-color" data-node="lfcpzrn307ho">
 	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-content-ticker fl-node-du18nf4cizyl" data-node="du18nf4cizyl">
 	<div class="fl-module-content fl-node-content">
