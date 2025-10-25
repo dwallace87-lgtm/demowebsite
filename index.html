@@ -15,6 +15,52 @@
             z-index: 0;
           }
 
+          .fl-node-85nmyjw1qt0f .hero-overlay-images {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(8px, 1.5vw, 24px);
+            padding-inline: 0;
+            z-index: 2;
+            pointer-events: none;
+          }
+
+          .fl-node-85nmyjw1qt0f .hero-overlay-images img {
+            max-width: min(22vw, 280px);
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 0 22px 10px rgba(255, 255, 255, 0.75);
+            animation: hero-overlay-pulse 2.75s ease-in-out infinite;
+          }
+
+          @keyframes hero-overlay-pulse {
+            0%,
+            100% {
+              box-shadow: 0 0 22px 10px rgba(255, 255, 255, 0.75);
+              transform: scale(1);
+            }
+
+            50% {
+              box-shadow: 0 0 36px 18px rgba(255, 255, 255, 0.95);
+              transform: scale(1.03);
+            }
+          }
+
+          @media (max-width: 768px) {
+            .fl-node-85nmyjw1qt0f .hero-overlay-images {
+              flex-direction: column;
+              justify-content: center;
+              gap: 24px;
+              padding-inline: 0;
+            }
+
+            .fl-node-85nmyjw1qt0f .hero-overlay-images img {
+              max-width: min(60vw, 260px);
+            }
+          }
+
           .fl-node-85nmyjw1qt0f .fl-row-content-wrap {
             position: relative;
           }
@@ -1774,7 +1820,12 @@ src="https://www.facebook.com/tr?id=360901681009076&ev=PageView
 	<div class="fl-row-content-wrap">
 		<div class="fl-bg-slideshow custom-hero-slideshow" data-slide-urls="https://lh3.googleusercontent.com/d/1Oyg6ITEZGHptiiRfIBzqY7ImBIecLX27,https://lh3.googleusercontent.com/d/12C2LngUjIE6oXvk7nCVIkA1rCIvbzOGV,https://lh3.googleusercontent.com/d/1bpe1kQDWsID37zzJzKBhjCWWL_6QXRwt">
 		  <div class="custom-hero-slide is-active" style="background-image: url('https://lh3.googleusercontent.com/d/1Oyg6ITEZGHptiiRfIBzqY7ImBIecLX27');"></div>
-		</div>				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		</div>
+		<div class="hero-overlay-images">
+		  <img src="https://lh3.googleusercontent.com/d/1SnF8XWZAAfEpvrCpiIXpuj6tM-eaQYlS" alt="Students smiling together collage" class="hero-overlay-image hero-overlay-image-left" loading="lazy" />
+		  <img src="https://lh3.googleusercontent.com/d/1S2tZvg0fa7XacWwW_ERPOuWnOYySbr2n" alt="Students celebrating collage" class="hero-overlay-image hero-overlay-image-right" loading="lazy" />
+		</div>
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
 		
 <div class="fl-col-group fl-node-4jnda68ex57m fl-col-group-custom-width" data-node="4jnda68ex57m">
 			<div class="fl-col fl-node-3me4a1f0jbxn fl-col-bg-color fl-col-small-custom-width" data-node="3me4a1f0jbxn">
