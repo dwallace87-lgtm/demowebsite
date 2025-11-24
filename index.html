@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ELA Demo Lesson – When Is It OK to Break the Rules?</title>
-  <!-- Optional: modern font -->
+  <!-- Modern font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,15 +17,10 @@
       --bg-soft: #f9fafb;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #ffffff;
       color: #111827;
       overflow: hidden;
@@ -50,9 +45,7 @@
       overflow: hidden;
     }
 
-    .slide.active {
-      display: flex;
-    }
+    .slide.active { display: flex; }
 
     /* soft abstract background shapes */
     .slide::before,
@@ -138,13 +131,9 @@
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
 
-    .pill span {
-      font-size: 0.9rem;
-    }
+    .pill span { font-size: 0.9rem; }
 
-    .emoji {
-      font-size: 1.15rem;
-    }
+    .emoji { font-size: 1.15rem; }
 
     .card {
       background: rgba(255, 255, 255, 0.95);
@@ -170,9 +159,7 @@
       color: #111827;
     }
 
-    .card-body strong {
-      font-weight: 700;
-    }
+    .card-body strong { font-weight: 700; }
 
     .quote {
       font-size: 1.5rem;
@@ -195,9 +182,7 @@
       font-size: 1rem;
     }
 
-    .list li {
-      margin-bottom: 0.35rem;
-    }
+    .list li { margin-bottom: 0.35rem; }
 
     .columns {
       display: grid;
@@ -284,8 +269,7 @@
       align-items: center;
       gap: 0.4rem;
       cursor: pointer;
-      transition: background 0.18s ease, transform 0.12s ease,
-        box-shadow 0.18s ease;
+      transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
     }
 
     .btn:hover {
@@ -296,21 +280,13 @@
 
     .btn-primary {
       border-color: transparent;
-      background: linear-gradient(
-        90deg,
-        var(--accent1),
-        var(--accent2)
-      );
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
       color: #ffffff;
       box-shadow: 0 12px 30px rgba(248, 113, 113, 0.35);
     }
 
     .btn-primary:hover {
-      background: linear-gradient(
-        90deg,
-        var(--accent2),
-        var(--accent3)
-      );
+      background: linear-gradient(90deg, var(--accent2), var(--accent3));
     }
 
     .btn:disabled {
@@ -338,11 +314,7 @@
 
     .dot.active {
       width: 22px;
-      background: linear-gradient(
-        to right,
-        var(--accent1),
-        var(--accent2)
-      );
+      background: linear-gradient(to right, var(--accent1), var(--accent2));
     }
 
     .progress-label {
@@ -352,20 +324,10 @@
     }
 
     @media (max-width: 768px) {
-      .slide {
-        padding: 2.5rem 6vw 4.2rem;
-      }
-      .card {
-        padding: 1.4rem 1.5rem;
-        border-radius: 1.3rem;
-      }
-      .nav {
-        padding-inline: 4vw;
-        bottom: 0.7rem;
-      }
-      .btn {
-        padding: 0.4rem 0.85rem;
-      }
+      .slide { padding: 2.5rem 6vw 4.2rem; }
+      .card { padding: 1.4rem 1.5rem; border-radius: 1.3rem; }
+      .nav { padding-inline: 4vw; bottom: 0.7rem; }
+      .btn { padding: 0.4rem 0.85rem; }
     }
   </style>
 </head>
@@ -381,15 +343,9 @@
         everyone’s voice has space.
       </div>
       <div class="pill-row">
-        <div class="pill">
-          <span class="emoji">📚</span><span>ELA & stories that matter</span>
-        </div>
-        <div class="pill">
-          <span class="emoji">🎮</span><span>Games, comics, and pop culture</span>
-        </div>
-        <div class="pill">
-          <span class="emoji">🗣️</span><span>Honest, respectful discussion</span>
-        </div>
+        <div class="pill"><span class="emoji">📚</span><span>ELA & stories that matter</span></div>
+        <div class="pill"><span class="emoji">🎮</span><span>Games, comics, and pop culture</span></div>
+        <div class="pill"><span class="emoji">🗣️</span><span>Honest, respectful discussion</span></div>
       </div>
       <div class="card">
         <div class="card-title">What I want for you today</div>
@@ -412,15 +368,9 @@
         who have to make hard choices.
       </div>
       <div class="pill-row">
-        <div class="pill">
-          <span class="emoji">🎯</span><span>I can make a claim</span>
-        </div>
-        <div class="pill">
-          <span class="emoji">🧠</span><span>I can back it up</span>
-        </div>
-        <div class="pill">
-          <span class="emoji">🎙️</span><span>I can listen and respond</span>
-        </div>
+        <div class="pill"><span class="emoji">🎯</span><span>I can make a claim</span></div>
+        <div class="pill"><span class="emoji">🧠</span><span>I can back it up</span></div>
+        <div class="pill"><span class="emoji">🎙️</span><span>I can listen and respond</span></div>
       </div>
       <div class="card">
         <div class="card-title">How we learn here</div>
@@ -435,11 +385,11 @@
     <!-- Slide 2: Objective & EDI -->
     <section class="slide">
       <div class="slide-header">Objective · Explicit Direct Instruction</div>
-      <div class="slide-title outline">Learning Target</div>
+      <div class="slide-title outline">Today’s Skill</div>
       <div class="slide-subtitle">
-        <strong>Today I will:</strong>
-        make a claim about rule-breaking and support it with reasoning or
-        evidence.
+        <strong>We are learning how to:</strong><br />
+        write a clear <strong>claim</strong> about an idea and support it with a
+        <strong>reason or example</strong>.
       </div>
       <div class="card">
         <div class="card-title">What success looks like</div>
@@ -448,9 +398,9 @@
             <div>
               <strong>By the end you can:</strong>
               <ul class="list">
-                <li>Take a clear position.</li>
-                <li>Use at least one reason or example.</li>
-                <li>Connect to a quote or a character.</li>
+                <li>Take a clear position on rule-breaking.</li>
+                <li>Give at least one strong reason or example.</li>
+                <li>Connect your idea to a quote or character.</li>
               </ul>
             </div>
             <div>
@@ -464,7 +414,7 @@
             </div>
           </div>
           <div class="small-note">
-            First I model. Then we try it together. Then you own it.
+            First I model. Then we try it together. Then you write your own claim.
           </div>
         </div>
       </div>
@@ -528,14 +478,18 @@
           </div>
           <div class="quote-author">Frederick Douglass</div>
           <br />
-          <strong>Think aloud (teacher model):</strong>
-          <br />
+          <strong>My think-aloud (how I build a claim):</strong><br />
           Douglass is saying that
-          <span class="highlight-text">truth and doing what is right</span>
-          matter more than popularity or winning.
+          <span class="highlight-text">being true and doing what is right</span>
+          matters more than being popular or “winning.”
           <br /><br />
-          <strong>Quick check:</strong> In your own words, what does “bound to
-          be true” mean here?
+          So a claim I could make is:<br />
+          <span class="highlight-text">
+            “Sometimes you have to break unfair rules if you want to do what’s right,
+            because just ‘winning’ is not the most important thing.”
+          </span>
+          <br /><br />
+          <strong>Quick check:</strong> In your own words, what does “bound to be true” mean here?
         </div>
       </div>
     </section>
@@ -557,14 +511,14 @@
             <div class="corner">⬛ Strongly Disagree</div>
           </div>
           <div class="small-note">
-            Be ready to share <strong>one reason</strong> and listen for a
+            Be ready to share <strong>one reason</strong> for your claim and listen for a
             reason you respect, even if you disagree.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Slide 7: Culturally Relevant Rule-Breakers -->
+    <!-- Slide 7: Culturally Relevant Rule-Breakers (optional quick flash) -->
     <section class="slide">
       <div class="slide-header">Connect · Make It Real</div>
       <div class="slide-title">Rule-Breakers We Know</div>
@@ -642,12 +596,8 @@
     <!-- Navigation -->
     <div class="nav">
       <div class="nav-buttons">
-        <button class="btn" id="prevBtn">
-          ◀ Back
-        </button>
-        <button class="btn btn-primary" id="nextBtn">
-          Next ▶
-        </button>
+        <button class="btn" id="prevBtn">◀ Back</button>
+        <button class="btn btn-primary" id="nextBtn">Next ▶</button>
       </div>
       <div class="progress" id="progress">
         <span class="progress-label">Slides</span>
