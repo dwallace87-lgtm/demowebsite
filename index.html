@@ -37,15 +37,25 @@
       position: absolute;
       inset: 0;
       padding: 3.25rem 6vw 4.5rem;
-      display: none;
+      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateX(18px);
+      transition: opacity 0.38s ease, transform 0.38s ease;
     }
 
-    .slide.active { display: flex; }
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(0);
+    }
 
     /* soft abstract background shapes */
     .slide::before,
@@ -280,6 +290,18 @@
       border-bottom: 3px solid rgba(99, 102, 241, 0.9);
     }
 
+    /* sequential item animation inside slides */
+    .anim-item {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    }
+
+    .anim-item.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .nav {
       position: absolute;
       inset-inline: 0;
@@ -373,19 +395,19 @@
   <div class="deck" id="deck">
     <!-- Slide 0: Intro About You -->
     <section class="slide active">
-      <div class="slide-header">Welcome · 9th Grade ELA</div>
-      <div class="slide-title alt">Hi, I’m Mr. Wallace</div>
-      <div class="slide-subtitle">
+      <div class="slide-header anim-item">Welcome · 9th Grade ELA</div>
+      <div class="slide-title alt anim-item">Hi, I’m Mr. Wallace</div>
+      <div class="slide-subtitle anim-item">
         I’m guest-teaching your class today.<br />
         I care about big questions, real-world connections, and making sure
         everyone’s voice has space.
       </div>
-      <div class="pill-row">
+      <div class="pill-row anim-item">
         <div class="pill"><span class="emoji">📚</span><span>ELA & stories that matter</span></div>
         <div class="pill"><span class="emoji">🎮</span><span>Games, comics, and pop culture</span></div>
         <div class="pill"><span class="emoji">🗣️</span><span>Honest, respectful discussion</span></div>
       </div>
-      <div class="card">
+      <div class="card anim-item">
         <div class="card-title">What I want for you today</div>
         <div class="card-body">
           <ul class="list">
@@ -399,18 +421,18 @@
 
     <!-- Slide 1: Welcome & Framing -->
     <section class="slide">
-      <div class="slide-header">Day 1 · 9th Grade ELA · Demo Lesson</div>
-      <div class="slide-title">When Is It OK<br />to Break the Rules?</div>
-      <div class="slide-subtitle">
+      <div class="slide-header anim-item">Day 1 · 9th Grade ELA · Demo Lesson</div>
+      <div class="slide-title anim-item">When Is It OK<br />to Break the Rules?</div>
+      <div class="slide-subtitle anim-item">
         Today we are going to think like readers, writers, and real people
         who have to make hard choices.
       </div>
-      <div class="pill-row">
+      <div class="pill-row anim-item">
         <div class="pill"><span class="emoji">🎯</span><span>I can make a claim</span></div>
         <div class="pill"><span class="emoji">🧠</span><span>I can back it up</span></div>
         <div class="pill"><span class="emoji">🎙️</span><span>I can listen and respond</span></div>
       </div>
-      <div class="card">
+      <div class="card anim-item">
         <div class="card-title">How we learn here</div>
         <div class="card-body">
           • We <strong>respect</strong> all voices.<br />
@@ -422,14 +444,14 @@
 
     <!-- Slide 2: Objective & EDI -->
     <section class="slide">
-      <div class="slide-header">Objective · Explicit Direct Instruction</div>
-      <div class="slide-title alt">Today’s Skill</div>
-      <div class="slide-subtitle">
+      <div class="slide-header anim-item">Objective · Explicit Direct Instruction</div>
+      <div class="slide-title alt anim-item">Today’s Skill</div>
+      <div class="slide-subtitle anim-item">
         <strong>We are learning how to:</strong><br />
         write a clear <strong>claim</strong> about an idea and support it with a
         <strong>reason or example</strong>.
       </div>
-      <div class="card">
+      <div class="card anim-item">
         <div class="card-title">What success looks like</div>
         <div class="card-body">
           <div class="columns">
@@ -460,9 +482,9 @@
 
     <!-- Slide 3: Hook Question · Quick Write -->
     <section class="slide">
-      <div class="slide-header">Hook · Activate Prior Knowledge</div>
-      <div class="slide-title">Is It Ever OK<br />to Break the Rules?</div>
-      <div class="card sticky-note">
+      <div class="slide-header anim-item">Hook · Activate Prior Knowledge</div>
+      <div class="slide-title anim-item">Is It Ever OK<br />to Break the Rules?</div>
+      <div class="card sticky-note anim-item">
         <div class="card-title chip">Step 1 · Think and write</div>
         <div class="card-body">
           ✏️ <strong>Quick Write (30–45 seconds):</strong><br />
@@ -475,20 +497,20 @@
           Then be ready to share with a partner.
         </div>
       </div>
-      <div class="footer-note">
+      <div class="footer-note anim-item">
         This is <strong>not graded.</strong> This is <em>you being honest.</em>
       </div>
     </section>
 
     <!-- Slide 4: Turn & Talk -->
     <section class="slide">
-      <div class="slide-header">Check for Understanding · Student Voice</div>
-      <div class="slide-title alt">Turn and Talk</div>
-      <div class="slide-subtitle">
+      <div class="slide-header anim-item">Check for Understanding · Student Voice</div>
+      <div class="slide-title alt anim-item">Turn and Talk</div>
+      <div class="slide-subtitle anim-item">
         <strong>Share</strong> your sentence with your partner.<br />
         <strong>Listen</strong> for something you agree with or want to push back on.
       </div>
-      <div class="card">
+      <div class="card anim-item">
         <div class="card-title chip">Sentence starters if you want them</div>
         <div class="card-body">
           <ul class="list">
@@ -506,9 +528,9 @@
 
     <!-- Slide 5: Anchor Text · Frederick Douglass -->
     <section class="slide">
-      <div class="slide-header">Model · Anchor Quote</div>
-      <div class="slide-title">A Voice from History</div>
-      <div class="card">
+      <div class="slide-header anim-item">Model · Anchor Quote</div>
+      <div class="slide-title anim-item">A Voice from History</div>
+      <div class="card anim-item">
         <div class="card-body">
           <div class="quote">
             “I am not bound to win, but I am <strong>bound to be true</strong>. I must stand
@@ -536,12 +558,12 @@
 
     <!-- Slide 6: Take a Stand · Corners -->
     <section class="slide">
-      <div class="slide-header">Guided Practice · Discussion Structure</div>
-      <div class="slide-title alt">Take a Stand</div>
-      <div class="slide-subtitle">
+      <div class="slide-header anim-item">Guided Practice · Discussion Structure</div>
+      <div class="slide-title alt anim-item">Take a Stand</div>
+      <div class="slide-subtitle anim-item">
         <span class="essential-question">“It is better to be true to yourself than to follow the rules.”</span>
       </div>
-      <div class="card">
+      <div class="card anim-item">
         <div class="card-title chip">Choose your corner</div>
         <div class="card-body">
           <div class="corner-grid">
@@ -560,9 +582,9 @@
 
     <!-- Slide 7: Culturally Relevant Rule-Breakers -->
     <section class="slide">
-      <div class="slide-header">Connect · Make It Real</div>
-      <div class="slide-title">Rule-Breakers We Know</div>
-      <div class="card">
+      <div class="slide-header anim-item">Connect · Make It Real</div>
+      <div class="slide-title anim-item">Rule-Breakers We Know</div>
+      <div class="card anim-item">
         <div class="card-title">From stories, movies, and real life</div>
         <div class="card-body">
           Think about people who broke rules for a bigger reason:
@@ -583,9 +605,9 @@
 
     <!-- Slide 8: Exit Reflection -->
     <section class="slide">
-      <div class="slide-header">Independent Practice · Exit Ticket</div>
-      <div class="slide-title alt">Make Your Claim</div>
-      <div class="card sticky-note">
+      <div class="slide-header anim-item">Independent Practice · Exit Ticket</div>
+      <div class="slide-title alt anim-item">Make Your Claim</div>
+      <div class="card sticky-note anim-item">
         <div class="card-title chip">Write it out (1–2 sentences)</div>
         <div class="card-body">
           📝 On your exit slip, <strong>finish this</strong>:
@@ -603,20 +625,20 @@
           </ul>
         </div>
       </div>
-      <div class="footer-note">
+      <div class="footer-note anim-item">
         I will read these to learn how you think and how I can support you.
       </div>
     </section>
 
     <!-- Slide 9: Close -->
     <section class="slide">
-      <div class="slide-header">Closure · Back to the Big Idea</div>
-      <div class="slide-title">Your Voice Matters Here</div>
-      <div class="slide-subtitle">
+      <div class="slide-header anim-item">Closure · Back to the Big Idea</div>
+      <div class="slide-title anim-item">Your Voice Matters Here</div>
+      <div class="slide-subtitle anim-item">
         You just <strong>took a stand, listened to others, and backed up your ideas.</strong>
         That is the heart of this class.
       </div>
-      <div class="card">
+      <div class="card anim-item">
         <div class="card-title">One-word checkout</div>
         <div class="card-body">
           If we have time, I will ask a few of you to share
@@ -664,6 +686,19 @@
 
     const dots = Array.from(document.querySelectorAll(".dot"));
 
+    function animateSlide(index) {
+      const slide = slides[index];
+      const items = slide.querySelectorAll(".anim-item");
+      items.forEach((el, i) => {
+        el.classList.remove("show");
+        // force reflow so animation can restart
+        void el.offsetWidth;
+        setTimeout(() => {
+          el.classList.add("show");
+        }, i * 90); // stagger
+      });
+    }
+
     function updateView() {
       slides.forEach((slide, index) => {
         slide.classList.toggle("active", index === current);
@@ -675,6 +710,8 @@
 
       prevBtn.disabled = current === 0;
       nextBtn.disabled = current === slides.length - 1;
+
+      animateSlide(current);
     }
 
     function goToSlide(index) {
