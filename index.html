@@ -93,14 +93,27 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* outlined style for some headers */
-    .slide-title.outline {
-      -webkit-text-stroke: 2px #111827;
-      -webkit-text-fill-color: transparent;
-      text-shadow:
-        0 0 22px rgba(15, 23, 42, 0.28),
-        0 0 4px rgba(255, 255, 255, 0.9);
-      letter-spacing: 0.03em;
+    /* alternative style: solid text with gradient underline */
+    .slide-title.alt {
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: #111827;
+      color: #111827;
+      position: relative;
+      padding-bottom: 0.35rem;
+    }
+
+    .slide-title.alt::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 60%;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--accent1), var(--accent3));
+      box-shadow: 0 8px 22px rgba(99, 102, 241, 0.45);
     }
 
     .slide-subtitle {
@@ -336,7 +349,7 @@
     <!-- Slide 0: Intro About You -->
     <section class="slide active">
       <div class="slide-header">Welcome · 9th Grade ELA</div>
-      <div class="slide-title outline">Hi, I’m Mr. Wallace</div>
+      <div class="slide-title alt">Hi, I’m Mr. Wallace</div>
       <div class="slide-subtitle">
         I’m guest-teaching your class today.<br />
         I care about big questions, real-world connections, and making sure
@@ -385,7 +398,7 @@
     <!-- Slide 2: Objective & EDI -->
     <section class="slide">
       <div class="slide-header">Objective · Explicit Direct Instruction</div>
-      <div class="slide-title outline">Today’s Skill</div>
+      <div class="slide-title alt">Today’s Skill</div>
       <div class="slide-subtitle">
         <strong>We are learning how to:</strong><br />
         write a clear <strong>claim</strong> about an idea and support it with a
@@ -445,7 +458,7 @@
     <!-- Slide 4: Turn & Talk -->
     <section class="slide">
       <div class="slide-header">Check for Understanding · Student Voice</div>
-      <div class="slide-title outline">Turn and Talk</div>
+      <div class="slide-title alt">Turn and Talk</div>
       <div class="slide-subtitle">
         Share your sentence with your partner.<br />
         Listen for something you agree with or want to push back on.
@@ -497,7 +510,7 @@
     <!-- Slide 6: Take a Stand · Corners -->
     <section class="slide">
       <div class="slide-header">Guided Practice · Discussion Structure</div>
-      <div class="slide-title outline">Take a Stand</div>
+      <div class="slide-title alt">Take a Stand</div>
       <div class="slide-subtitle">
         “It is better to be true to yourself than to follow the rules.”
       </div>
@@ -518,7 +531,7 @@
       </div>
     </section>
 
-    <!-- Slide 7: Culturally Relevant Rule-Breakers (optional quick flash) -->
+    <!-- Slide 7: Culturally Relevant Rule-Breakers -->
     <section class="slide">
       <div class="slide-header">Connect · Make It Real</div>
       <div class="slide-title">Rule-Breakers We Know</div>
@@ -544,7 +557,7 @@
     <!-- Slide 8: Exit Reflection -->
     <section class="slide">
       <div class="slide-header">Independent Practice · Exit Ticket</div>
-      <div class="slide-title outline">Make Your Claim</div>
+      <div class="slide-title alt">Make Your Claim</div>
       <div class="card">
         <div class="card-title">Write it out (1–2 sentences)</div>
         <div class="card-body">
