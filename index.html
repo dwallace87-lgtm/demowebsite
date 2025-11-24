@@ -158,12 +158,30 @@
       text-align: left;
     }
 
+    /* sticky-note style for writing prompts / exit tickets */
+    .card.sticky-note {
+      background: #fefce8;
+      border-color: #facc15;
+      box-shadow: 0 18px 45px rgba(180, 83, 9, 0.18);
+    }
+
     .card-title {
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: #9ca3af;
       margin-bottom: 0.55rem;
+    }
+
+    /* pill-style label for some card titles */
+    .card-title.chip {
+      display: inline-block;
+      padding: 0.18rem 0.9rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(248, 250, 252, 0.96), rgba(229, 231, 235, 0.96));
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
     }
 
     .card-body {
@@ -253,6 +271,13 @@
       font-size: 0.9rem;
       color: #9ca3af;
       text-align: center;
+    }
+
+    /* essential question styling */
+    .essential-question {
+      display: inline-block;
+      padding-bottom: 0.18rem;
+      border-bottom: 3px solid rgba(99, 102, 241, 0.9);
     }
 
     .nav {
@@ -365,8 +390,8 @@
         <div class="card-body">
           <ul class="list">
             <li>That you feel <strong>heard</strong>.</li>
-            <li>That you feel safe sharing your thinking, even if it’s different.</li>
-            <li>That you leave thinking, “Okay, that was actually kind of real.”</li>
+            <li>That you feel <strong>safe</strong> sharing your thinking, even if it’s different.</li>
+            <li>That you leave thinking, <strong>“Okay, that was actually kind of real.”</strong></li>
           </ul>
         </div>
       </div>
@@ -388,9 +413,9 @@
       <div class="card">
         <div class="card-title">How we learn here</div>
         <div class="card-body">
-          • We respect all voices.<br />
-          • We stay curious, even when we disagree.<br />
-          • We focus on ideas, not people.
+          • We <strong>respect</strong> all voices.<br />
+          • We stay <strong>curious</strong>, even when we disagree.<br />
+          • We focus on <strong>ideas</strong>, not people.
         </div>
       </div>
     </section>
@@ -411,9 +436,9 @@
             <div>
               <strong>By the end you can:</strong>
               <ul class="list">
-                <li>Take a clear position on rule-breaking.</li>
-                <li>Give at least one strong reason or example.</li>
-                <li>Connect your idea to a quote or character.</li>
+                <li><strong>Take</strong> a clear position on rule-breaking.</li>
+                <li><strong>Give</strong> at least one strong reason or example.</li>
+                <li><strong>Connect</strong> your idea to a quote or character.</li>
               </ul>
             </div>
             <div>
@@ -427,7 +452,7 @@
             </div>
           </div>
           <div class="small-note">
-            First I model. Then we try it together. Then you write your own claim.
+            First <strong>I model.</strong> Then <strong>we try it together.</strong> Then <strong>you own it.</strong>
           </div>
         </div>
       </div>
@@ -437,21 +462,21 @@
     <section class="slide">
       <div class="slide-header">Hook · Activate Prior Knowledge</div>
       <div class="slide-title">Is It Ever OK<br />to Break the Rules?</div>
-      <div class="card">
-        <div class="card-title">Step 1 · Think and write</div>
+      <div class="card sticky-note">
+        <div class="card-title chip">Step 1 · Think and write</div>
         <div class="card-body">
           ✏️ <strong>Quick Write (30–45 seconds):</strong><br />
           In <strong>one sentence</strong>, answer:
           <br /><br />
-          <span class="highlight-text">
+          <span class="highlight-text"><em>
             “Yes, because…” or “No, because…”
-          </span>
+          </em></span>
           <br /><br />
           Then be ready to share with a partner.
         </div>
       </div>
       <div class="footer-note">
-        This is not graded. This is you being honest.
+        This is <strong>not graded.</strong> This is <em>you being honest.</em>
       </div>
     </section>
 
@@ -460,16 +485,16 @@
       <div class="slide-header">Check for Understanding · Student Voice</div>
       <div class="slide-title alt">Turn and Talk</div>
       <div class="slide-subtitle">
-        Share your sentence with your partner.<br />
-        Listen for something you agree with or want to push back on.
+        <strong>Share</strong> your sentence with your partner.<br />
+        <strong>Listen</strong> for something you agree with or want to push back on.
       </div>
       <div class="card">
-        <div class="card-title">Sentence starters if you want them</div>
+        <div class="card-title chip">Sentence starters if you want them</div>
         <div class="card-body">
           <ul class="list">
-            <li><strong>“I agree because…”</strong></li>
-            <li><strong>“I hear you, but another way to see it is…”</strong></li>
-            <li><strong>“That reminds me of…”</strong></li>
+            <li><em>“I agree because…”</em></li>
+            <li><em>“I hear you, but another way to see it is…”</em></li>
+            <li><em>“That reminds me of…”</em></li>
           </ul>
           <div class="small-note">
             I will invite a few people to share what their partner said,
@@ -486,7 +511,7 @@
       <div class="card">
         <div class="card-body">
           <div class="quote">
-            “I am not bound to win, but I am bound to be true. I must stand
+            “I am not bound to win, but I am <strong>bound to be true</strong>. I must stand
             with anybody that stands right.”
           </div>
           <div class="quote-author">Frederick Douglass</div>
@@ -497,12 +522,14 @@
           matters more than being popular or “winning.”
           <br /><br />
           So a claim I could make is:<br />
-          <span class="highlight-text">
-            “Sometimes you have to break unfair rules if you want to do what’s right,
-            because just ‘winning’ is not the most important thing.”
-          </span>
+          <span class="highlight-text"><em>
+            “Sometimes you <strong>have to break unfair rules</strong> if you want to
+            <strong>do what’s right</strong>, because just <strong>‘winning’</strong> is not the most
+            important thing.”
+          </em></span>
           <br /><br />
-          <strong>Quick check:</strong> In your own words, what does “bound to be true” mean here?
+          <strong>Quick check:</strong>
+          <span class="highlight-text"><em>In your own words, what does “bound to be true” mean here?</em></span>
         </div>
       </div>
     </section>
@@ -512,10 +539,10 @@
       <div class="slide-header">Guided Practice · Discussion Structure</div>
       <div class="slide-title alt">Take a Stand</div>
       <div class="slide-subtitle">
-        “It is better to be true to yourself than to follow the rules.”
+        <span class="essential-question">“It is better to be true to yourself than to follow the rules.”</span>
       </div>
       <div class="card">
-        <div class="card-title">Choose your corner</div>
+        <div class="card-title chip">Choose your corner</div>
         <div class="card-body">
           <div class="corner-grid">
             <div class="corner">🟥 Strongly Agree</div>
@@ -524,7 +551,7 @@
             <div class="corner">⬛ Strongly Disagree</div>
           </div>
           <div class="small-note">
-            Be ready to share <strong>one reason</strong> for your claim and listen for a
+            Be ready to share <strong>one reason</strong> for your claim and <strong>listen</strong> for a
             reason you respect, even if you disagree.
           </div>
         </div>
@@ -547,7 +574,7 @@
             <li>Greta Thunberg</li>
           </ul>
           <div class="small-note">
-            What did they stand for? What did they risk? This is the kind of
+            What did they <strong>stand for</strong>? What did they <strong>risk</strong>? This is the kind of
             thinking we do in ELA all year.
           </div>
         </div>
@@ -558,21 +585,21 @@
     <section class="slide">
       <div class="slide-header">Independent Practice · Exit Ticket</div>
       <div class="slide-title alt">Make Your Claim</div>
-      <div class="card">
-        <div class="card-title">Write it out (1–2 sentences)</div>
+      <div class="card sticky-note">
+        <div class="card-title chip">Write it out (1–2 sentences)</div>
         <div class="card-body">
-          📝 On your exit slip, finish this:
+          📝 On your exit slip, <strong>finish this</strong>:
           <br /><br />
-          <span class="highlight-text">
+          <span class="highlight-text"><em>
             “A time someone broke the rules for a good reason was…
             because…”
-          </span>
+          </em></span>
           <br /><br />
           You can choose:
           <ul class="list">
-            <li>a book or movie character,</li>
-            <li>a person from history, or</li>
-            <li>something from real life.</li>
+            <li>a <strong>book or movie character</strong>,</li>
+            <li>a <strong>person from history</strong>, or</li>
+            <li>something from <strong>real life</strong>.</li>
           </ul>
         </div>
       </div>
@@ -586,7 +613,7 @@
       <div class="slide-header">Closure · Back to the Big Idea</div>
       <div class="slide-title">Your Voice Matters Here</div>
       <div class="slide-subtitle">
-        You just took a stand, listened to others, and backed up your ideas.
+        You just <strong>took a stand, listened to others, and backed up your ideas.</strong>
         That is the heart of this class.
       </div>
       <div class="card">
@@ -599,7 +626,7 @@
           <span class="tag">“challenging”</span>
           <span class="tag">“spicy”</span>
           <span class="tag">“confusing”</span>
-          <span class="tag">“real”</span>
+          <span class="tag"><strong>“real”</strong></span>
           <br /><br />
           Thank you for bringing your full self to ELA.
         </div>
