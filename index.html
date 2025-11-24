@@ -1,2395 +1,671 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-<meta http-equiv='X-UA-Compatible' content='IE=edge' />
-<link rel="profile" href="https://gmpg.org/xfn/11" />
-<title>Prospect Schools in Brooklyn, New York</title>
-        <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
-        <style>
-          .fl-node-85nmyjw1qt0f .custom-hero-slideshow {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            z-index: 0;
-          }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELA Demo Lesson – When Is It OK to Break the Rules?</title>
+  <style>
+    :root {
+      --accent1: #ff3c3c;
+      --accent2: #ff8c00;
+      --accent3: #6366f1;
+      --accent4: #22c55e;
+      --bg-soft: #f9fafb;
+    }
 
-          .fl-node-85nmyjw1qt0f .fl-row-content-wrap {
-            position: relative;
-            min-height: clamp(360px, 62vh, 560px) !important;
-            padding-top: clamp(72px, 12vh, 140px);
-            padding-bottom: clamp(48px, 10vh, 110px);
-          }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-          .fl-node-85nmyjw1qt0f.fl-row-full-height {
-            min-height: auto !important;
-          }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #ffffff;
+      color: #111827;
+      overflow: hidden;
+    }
 
-          .fl-node-85nmyjw1qt0f .custom-hero-slideshow .custom-hero-slide {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: 50% 42%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            z-index: 1;
-          }
+    .deck {
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      background: #ffffff;
+    }
 
-          .fl-node-85nmyjw1qt0f .custom-hero-slideshow .custom-hero-slide.is-active {
-            opacity: 1;
-          }
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 3rem 5vw;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
 
-          .fl-node-85nmyjw1qt0f .fl-row-content {
-            position: relative;
-            z-index: 3;
-          }
+    .slide.active {
+      display: flex;
+    }
 
-          .northside-hero-badges {
-            position: absolute;
-            top: 50%;
-            right: clamp(24px, 9vw, 160px);
-            left: auto;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: clamp(22px, 4vw, 60px);
-            z-index: 2;
-          }
+    /* soft background shapes */
+    .slide::before,
+    .slide::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(40px);
+      opacity: 0.18;
+      z-index: -1;
+    }
 
-          .northside-hero-badges img {
-            width: clamp(170px, 20vw, 300px);
-            height: auto;
-            filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0.95))
-              drop-shadow(0 0 8px rgba(0, 0, 0, 0.75))
-              drop-shadow(0 0 18px rgba(255, 255, 255, 0.8))
-              drop-shadow(0 0 34px rgba(255, 255, 255, 0.6));
-          }
+    .slide::before {
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle at top left, var(--accent1), transparent);
+      top: -120px;
+      left: -120px;
+    }
 
-          .fl-node-n13pg4smltvw .fl-heading .fl-heading-text {
-            font-size: clamp(1.85rem, 3.6vw, 2.8rem);
-            line-height: 1.12;
-          }
+    .slide::after {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle at bottom right, var(--accent3), transparent);
+      bottom: -120px;
+      right: -120px;
+    }
 
-          @media (max-width: 1024px) {
-            .northside-hero-badges {
-              right: clamp(18px, 6vw, 80px);
-              left: auto;
-              gap: clamp(20px, 5vw, 44px);
-            }
+    .slide-header {
+      font-size: clamp(1rem, 1.3vw, 1.25rem);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 0.8rem;
+    }
 
-            .northside-hero-badges img {
-              width: clamp(150px, 28vw, 240px);
-            }
-          }
+    .slide-title {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-          @media (max-width: 768px) {
-            .northside-hero-badges {
-              position: relative;
-              top: auto;
-              right: auto;
-              left: auto;
-              transform: none;
-              margin: 0 auto clamp(16px, 4vw, 32px);
-              justify-content: center;
-            }
-          }
-        </style>
-	<meta name="dc.title" content="Prospect Schools in Brooklyn, New York">
-<meta name="dc.description" content="Prospect Schools in Brooklyn is a tuition-free K-12 charter school network preparing students for lifelong learning.">
-<meta name="dc.relation" content="https://www.brooklynprospect.org/">
-<meta name="dc.source" content="https://www.brooklynprospect.org/">
-<meta name="dc.language" content="en_US">
-<meta name="description" content="Prospect Schools in Brooklyn is a tuition-free K-12 charter school network preparing students for lifelong learning.">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<link rel="canonical" href="https://www.brooklynprospect.org/">
-<script id="website-schema" type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebSite","name":"Prospect Schools in Brooklyn, New York","alternateName":"Prospect Schools in Brooklyn, NY","description":"Prospect Schools is a K-12 college preparatory, charter school IB World School community where excellent teachers prepare a diverse student body to have a positive impact on society and passion for learning.","url":"https:\/\/www.brooklynprospect.org"}</script>
-<meta property="og:url" content="https://www.brooklynprospect.org/">
-<meta property="og:site_name" content="Prospect Schools in Brooklyn, NY">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Prospect Schools in Brooklyn, New York">
-<meta property="og:description" content="Prospect Schools in Brooklyn is a tuition-free K-12 charter school network preparing students for lifelong learning.">
-<meta property="og:image" content="https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchoolsClintonHillMS_OCT1322_092-1.jpg">
-<meta property="og:image:secure_url" content="https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchoolsClintonHillMS_OCT1322_092-1.jpg">
-<meta property="og:image:width" content="2500">
-<meta property="og:image:height" content="1667">
-<meta property="fb:pages" content="">
-<meta property="fb:admins" content="">
-<meta property="fb:app_id" content="">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Prospect Schools in Brooklyn, New York">
-<meta name="twitter:description" content="Prospect Schools in Brooklyn is a tuition-free K-12 charter school network preparing students for lifelong learning.">
-<meta name="twitter:image" content="https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchoolsClintonHillMS_OCT1322_092-1-1024x683.jpg">
-<link rel='dns-prefetch' href='//js.hs-scripts.com' />
-<link rel='dns-prefetch' href='//www.googletagmanager.com' />
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" />
-<link rel="alternate" type="application/rss+xml" title="Prospect Schools in Brooklyn, NY &raquo; Feed" href="https://www.brooklynprospect.org/feed/" />
-<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Organization","name":"Prospect Schools in Brooklyn, NY","url":"https:\/\/www.brooklynprospect.org","alternateName":"Prospect Schools in Brooklyn, NY","description":"Prospect Schools in Brooklyn, NY","logo":"https:\/\/www.brooklynprospect.org\/wp-content\/uploads\/2025\/02\/prospect-schools-logo.png","sameAs":["https:\/\/www.facebook.com\/ProspectSchools.org\/","https:\/\/www.instagram.com\/prospect_schools","https:\/\/www.youtube.com\/@prospect_schools","https:\/\/www.linkedin.com\/school\/brooklyn-prospect-charter-school\/"]}</script>
-<link rel="preload" href="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<script>
-window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.brooklynprospect.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.3"}};
-/*! This file is auto-generated */
-!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
-</script>
-<style id='wp-emoji-styles-inline-css'>
+    .slide-subtitle {
+      font-size: clamp(1.25rem, 2.1vw, 1.7rem);
+      max-width: 880px;
+      color: #111827;
+      margin-bottom: 1.5rem;
+    }
 
-	img.wp-smiley, img.emoji {
-		display: inline !important;
-		border: none !important;
-		box-shadow: none !important;
-		height: 1em !important;
-		width: 1em !important;
-		margin: 0 0.07em !important;
-		vertical-align: -0.1em !important;
-		background: none !important;
-		padding: 0 !important;
-	}
-</style>
-<link rel='stylesheet' id='wp-block-library-css' href='https://www.brooklynprospect.org/wp-includes/css/dist/block-library/style.min.css?ver=6.8.3' media='all' />
-<style id='wp-block-library-theme-inline-css'>
-.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
-</style>
-<style id='classic-theme-styles-inline-css'>
-/*! This file is auto-generated */
-.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
-</style>
-<style id='wpseopress-local-business-style-inline-css'>
-span.wp-block-wpseopress-local-business-field{margin-right:8px}
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
 
-</style>
-<style id='wpseopress-table-of-contents-style-inline-css'>
-.wp-block-wpseopress-table-of-contents li.active>a{font-weight:bold}
+    .pill {
+      font-size: 0.9rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: rgba(249, 250, 251, 0.85);
+      backdrop-filter: blur(6px);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
 
-</style>
-<style id='global-styles-inline-css'>
-:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #d8b4fe;--wp--preset--color--vivid-green-cyan: #7c3aed;--wp--preset--color--pale-cyan-blue: #e9d5ff;--wp--preset--color--vivid-cyan-blue: #5b21b6;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--fl-heading-text: #333333;--wp--preset--color--fl-body-bg: #f2f2f2;--wp--preset--color--fl-body-text: #757575;--wp--preset--color--fl-accent: #2b7bb9;--wp--preset--color--fl-accent-hover: #2b7bb9;--wp--preset--color--fl-topbar-bg: #ffffff;--wp--preset--color--fl-topbar-text: #757575;--wp--preset--color--fl-topbar-link: #2b7bb9;--wp--preset--color--fl-topbar-hover: #2b7bb9;--wp--preset--color--fl-header-bg: #ffffff;--wp--preset--color--fl-header-text: #757575;--wp--preset--color--fl-header-link: #757575;--wp--preset--color--fl-header-hover: #2b7bb9;--wp--preset--color--fl-nav-bg: #ffffff;--wp--preset--color--fl-nav-link: #757575;--wp--preset--color--fl-nav-hover: #2b7bb9;--wp--preset--color--fl-content-bg: #ffffff;--wp--preset--color--fl-footer-widgets-bg: #ffffff;--wp--preset--color--fl-footer-widgets-text: #757575;--wp--preset--color--fl-footer-widgets-link: #2b7bb9;--wp--preset--color--fl-footer-widgets-hover: #2b7bb9;--wp--preset--color--fl-footer-bg: #ffffff;--wp--preset--color--fl-footer-text: #757575;--wp--preset--color--fl-footer-link: #2b7bb9;--wp--preset--color--fl-footer-hover: #2b7bb9;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(94,86,243,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(216,180,254) 0%,rgb(124,58,237) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(124,90,255) 0%,rgb(167,120,255) 25%,rgb(209,102,255) 50%,rgb(242,153,255) 75%,rgb(255,192,231) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(237,222,255) 0%,rgb(205,186,255) 50%,rgb(168,139,250) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(201,178,255) 0%,rgb(139,92,246) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
-:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
-:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
-:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
-</style>
-<style id='custom-purple-theme'>
-:root {
-  --wp--preset--color--fl-accent: #603bb3;
-  --wp--preset--color--fl-accent-hover: #7a52d1;
-  --wp--preset--color--fl-topbar-link: #603bb3;
-  --wp--preset--color--fl-topbar-hover: #7a52d1;
-  --wp--preset--color--fl-header-hover: #603bb3;
-  --wp--preset--color--fl-nav-hover: #603bb3;
-  --wp--preset--color--fl-footer-widgets-link: #603bb3;
-  --wp--preset--color--fl-footer-widgets-hover: #7a52d1;
-  --wp--preset--color--fl-footer-link: #603bb3;
-  --wp--preset--color--fl-footer-hover: #7a52d1;
-}
+    .pill span {
+      font-size: 0.9rem;
+    }
 
-.fl-node-zyikb04p3geh > .fl-row-content-wrap {
-  background-image: linear-gradient(180deg, #6f3ba8 0%, #2b1055 100%) !important;
-  border-color: #1f1a3d !important;
-}
+    .emoji {
+      font-size: 1.1rem;
+    }
 
-.fl-builder-content .fl-button,
-.fl-builder-content .fl-button:visited {
-  background-color: #603bb3;
-  border-color: #1f1a3d;
-  color: #ffffff;
-  box-shadow: 0 8px 22px rgba(17, 17, 17, 0.25);
-}
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 1.5rem;
+      padding: 1.6rem 1.8rem;
+      border: 1px solid #e5e7eb;
+      max-width: 880px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      text-align: left;
+    }
 
-.fl-builder-content .fl-button:hover,
-.fl-builder-content .fl-button:focus {
-  background-color: #7a52d1;
-  border-color: #1f1a3d;
-  color: #ffffff;
-  box-shadow: 0 10px 26px rgba(17, 17, 17, 0.3);
-}
+    .card-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
 
-.fl-builder-content .fl-button:hover .fl-button-text,
-.fl-builder-content .fl-button:focus .fl-button-text {
-  color: inherit;
-}
+    .card-body {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #111827;
+    }
 
-.fl-node-zyikb04p3geh .fl-module-content h1,
-.fl-node-zyikb04p3geh .fl-module-content h2 {
-  color: #ffffff;
-  text-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
-}
+    .card-body strong {
+      font-weight: 700;
+    }
 
-.fl-node-zyikb04p3geh .fl-module-content .fl-callout-title,
-.fl-node-zyikb04p3geh .fl-module-content .fl-callout-text {
-  color: #ffffff;
-}
-</style>
+    .quote {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      font-style: italic;
+      color: #374151;
+      margin-bottom: 0.75rem;
+    }
 
-<link rel='stylesheet' id='yui3-css' href='https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/css/yui3.css?ver=2.9.4' media='all' />
-<link rel='stylesheet' id='fl-slideshow-css' href='https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/css/fl-slideshow.min.css?ver=2.9.4' media='all' />
-<link rel='stylesheet' id='font-awesome-5-css' href='https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/css/all.min.css?ver=2.9.4' media='all' />
-<link rel='stylesheet' id='jquery-magnificpopup-css' href='https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/css/jquery.magnificpopup.min.css?ver=2.9.4' media='all' />
-<link rel='stylesheet' id='font-awesome-css' href='https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/css/v4-shims.min.css?ver=2.9.4' media='all' />
-<link rel='stylesheet' id='jquery-swiper-css' href='https://www.brooklynprospect.org/wp-content/plugins/bbpowerpack/assets/css/swiper.min.css?ver=8.4.7' media='all' />
-<link rel='stylesheet' id='fl-builder-layout-7-css' href='https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/7-layout.css?ver=bb06036ab168f0fa2c35247972ba2852' media='all' />
-<link rel='stylesheet' id='dashicons-css' href='https://www.brooklynprospect.org/wp-includes/css/dashicons.min.css?ver=6.8.3' media='all' />
-<link rel='stylesheet' id='fl-builder-layout-bundle-1a8cf0cba472df4cb5d45288fd2fc8fc-css' href='https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/1a8cf0cba472df4cb5d45288fd2fc8fc-layout-bundle.css?ver=2.9.4-1.5.2' media='all' />
-<link rel='stylesheet' id='dflip-icons-style-css' href='https://www.brooklynprospect.org/wp-content/plugins/dflip/assets/css/themify-icons.min.css?ver=1.5.6' media='all' />
-<link rel='stylesheet' id='dflip-style-css' href='https://www.brooklynprospect.org/wp-content/plugins/dflip/assets/css/dflip.min.css?ver=1.5.6' media='all' />
-<link rel='stylesheet' id='base-css' href='https://www.brooklynprospect.org/wp-content/themes/bb-theme/css/base.min.css?ver=1.7.17.1' media='all' />
-<link rel='stylesheet' id='fl-automator-skin-css' href='https://www.brooklynprospect.org/wp-content/uploads/bb-theme/skin-68b7373a9412a.css?ver=1.7.17.1' media='all' />
-<link rel='stylesheet' id='pp-animate-css' href='https://www.brooklynprospect.org/wp-content/plugins/bbpowerpack/assets/css/animate.min.css?ver=3.5.1' media='all' />
-<link rel='stylesheet' id='fl-builder-google-fonts-945bd63ad93b42b6e50868f4854ce82d-css' href='//fonts.googleapis.com/css?family=Mulish%3A200%2C400%2C700%2C300%7CPoppins%3A600%2C700%2C200%2C400%2C700i%7CMontserrat%3A400%2C700&#038;ver=6.8.3' media='all' />
-<script data-cfasync="false" src="https://www.brooklynprospect.org/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
-<script src="https://www.brooklynprospect.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+    .quote-author {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #6b7280;
+    }
 
-<!-- Google tag (gtag.js) snippet added by Site Kit -->
-<!-- Google Analytics snippet added by Site Kit -->
-<script src="https://www.googletagmanager.com/gtag/js?id=GT-TQVKLKC" id="google_gtagjs-js" async></script>
-<script id="google_gtagjs-js-after">
-window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
-gtag("set","linker",{"domains":["www.brooklynprospect.org"]});
-gtag("js", new Date());
-gtag("set", "developer_id.dZTNiMT", true);
-gtag("config", "GT-TQVKLKC", {"googlesitekit_post_type":"page"});
- window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); };
-</script>
-<link rel="https://api.w.org/" href="https://www.brooklynprospect.org/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.brooklynprospect.org/wp-json/wp/v2/pages/7" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.brooklynprospect.org/xmlrpc.php?rsd" />
-<link rel='shortlink' href='https://www.brooklynprospect.org/' />
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.brooklynprospect.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.brooklynprospect.org%2F" />
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.brooklynprospect.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.brooklynprospect.org%2F&#038;format=xml" />
-		<script>
-			var bb_powerpack = {
-				version: '2.40.7',
-				getAjaxUrl: function() { return atob( 'aHR0cHM6Ly93d3cuYnJvb2tseW5wcm9zcGVjdC5vcmcvd3AtYWRtaW4vYWRtaW4tYWpheC5waHA=' ); },
-				callback: function() {},
-				mapMarkerData: {},
-				post_id: '7',
-				search_term: '',
-				current_page: 'https://www.brooklynprospect.org/',
-				conditionals: {
-					is_front_page: true,
-					is_home: false,
-					is_archive: false,
-					current_post_type: '',
-					is_tax: false,
-										is_author: false,
-					current_author: false,
-					is_search: false,
-									}
-			};
-		</script>
-		<meta name="generator" content="Site Kit by Google 1.163.0" />			<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v11.3.21-->
-			<script class="hsq-set-content-id" data-content-id="standard-page">
-				var _hsq = _hsq || [];
-				_hsq.push(["setContentType", "standard-page"]);
-			</script>
-			<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->
-			<link rel="icon" type="image/png" href="/wp-content/uploads/fbrfg/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/wp-content/uploads/fbrfg/favicon.svg" />
-<link rel="shortcut icon" href="/wp-content/uploads/fbrfg/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/uploads/fbrfg/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Prospect Schools" />
-<link rel="manifest" href="/wp-content/uploads/fbrfg/site.webmanifest" /><script data-cfasync="false"> var dFlipLocation = "https://www.brooklynprospect.org/wp-content/plugins/dflip/assets/"; var dFlipWPGlobal = {"text":{"toggleSound":"Turn on\/off Sound","toggleThumbnails":"Toggle Thumbnails","toggleOutline":"Toggle Outline\/Bookmark","previousPage":"Previous Page","nextPage":"Next Page","toggleFullscreen":"Toggle Fullscreen","zoomIn":"Zoom In","zoomOut":"Zoom Out","toggleHelp":"Toggle Help","singlePageMode":"Single Page Mode","doublePageMode":"Double Page Mode","downloadPDFFile":"Download PDF File","gotoFirstPage":"Goto First Page","gotoLastPage":"Goto Last Page","share":"Share"},"moreControls":"download,pageMode,startPage,endPage,sound","hideControls":"","scrollWheel":"true","backgroundColor":"#ffffff","backgroundImage":"","height":"auto","paddingLeft":"20","paddingRight":"20","controlsPosition":"hide","duration":"800","soundEnable":"false","enableDownload":"true","enableAnalytics":"false","webgl":"true","hard":"cover","maxTextureSize":"1600","rangeChunkSize":"524288","zoomRatio":"1.5","stiffness":"3","singlePageMode":"0","autoPlay":"false","autoPlayDuration":"5000","autoPlayStart":"false","linkTarget":"2"};</script><link rel="icon" href="https://www.brooklynprospect.org/wp-content/uploads/2024/01/cropped-prospect_favicon-1-32x32.png" sizes="32x32" />
-<link rel="icon" href="https://www.brooklynprospect.org/wp-content/uploads/2024/01/cropped-prospect_favicon-1-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://www.brooklynprospect.org/wp-content/uploads/2024/01/cropped-prospect_favicon-1-180x180.png" />
-<meta name="msapplication-TileImage" content="https://www.brooklynprospect.org/wp-content/uploads/2024/01/cropped-prospect_favicon-1-270x270.png" />
-		<style id="wp-custom-css">
-			@font-face {
-    font-family: 'Hannik Regular';
-    src: url('/wp-content/themes/bb-theme-child/fonts/hannik-webfont.woff2') format('woff2'),
-         url('/wp-content/themes/bb-theme-child/fonts/hannik-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+    .list {
+      margin-top: 0.6rem;
+      padding-left: 1.1rem;
+      font-size: 1rem;
+    }
 
-div.gt-current-lang img { display:none; }
+    .list li {
+      margin-bottom: 0.35rem;
+    }
 
-div.gt_options img {display: none }		</style>
-		<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
- fbq('init', '360901681009076'); 
-fbq('track', 'PageView');
-</script>
-<noscript>
- <img height="1" width="1" 
-src="https://www.facebook.com/tr?id=360901681009076&ev=PageView
-&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+    }
+
+    .highlight-text {
+      font-weight: 600;
+      color: var(--accent3);
+    }
+
+    .corner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+      font-size: 1.05rem;
+    }
+
+    .corner {
+      border-radius: 0.9rem;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid #e5e7eb;
+      background: rgba(248, 250, 252, 0.9);
+    }
+
+    .small-note {
+      margin-top: 0.7rem;
+      font-size: 0.95rem;
+      color: #6b7280;
+    }
+
+    .footer-note {
+      margin-top: 1.6rem;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    .nav {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 1.1rem;
+      padding-inline: 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 0.6rem;
+      pointer-events: all;
+    }
+
+    .btn {
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: rgba(17, 24, 39, 0.03);
+      padding: 0.45rem 1rem;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition: background 0.18s ease, transform 0.12s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .btn:hover {
+      background: rgba(17, 24, 39, 0.06);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+    }
+
+    .btn-primary {
+      border-color: transparent;
+      background: linear-gradient(
+        90deg,
+        var(--accent1),
+        var(--accent2)
+      );
+      color: #ffffff;
+      box-shadow: 0 12px 30px rgba(248, 113, 113, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(
+        90deg,
+        var(--accent2),
+        var(--accent3)
+      );
+    }
+
+    .progress {
+      display: flex;
+      gap: 0.35rem;
+      align-items: center;
+      pointer-events: all;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      transition: all 0.18s ease;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      width: 22px;
+      background: linear-gradient(
+        to right,
+        var(--accent1),
+        var(--accent2)
+      );
+    }
+
+    .progress-label {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-right: 0.4rem;
+    }
+
+    @media (max-width: 768px) {
+      .slide {
+        padding: 2.5rem 6vw 4.2rem;
+      }
+      .card {
+        padding: 1.3rem 1.4rem;
+        border-radius: 1.2rem;
+      }
+      .nav {
+        padding-inline: 4vw;
+        bottom: 0.7rem;
+      }
+      .btn {
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  </style>
 </head>
-<body class="home wp-singular page-template-default page page-id-7 wp-theme-bb-theme wp-child-theme-bb-theme-child fl-builder fl-builder-2-9-4 fl-themer-1-5-2 fl-theme-1-7-17-1 fl-no-js fl-theme-builder-header fl-theme-builder-header-header fl-theme-builder-footer fl-theme-builder-footer-footer fl-framework-base fl-preset-default fl-full-width fl-search-active" itemscope="itemscope" itemtype="https://schema.org/WebPage">
-<a aria-label="Skip to content" class="fl-screen-reader-text" href="#fl-main-content">Skip to content</a><div class="fl-page">
-        <!-- ===== Northside-style header + mega menu (standalone) ===== --> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --northside-ink-900:#050312;
-  --northside-ink-800:#0c0a1f;
-  --northside-surface:rgba(31,22,68,.78);
-  --northside-surface-strong:rgba(20,12,45,.9);
-  --northside-surface-highlight:rgba(255,255,255,.12);
-  --northside-accent-a:#9f8cff;
-  --northside-accent-b:#7f67ff;
-  --northside-nav-muted:rgba(228,222,255,.72);
-  --northside-text-strong:#fbf9ff;
-  --northside-shadow-sm:0 18px 45px rgba(10,5,32,.55);
-  --northside-shadow-xl:0 55px 120px rgba(7,4,24,.72);
-  --northside-pill-shadow:0 28px 55px rgba(56,18,120,.48);
-  --northside-glass-stroke:rgba(177,156,255,.32);
-  --northside-sheen:rgba(255,255,255,.4);
-  --northside-font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-}
-
-body{margin:0;}
-
-.northside-header,
-.northside-mobile-panel{font-family:var(--northside-font);}
-
-.northside-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:1.1rem 0 1.2rem;
-  background:linear-gradient(180deg, rgba(5,3,18,.88) 0%, rgba(5,3,18,.68) 38%, rgba(5,3,18,.32) 68%, rgba(5,3,18,0) 100%);
-  color:var(--northside-text-strong);
-}
-
-.northside-header::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:1px;
-  background:linear-gradient(90deg, transparent, rgba(159,140,255,.45), transparent);
-  pointer-events:none;
-}
-
-@supports (backdrop-filter: blur(12px)){
-  .northside-header{
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-  }
-}
-
-.northside-header .northside-shell{
-  position:relative;
-  width:min(1180px,92vw);
-  display:flex;
-  align-items:center;
-  gap:1rem;
-  padding:.95rem 1.6rem;
-  border-radius:28px;
-  color:var(--northside-text-strong);
-  border:1px solid var(--northside-glass-stroke);
-  background:linear-gradient(135deg, rgba(36,25,70,.78), rgba(17,10,44,.96));
-  box-shadow:0 26px 60px rgba(5,2,24,.55);
-  overflow:hidden;
-  isolation:isolate;
-}
-
-.northside-header .northside-shell::before{
-  content:"";
-  position:absolute;
-  inset:-140% -60% 10%;
-  background:radial-gradient(circle at 20% 10%, rgba(174,148,255,.36), transparent 60%),radial-gradient(circle at 85% 15%, rgba(89,244,255,.32), transparent 55%),radial-gradient(circle at 50% 95%, rgba(255,135,222,.28), transparent 65%);
-  opacity:.85;
-  animation:northsideAurora 22s linear infinite;
-  pointer-events:none;
-}
-
-.northside-header .northside-shell::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg, rgba(255,255,255,.22), rgba(255,255,255,0) 45%);
-  mix-blend-mode:screen;
-  opacity:.35;
-  pointer-events:none;
-}
-
-.northside-header .northside-shell > *{position:relative; z-index:1;}
-
-.northside-header .northside-brand{
-  display:flex;
-  align-items:center;
-  gap:.85rem;
-  text-decoration:none;
-  color:inherit;
-  padding:.45rem .6rem;
-  border-radius:22px;
-  border:1px solid rgba(255,255,255,.12);
-  background:linear-gradient(140deg, rgba(255,255,255,.14), rgba(255,255,255,.02));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 14px 35px rgba(14,8,40,.28);
-  transition:background .3s ease,border-color .3s ease,transform .3s ease;
-}
-
-.northside-header .northside-brand:hover,
-.northside-header .northside-brand:focus-visible{
-  background:linear-gradient(140deg, rgba(255,255,255,.22), rgba(255,255,255,.06));
-  border-color:rgba(255,255,255,.28);
-  transform:translateY(-1px);
-  outline:none;
-}
-
-.northside-logo-glass{
-  position:relative;
-  width:46px;
-  height:46px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.22);
-  background:linear-gradient(135deg, rgba(255,255,255,.26), rgba(255,255,255,.05));
-  display:grid;
-  place-items:center;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 10px 24px rgba(16,9,40,.35);
-  overflow:hidden;
-}
-
-.northside-logo-glass::after{
-  content:"";
-  position:absolute;
-  inset:-120% -80% 45%;
-  background:linear-gradient(120deg, rgba(255,255,255,.6), rgba(255,255,255,0));
-  opacity:.5;
-  transform:rotate(18deg);
-}
-
-.northside-header .northside-brand img{
-  width:26px;
-  height:26px;
-  object-fit:contain;
-  filter:drop-shadow(0 6px 12px rgba(0,0,0,.28));
-}
-
-.northside-brand-text{display:flex; flex-direction:column; gap:2px;}
-
-.northside-brand .northside-muted{
-  font-size:.62rem;
-  letter-spacing:.32em;
-  text-transform:uppercase;
-  color:rgba(237,233,255,.7);
-}
-
-.northside-title{font-weight:800; letter-spacing:.18em; text-transform:uppercase; font-size:1rem;}
-
-.northside-tagline{font-size:.64rem; letter-spacing:.28em; text-transform:uppercase; color:rgba(237,233,255,.58);}
-
-.northside-header .northside-nav{
-  display:flex;
-  align-items:center;
-  gap:.7rem;
-  margin-left:1.2rem;
-  padding:0;
-}
-
-.northside-header .northside-nav>li{
-  list-style:none;
-  position:relative;
-  --northside-link-accent-1:var(--northside-accent-a);
-  --northside-link-accent-2:var(--northside-accent-b);
-  --northside-link-accent-3:rgba(255,255,255,.6);
-}
-
-.northside-header .northside-nav>li[data-mega="why"]{--northside-link-accent-1:#b798ff; --northside-link-accent-2:#8c73ff; --northside-link-accent-3:#f5b7ff;}
-.northside-header .northside-nav>li[data-mega="schools"]{--northside-link-accent-1:#cdb4ff; --northside-link-accent-2:#9d87ff; --northside-link-accent-3:#f1dcff;}
-.northside-header .northside-nav>li[data-mega="enroll"]{--northside-link-accent-1:#d8bdfc; --northside-link-accent-2:#a184ff; --northside-link-accent-3:#f4e9ff;}
-.northside-header .northside-nav>li[data-mega="careers"]{--northside-link-accent-1:#e4a8ff; --northside-link-accent-2:#c58cff; --northside-link-accent-3:#f7e8ff;}
-.northside-header .northside-nav>li[data-mega="families"]{--northside-link-accent-1:#e8c5ff; --northside-link-accent-2:#f3a9ff; --northside-link-accent-3:#f7e6ff;}
-.northside-header .northside-nav>li[data-mega="support"]{--northside-link-accent-1:#d1c4ff; --northside-link-accent-2:#9d87ff; --northside-link-accent-3:#efe4ff;}
-
-.northside-header .northside-link{
-  position:relative;
-  display:flex;
-  align-items:center;
-  gap:.35rem;
-  padding:.7rem 1.3rem;
-  border-radius:999px;
-  text-decoration:none;
-  color:var(--northside-text-strong);
-  font-weight:800;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  font-size:.92rem;
-  background:linear-gradient(135deg, rgba(157,136,255,.75), rgba(93,60,220,.82));
-  border:1px solid rgba(198,187,255,.55);
-  box-shadow:var(--northside-pill-shadow);
-  overflow:hidden;
-  transition:transform .35s ease, border-color .35s ease, background .35s ease;
-}
-
-.northside-header .northside-link span{position:relative; z-index:2;}
-
-.northside-header .northside-link::before,
-.northside-header .northside-link::after{
-  display:none;
-}
-
-.northside-header .northside-link:hover,
-.northside-header .northside-link:focus-visible{
-  color:var(--northside-text-strong);
-  border-color:rgba(255,255,255,.32);
-  background:linear-gradient(135deg, rgba(177,158,255,.88), rgba(105,74,230,.9));
-  transform:translateY(-1px);
-  outline:none;
-}
-
-.northside-header .northside-pills{margin-left:auto; display:flex; gap:.65rem;}
-
-.northside-pill{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:.4rem;
-  padding:.7rem 1.3rem;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:800;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--northside-text-strong);
-  border:1px solid rgba(255,255,255,.16);
-  box-shadow:var(--northside-pill-shadow);
-  background:linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.05));
-  overflow:hidden;
-  transition:transform .35s ease, border-color .35s ease, background .35s ease;
-}
-
-.northside-pill span{position:relative; z-index:1; letter-spacing:.18em;}
-
-.northside-pill::before{
-  content:"";
-  position:absolute;
-  inset:-140% -40% 40%;
-  background:linear-gradient(120deg, rgba(255,255,255,.45), rgba(255,255,255,0));
-  opacity:.45;
-  transform:rotate(18deg);
-  transition:opacity .35s ease;
-}
-
-.northside-pill:hover,
-.northside-pill:focus-visible{
-  transform:translateY(-2px);
-  border-color:rgba(255,255,255,.32);
-  background:linear-gradient(135deg, rgba(255,255,255,.24), rgba(255,255,255,.08));
-  outline:none;
-}
-
-.northside-pill:hover::before,
-.northside-pill:focus-visible::before{opacity:.7;}
-
-.northside-pill--violet{
-  background:linear-gradient(135deg, rgba(157,136,255,.75), rgba(93,60,220,.82));
-  border-color:rgba(198,187,255,.55);
-}
-
-.northside-pill--outline{
-  background:linear-gradient(135deg, rgba(157,136,255,.75), rgba(93,60,220,.82));
-  border-color:rgba(198,187,255,.55);
-  color:var(--northside-text-strong);
-}
-
-.northside-header .northside-hamburger{
-  display:none;
-  margin-left:auto;
-  width:48px;
-  height:48px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.06);
-  color:inherit;
-  cursor:pointer;
-  position:relative;
-  transition:background .3s ease,border-color .3s ease;
-}
-
-.northside-header .northside-hamburger:hover,
-.northside-header .northside-hamburger:focus-visible{
-  background:rgba(255,255,255,.12);
-  border-color:rgba(255,255,255,.28);
-  outline:none;
-}
-
-.northside-header .northside-hamburger span{
-  position:absolute;
-  left:50%;
-  width:22px;
-  height:2px;
-  background:var(--northside-text-strong);
-  border-radius:999px;
-  transform:translateX(-50%);
-  transition:transform .35s ease,opacity .3s ease;
-}
-
-.northside-header .northside-hamburger span:nth-child(1){top:16px;}
-.northside-header .northside-hamburger span:nth-child(2){top:23px;}
-.northside-header .northside-hamburger span:nth-child(3){top:30px;}
-
-.northside-header .northside-hamburger.is-active span:nth-child(1){transform:translate(-50%,7px) rotate(45deg);}
-.northside-header .northside-hamburger.is-active span:nth-child(2){opacity:0;}
-.northside-header .northside-hamburger.is-active span:nth-child(3){transform:translate(-50%,-7px) rotate(-45deg);}
-
-.northside-header .northside-mega-wrap{position:relative; width:100%;}
-
-.northside-header .northside-mega{
-  position:absolute;
-  left:50%;
-  transform:translate(-50%,18px);
-  top:100%;
-  width:min(1080px,92vw);
-  background:linear-gradient(160deg, rgba(31,22,68,.9), rgba(18,11,46,.96));
-  border:1px solid rgba(175,155,255,.28);
-  border-radius:28px;
-  box-shadow:var(--northside-shadow-xl);
-  padding:32px;
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .28s ease, transform .28s ease;
-}
-
-.northside-header .northside-mega.is-open{opacity:1; visibility:visible; transform:translate(-50%,0);}
-
-.northside-header .northside-mega-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px;}
-
-.northside-header .northside-mega-grid > div{
-  background:linear-gradient(140deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:20px;
-  padding:18px 20px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.18);
-}
-
-.northside-header .northside-mega h3{margin:0 0 .65rem; color:#e4dcff; letter-spacing:.28em; text-transform:uppercase; font-size:.74rem;}
-
-.northside-header .northside-mega p{margin:0 0 1.1rem; opacity:.8; font-size:.88rem; line-height:1.5;}
-
-.northside-header .northside-mega ul{margin:0; padding:0; list-style:none; display:grid; gap:.4rem;}
-
-.northside-header .northside-mega li a{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:.48rem 0;
-  color:#fbf9ff;
-  text-decoration:none;
-  font-weight:600;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  font-size:.78rem;
-  opacity:.85;
-  transition:opacity .25s ease, transform .25s ease;
-}
-
-.northside-header .northside-mega li a::after{content:'↗'; font-size:.85rem; opacity:.4;}
-
-.northside-header .northside-mega li a:hover,
-.northside-header .northside-mega li a:focus-visible{opacity:1; transform:translateX(4px); outline:none;}
-
-.northside-mobile-nav{
-  position:fixed;
-  inset:0;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  padding:32px 18px;
-  background:radial-gradient(circle at top, rgba(26,18,60,.86), rgba(9,6,22,.88));
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  z-index:1001;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .35s ease;
-}
-
-.northside-mobile-nav.is-open{opacity:1; pointer-events:auto;}
-
-.northside-mobile-panel{
-  width:100%;
-  max-width:520px;
-  background:linear-gradient(160deg, rgba(36,23,76,.94), rgba(20,12,52,.97));
-  border:1px solid rgba(174,153,255,.34);
-  border-radius:28px;
-  padding:26px 28px 32px;
-  color:var(--northside-text-strong);
-  box-shadow:var(--northside-shadow-xl);
-  transform:translateY(-18px);
-  opacity:0;
-  transition:transform .4s ease, opacity .35s ease;
-  position:relative;
-  overflow:hidden;
-}
-
-.northside-mobile-nav.is-open .northside-mobile-panel{transform:none; opacity:1;}
-
-.northside-mobile-panel::before{
-  content:"";
-  position:absolute;
-  inset:-160% -40% 20%;
-  background:radial-gradient(circle at 30% 10%, rgba(157,132,255,.35), transparent 55%),radial-gradient(circle at 85% 25%, rgba(95,244,255,.28), transparent 55%);
-  opacity:.9;
-  pointer-events:none;
-}
-
-.northside-mobile-header{display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;}
-
-.northside-mobile-title{font-size:.72rem; letter-spacing:.34em; text-transform:uppercase; color:rgba(237,233,255,.75);}
-
-.northside-mobile-close{
-  width:44px;
-  height:44px;
-  border-radius:15px;
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.06);
-  display:grid;
-  place-items:center;
-  cursor:pointer;
-  transition:background .3s ease,border-color .3s ease;
-}
-
-.northside-mobile-close:hover,
-.northside-mobile-close:focus-visible{background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.28); outline:none;}
-
-.northside-mobile-close span{width:20px; height:2px; background:var(--northside-text-strong); border-radius:999px; display:block;}
-
-.northside-mobile-close span:first-child{transform:rotate(45deg);}
-.northside-mobile-close span:last-child{transform:rotate(-45deg);}
-
-.northside-mobile-row{display:grid; gap:12px;}
-
-.northside-mobile-row a{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:16px 18px;
-  border-radius:18px;
-  background:linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.08);
-  color:inherit;
-  font-weight:700;
-  text-decoration:none;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  font-size:.78rem;
-  transition:transform .25s ease, background .25s ease, border-color .25s ease;
-}
-
-.northside-mobile-row a::after{content:'↗'; font-size:1rem; opacity:.45;}
-
-.northside-mobile-row a:hover,
-.northside-mobile-row a:focus-visible{transform:translateX(6px); background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.24); outline:none;}
-
-.northside-mobile-cta{display:grid; gap:14px; margin-top:24px;}
-
-.northside-mobile-panel .northside-pill{width:100%; justify-content:center;}
-
-@keyframes northsideAurora{
-  0%{transform:translate3d(-5%, -6%, 0) rotate(0deg);}
-  35%{transform:translate3d(3%, -2%, 0) rotate(6deg);}
-  70%{transform:translate3d(-2%, 4%, 0) rotate(-4deg);}
-  100%{transform:translate3d(-5%, -6%, 0) rotate(0deg);}
-}
-
-@media (max-width:1280px){.northside-header .northside-nav{margin-left:.6rem;}}
-
-@media (max-width:1100px){
-  .northside-header .northside-shell{padding:.85rem 1.2rem;}
-  .northside-header .northside-nav{gap:.55rem;}
-  .northside-header .northside-link{padding:.76rem 1.4rem; font-size:.86rem; letter-spacing:.18em;}
-}
-
-@media (max-width:1024px){
-  .northside-header .northside-nav,
-  .northside-header .northside-pills{display:none;}
-  .northside-header .northside-hamburger{display:block;}
-  .northside-header .northside-mega{display:none !important;}
-}
-
-@media (max-width:720px){
-  .northside-header{padding:.9rem 0 1rem;}
-  .northside-header .northside-brand{padding:.35rem .55rem;}
-  .northside-title{font-size:.9rem;}
-  .northside-tagline{display:none;}
-}
-
-@media (max-width:520px){
-  .northside-header .northside-shell{gap:.7rem; padding:.75rem .95rem;}
-  .northside-logo-glass{width:42px; height:42px;}
-  .northside-mobile-panel{padding:24px 22px 28px;}
-}
-
-@media (prefers-reduced-motion: reduce){
-  .northside-header .northside-shell::before,
-  .northside-header .northside-shell::after,
-  .northside-pill::before{animation:none; transition:none;}
-  .northside-header .northside-link,
-  .northside-pill,
-  .northside-mobile-panel{transition:none;}
-}
-
-</style>
-
-<header class="northside-header">
-  <div class="northside-shell northside-mega-wrap">
-      <a class="northside-brand" href="#">
-        <span class="northside-logo-glass">
-          <img alt="Northside logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIzOCI+PHJlY3Qgd2lkdGg9IjM4IiBoZWlnaHQ9IjM4IiBmaWxsPSJub25lIi8+PC9zdmc+">
-        </span>
-        <span class="northside-brand-text">
-          <span class="northside-muted">BROOKLYN</span>
-          <span class="northside-title">NORTHSIDE CHARTER HIGH</span>
-          <span class="northside-tagline">IB World School</span>
-        </span>
-      </a>
-
-    <ul class="northside-nav" id="northside-nav">
-      <li data-mega="why"><a class="northside-link" href="#"><span>Why Northside</span></a></li>
-      <li data-mega="schools"><a class="northside-link" href="#"><span>Schools</span></a></li>
-      <li data-mega="enroll"><a class="northside-link" href="#"><span>Enroll</span></a></li>
-      <li data-mega="careers"><a class="northside-link" href="#"><span>Careers</span></a></li>
-      <li data-mega="families"><a class="northside-link" href="#"><span>Families</span></a></li>
-      <li data-mega="support"><a class="northside-link" href="#"><span>Support</span></a></li>
-    </ul>
-
-    <div class="northside-pills">
-      <a class="northside-pill northside-pill--violet" href="#"><span>Apply</span></a>
-      <a class="northside-pill northside-pill--outline" href="#"><span>Visit</span></a>
-    </div>
-
-    <button class="northside-hamburger" id="northside-hamburger" type="button" aria-label="Open menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- Mega menu panels -->
-    <div class="northside-mega" id="northside-mega-why" role="dialog" aria-label="Why Northside">
-      <div class="northside-mega-grid">
-        <div>
-          <h3>Why Northside</h3>
-          <p>One of NYC’s leading IB World Schools—rigor, belonging, and purpose in every classroom.</p>
-          <ul>
-            <li><a href="#">IB World Program</a></li>
-            <li><a href="#">Teaching & Learning</a></li>
-            <li><a href="#">Student Stories</a></li>
-          </ul>
+<body>
+  <div class="deck" id="deck">
+    <!-- Slide 1: Welcome & Framing -->
+    <section class="slide active">
+      <div class="slide-header">Day 1 · 9th Grade ELA · Demo Lesson</div>
+      <div class="slide-title">When Is It OK<br />to Break the Rules?</div>
+      <div class="slide-subtitle">
+        Today we are going to think like readers, writers, and real people
+        who have to make hard choices.
+      </div>
+      <div class="pill-row">
+        <div class="pill">
+          <span class="emoji">🎯</span><span>I can make a claim</span>
         </div>
-        <div>
-          <h3>Experience</h3>
-          <ul>
-            <li><a href="#">Clubs & Athletics</a></li>
-            <li><a href="#">College Counseling</a></li>
-            <li><a href="#">Arts & Design Labs</a></li>
-          </ul>
+        <div class="pill">
+          <span class="emoji">🧠</span><span>I can back it up</span>
         </div>
-        <div>
-          <h3>Take Action</h3>
-          <ul>
-            <li><a href="#">Enroll Today</a></li>
-            <li><a href="#">Visit a School</a></li>
-            <li><a href="#">Request Info</a></li>
+        <div class="pill">
+          <span class="emoji">🎙️</span><span>I can listen and respond</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">How we learn here</div>
+        <div class="card-body">
+          • We respect all voices.<br />
+          • We stay curious, even when we disagree.<br />
+          • We focus on ideas, not people.
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 2: Objective & EDI -->
+    <section class="slide">
+      <div class="slide-header">Objective · Explicit Direct Instruction</div>
+      <div class="slide-title">Learning Target</div>
+      <div class="slide-subtitle">
+        <strong>Today I will:</strong>
+        make a claim about rule-breaking and support it with reasoning or
+        evidence.
+      </div>
+      <div class="card">
+        <div class="card-title">What success looks like</div>
+        <div class="card-body">
+          <div class="columns">
+            <div>
+              <strong>By the end you can:</strong>
+              <ul class="list">
+                <li>Take a clear position.</li>
+                <li>Use at least one reason or example.</li>
+                <li>Connect to a quote or a character.</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Standards behind the scenes:</strong>
+              <div class="tag-row">
+                <span class="tag">RL.1 · Evidence</span>
+                <span class="tag">RL.2 · Theme</span>
+                <span class="tag">SL.1 · Discussion</span>
+                <span class="tag">W.1 · Argument</span>
+              </div>
+            </div>
+          </div>
+          <div class="small-note">
+            First I model. Then we try it together. Then you own it.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Hook Question · Quick Write -->
+    <section class="slide">
+      <div class="slide-header">Hook · Activate Prior Knowledge</div>
+      <div class="slide-title">Is It Ever OK<br />to Break the Rules?</div>
+      <div class="card">
+        <div class="card-title">Step 1 · Think and write</div>
+        <div class="card-body">
+          ✏️ <strong>Quick Write (30–45 seconds):</strong><br />
+          In <strong>one sentence</strong>, answer:
+          <br /><br />
+          <span class="highlight-text">
+            “Yes, because…” or “No, because…”
+          </span>
+          <br /><br />
+          Then be ready to share with a partner.
+        </div>
+      </div>
+      <div class="footer-note">
+        This is not graded. This is you being honest.
+      </div>
+    </section>
+
+    <!-- Slide 4: Turn & Talk -->
+    <section class="slide">
+      <div class="slide-header">Check for Understanding · Student Voice</div>
+      <div class="slide-title">Turn and Talk</div>
+      <div class="slide-subtitle">
+        Share your sentence with your partner.<br />
+        Listen for something you agree with or want to push back on.
+      </div>
+      <div class="card">
+        <div class="card-title">Sentence starters if you want them</div>
+        <div class="card-body">
+          <ul class="list">
+            <li><strong>“I agree because…”</strong></li>
+            <li><strong>“I hear you, but another way to see it is…”</strong></li>
+            <li><strong>“That reminds me of…”</strong></li>
+          </ul>
+          <div class="small-note">
+            I will invite a few people to share what their partner said,
+            not put anyone on the spot.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Anchor Text · Frederick Douglass -->
+    <section class="slide">
+      <div class="slide-header">Model · Anchor Quote</div>
+      <div class="slide-title">A Voice from History</div>
+      <div class="card">
+        <div class="card-body">
+          <div class="quote">
+            “I am not bound to win, but I am bound to be true. I must stand
+            with anybody that stands right.”
+          </div>
+          <div class="quote-author">Frederick Douglass</div>
+          <br />
+          <strong>Think aloud (teacher model):</strong>
+          <br />
+          Douglass is saying that
+          <span class="highlight-text">truth and doing what is right</span>
+          matter more than popularity or winning.
+          <br /><br />
+          <strong>Quick check:</strong> In your own words, what does “bound to
+          be true” mean here?
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Take a Stand · Corners -->
+    <section class="slide">
+      <div class="slide-header">Guided Practice · Discussion Structure</div>
+      <div class="slide-title">Take a Stand</div>
+      <div class="slide-subtitle">
+        “It is better to be true to yourself than to follow the rules.”
+      </div>
+      <div class="card">
+        <div class="card-title">Choose your corner</div>
+        <div class="card-body">
+          <div class="corner-grid">
+            <div class="corner">🟥 Strongly Agree</div>
+            <div class="corner">🟨 Agree</div>
+            <div class="corner">🟦 Disagree</div>
+            <div class="corner">⬛ Strongly Disagree</div>
+          </div>
+          <div class="small-note">
+            Be ready to share <strong>one reason</strong> and listen for a
+            reason you respect, even if you disagree.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: Culturally Relevant Rule-Breakers -->
+    <section class="slide">
+      <div class="slide-header">Connect · Make It Real</div>
+      <div class="slide-title">Rule-Breakers We Know</div>
+      <div class="card">
+        <div class="card-title">From stories, movies, and real life</div>
+        <div class="card-body">
+          Think about people who broke rules for a bigger reason:
+          <ul class="list">
+            <li>Miles Morales</li>
+            <li>Katniss Everdeen</li>
+            <li>Martin Luther King Jr.</li>
+            <li>Mulan</li>
+            <li>Greta Thunberg</li>
+          </ul>
+          <div class="small-note">
+            What did they stand for? What did they risk? This is the kind of
+            thinking we do in ELA all year.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Exit Reflection -->
+    <section class="slide">
+      <div class="slide-header">Independent Practice · Exit Ticket</div>
+      <div class="slide-title">Make Your Claim</div>
+      <div class="card">
+        <div class="card-title">Write it out (1–2 sentences)</div>
+        <div class="card-body">
+          📝 On your exit slip, finish this:
+          <br /><br />
+          <span class="highlight-text">
+            “A time someone broke the rules for a good reason was…
+            because…”
+          </span>
+          <br /><br />
+          You can choose:
+          <ul class="list">
+            <li>a book or movie character,</li>
+            <li>a person from history, or</li>
+            <li>something from real life.</li>
           </ul>
         </div>
       </div>
-    </div>
+      <div class="footer-note">
+        I will read these to learn how you think and how I can support you.
+      </div>
+    </section>
 
-    <div class="northside-mega" id="northside-mega-schools" role="dialog" aria-label="Schools">
-      <div class="northside-mega-grid">
-        <div>
-          <h3>Our Schools</h3>
-          <p>IB pathways for every learner from elementary through high school.</p>
-          <ul>
-            <li><a href="#">High School</a></li>
-            <li><a href="#">Middle Programs</a></li>
-            <li><a href="#">Elementary Programs</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Locations</h3>
-          <ul>
-            <li><a href="#">Downtown Brooklyn</a></li>
-            <li><a href="#">Clinton Hill</a></li>
-            <li><a href="#">Windsor Terrace</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Calendars</h3>
-          <ul>
-            <li><a href="#">District Calendar</a></li>
-            <li><a href="#">Athletics Calendar</a></li>
-            <li><a href="#">Assessment Dates</a></li>
-          </ul>
+    <!-- Slide 9: Close -->
+    <section class="slide">
+      <div class="slide-header">Closure · Back to the Big Idea</div>
+      <div class="slide-title">Your Voice Matters Here</div>
+      <div class="slide-subtitle">
+        You just took a stand, listened to others, and backed up your ideas.
+        That is the heart of this class.
+      </div>
+      <div class="card">
+        <div class="card-title">One-word checkout</div>
+        <div class="card-body">
+          If we have time, I will ask a few of you to share
+          <strong>one word</strong> about how this conversation felt:
+          <br /><br />
+          <span class="tag">“interesting”</span>
+          <span class="tag">“challenging”</span>
+          <span class="tag">“spicy”</span>
+          <span class="tag">“confusing”</span>
+          <span class="tag">“real”</span>
+          <br /><br />
+          Thank you for bringing your full self to ELA.
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="northside-mega" id="northside-mega-enroll" role="dialog" aria-label="Enroll">
-      <div class="northside-mega-grid">
-        <div>
-          <h3>Get Started</h3>
-          <p>Enrollment is 100% digital with bilingual support at every step.</p>
-          <ul>
-            <li><a href="#">Apply Online</a></li>
-            <li><a href="#">Application Checklist</a></li>
-            <li><a href="#">Lottery &amp; Key Dates</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Visit Us</h3>
-          <ul>
-            <li><a href="#">Virtual Info Sessions</a></li>
-            <li><a href="#">Campus Tours</a></li>
-            <li><a href="#">Shadow Days</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Need Support?</h3>
-          <ul>
-            <li><a href="#">Talk with Admissions</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Language Assistance</a></li>
-          </ul>
-        </div>
+    <!-- Navigation -->
+    <div class="nav">
+      <div class="nav-buttons">
+        <button class="btn" id="prevBtn">
+          ◀ Back
+        </button>
+        <button class="btn btn-primary" id="nextBtn">
+          Next ▶
+        </button>
       </div>
-    </div>
-
-    <div class="northside-mega" id="northside-mega-careers" role="dialog" aria-label="Careers">
-      <div class="northside-mega-grid">
-        <div>
-          <h3>Join the Team</h3>
-          <p>Bring your practice to a future-ready, inclusive learning community.</p>
-          <ul>
-            <li><a href="#">Featured Roles</a></li>
-            <li><a href="#">Why Teach Here</a></li>
-            <li><a href="#">Residency Program</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Professional Growth</h3>
-          <ul>
-            <li><a href="#">Learning &amp; Development</a></li>
-            <li><a href="#">Leadership Pathways</a></li>
-            <li><a href="#">Culture &amp; Belonging</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Benefits</h3>
-          <ul>
-            <li><a href="#">Compensation Overview</a></li>
-            <li><a href="#">Wellness &amp; Support</a></li>
-            <li><a href="#">How to Apply</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="northside-mega" id="northside-mega-families" role="dialog" aria-label="Families">
-      <div class="northside-mega-grid">
-        <div>
-          <h3>Family Hub</h3>
-          <p>Tools and resources for staying connected to every classroom.</p>
-          <ul>
-            <li><a href="#">Parent Portal</a></li>
-            <li><a href="#">Calendars &amp; Alerts</a></li>
-            <li><a href="#">Meal Program</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Get Involved</h3>
-          <ul>
-            <li><a href="#">Family Council</a></li>
-            <li><a href="#">Volunteer Opportunities</a></li>
-            <li><a href="#">Workshops &amp; Events</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Support Services</h3>
-          <ul>
-            <li><a href="#">Student Wellness</a></li>
-            <li><a href="#">Transportation</a></li>
-            <li><a href="#">Special Education</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="northside-mega" id="northside-mega-support" role="dialog" aria-label="Support">
-      <div class="northside-mega-grid">
-        <div>
-          <h3>Support Prospect</h3>
-          <p>Your partnership accelerates access, innovation, and equity for students.</p>
-          <ul>
-            <li><a href="#">Give Today</a></li>
-            <li><a href="#">Corporate Partnerships</a></li>
-            <li><a href="#">Sponsor a Program</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Ways to Engage</h3>
-          <ul>
-            <li><a href="#">Volunteer &amp; Mentor</a></li>
-            <li><a href="#">Alumni Network</a></li>
-            <li><a href="#">Community Events</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Impact Reports</h3>
-          <ul>
-            <li><a href="#">Annual Report</a></li>
-            <li><a href="#">Strategic Plan</a></li>
-            <li><a href="#">Financials</a></li>
-          </ul>
-        </div>
+      <div class="progress" id="progress">
+        <span class="progress-label">Slides</span>
+        <!-- dots will be injected by JS -->
       </div>
     </div>
   </div>
 
-</header>
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const progress = document.getElementById("progress");
+    let current = 0;
 
-<script>
-/* Centered sticky mega-menu behavior */
-(function() {
-  const shell = document.querySelector('.northside-shell');
-  if (!shell) return;
-  const navItems = shell.querySelectorAll('.northside-nav > li[data-mega]');
-  const megas = {
-    why: document.getElementById('northside-mega-why'),
-    schools: document.getElementById('northside-mega-schools'),
-    enroll: document.getElementById('northside-mega-enroll'),
-    careers: document.getElementById('northside-mega-careers'),
-    families: document.getElementById('northside-mega-families'),
-    support: document.getElementById('northside-mega-support'),
-  };
-  const accentMap = {
-    default: ['#9f8cff', '#7f67ff'],
-    why: ['#b798ff', '#8c73ff'],
-    schools: ['#cdb4ff', '#9d87ff'],
-    enroll: ['#d8bdfc', '#a184ff'],
-    careers: ['#e4a8ff', '#c58cff'],
-    families: ['#e8c5ff', '#f3a9ff'],
-    support: ['#d1c4ff', '#9d87ff'],
-  };
-  let openKey = null;
-  let hideTimer = null;
+    // build progress dots
+    slides.forEach((_, index) => {
+      const dot = document.createElement("div");
+      dot.className = "dot" + (index === 0 ? " active" : "");
+      dot.dataset.index = index.toString();
+      dot.addEventListener("click", () => goToSlide(index));
+      progress.appendChild(dot);
+    });
 
-  const setAccent = (key = 'default') => {
-    const [a, b] = accentMap[key] || accentMap.default;
-    shell.style.setProperty('--northside-accent-a', a);
-    shell.style.setProperty('--northside-accent-b', b);
-  };
+    const dots = Array.from(document.querySelectorAll(".dot"));
 
-  function openMega(key) {
-    clearTimeout(hideTimer);
-    if (openKey && megas[openKey]) {
-      megas[openKey].classList.remove('is-open');
-    }
-    openKey = key;
-    setAccent(key);
-    if (megas[key]) {
-      megas[key].classList.add('is-open');
-    }
-  }
-
-  function scheduleHide() {
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => {
-      if (openKey && megas[openKey]) {
-        megas[openKey].classList.remove('is-open');
-      }
-      openKey = null;
-      setAccent('default');
-    }, 140);
-  }
-
-  navItems.forEach(li => {
-    const key = li.getAttribute('data-mega') || 'default';
-    li.addEventListener('mouseenter', () => openMega(key));
-    li.addEventListener('focusin', () => openMega(key));
-  });
-
-  shell.addEventListener('mouseleave', scheduleHide);
-  shell.addEventListener('focusout', event => {
-    if (!shell.contains(event.relatedTarget)) {
-      scheduleHide();
-    }
-  });
-
-  Object.values(megas).forEach(panel => {
-    if (!panel) return;
-    panel.addEventListener('mouseenter', () => clearTimeout(hideTimer));
-    panel.addEventListener('mouseleave', scheduleHide);
-  });
-
-  setAccent('default');
-})();
-
-/* Mobile off-canvas open/close */
-(function(){
-  const btn = document.getElementById('northside-hamburger');
-  if (!btn) return;
-  const sheet = document.createElement('div');
-  sheet.className = 'northside-mobile-nav';
-  sheet.setAttribute('aria-hidden', 'true');
-  sheet.innerHTML = `
-    <div class="northside-mobile-panel" id="northside-mobile-menu" role="dialog" aria-modal="true" aria-label="Primary navigation" tabindex="-1">
-      <div class="northside-mobile-header">
-        <span class="northside-mobile-title">Menu</span>
-        <button class="northside-mobile-close" type="button" aria-label="Close menu"><span></span><span></span></button>
-      </div>
-      <div class="northside-mobile-row">
-        <a href="#">Why Northside</a>
-        <a href="#">Schools</a>
-        <a href="#">Enroll</a>
-        <a href="#">Careers</a>
-        <a href="#">Families</a>
-        <a href="#">Support</a>
-      </div>
-      <div class="northside-mobile-cta">
-        <a class="northside-pill northside-pill--violet" href="#"><span>Apply</span></a>
-        <a class="northside-pill northside-pill--outline" href="#"><span>Visit</span></a>
-      </div>
-    </div>`;
-  document.body.appendChild(sheet);
-  btn.setAttribute('aria-controls', 'northside-mobile-menu');
-
-  const closeBtn = sheet.querySelector('.northside-mobile-close');
-
-  const toggle = show => {
-    const willOpen = typeof show === 'boolean' ? show : !sheet.classList.contains('is-open');
-    sheet.classList.toggle('is-open', willOpen);
-    sheet.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
-    btn.classList.toggle('is-active', willOpen);
-    btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-    if (willOpen) {
-      requestAnimationFrame(() => {
-        const firstLink = sheet.querySelector('.northside-mobile-row a');
-        (firstLink || closeBtn)?.focus({ preventScroll: true });
+    function updateView() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle("active", index === current);
       });
-    } else {
-      btn.focus({ preventScroll: true });
-    }
-  };
 
-  btn.addEventListener('click', () => toggle());
-  closeBtn?.addEventListener('click', () => toggle(false));
-  sheet.addEventListener('click', event => {
-    if (event.target === sheet) toggle(false);
-  });
-  sheet.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      toggle(false);
-      return;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === current);
+      });
+
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current === slides.length - 1;
     }
-    if (event.key === 'Tab' && sheet.classList.contains('is-open')) {
-      const focusables = sheet.querySelectorAll('a, button');
-      if (!focusables.length) return;
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
+
+    function goToSlide(index) {
+      if (index < 0 || index >= slides.length) return;
+      current = index;
+      updateView();
+    }
+
+    function nextSlide() {
+      if (current < slides.length - 1) {
+        current += 1;
+        updateView();
       }
     }
-  });
-})();
-</script>
-      <div id="fl-main-content" class="fl-page-content" itemprop="mainContentOfPage" role="main">
 
-		
-<div class="fl-content-full container">
-	<div class="row">
-		<div class="fl-content col-md-12">
-			<article class="fl-post post-7 page type-page status-publish has-post-thumbnail hentry" id="fl-post-7" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
-
-			<div class="fl-post-content clearfix" itemprop="text">
-		<div class="fl-builder-content fl-builder-content-7 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="7"><div class="fl-row fl-row-full-width fl-row-bg-slideshow fl-node-85nmyjw1qt0f fl-row-full-height fl-row-align-bottom fl-row-bg-overlay" data-node="85nmyjw1qt0f">
-	<div class="fl-row-content-wrap">
-		<div class="fl-bg-slideshow custom-hero-slideshow" data-slide-urls="https://lh3.googleusercontent.com/d/1Oyg6ITEZGHptiiRfIBzqY7ImBIecLX27,https://lh3.googleusercontent.com/d/12C2LngUjIE6oXvk7nCVIkA1rCIvbzOGV,https://lh3.googleusercontent.com/d/1bpe1kQDWsID37zzJzKBhjCWWL_6QXRwt">
-		  <div class="custom-hero-slide is-active" style="background-image: url('https://lh3.googleusercontent.com/d/1Oyg6ITEZGHptiiRfIBzqY7ImBIecLX27');"></div>
-		</div>
-		<div class="northside-hero-badges">
-		  <img src="https://lh3.googleusercontent.com/d/1SnF8XWZAAfEpvrCpiIXpuj6tM-eaQYlS" alt="Northside crest" />
-		  <img src="https://lh3.googleusercontent.com/d/1S2tZvg0fa7XacWwW_ERPOuWnOYySbr2n" alt="Community emblem" />
-		</div>
-		<div class="fl-row-content fl-row-fixed-width fl-node-content">
-
-<div class="fl-col-group fl-node-4jnda68ex57m fl-col-group-custom-width" data-node="4jnda68ex57m">
-			<div class="fl-col fl-node-3me4a1f0jbxn fl-col-bg-color fl-col-small-custom-width" data-node="3me4a1f0jbxn">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-n13pg4smltvw" data-node="n13pg4smltvw">
-	<div class="fl-module-content fl-node-content">
-                <h1 class="fl-heading">
-                <span class="fl-heading-text">At Northside, your child is <strong>known</strong>.<br />Your children are <strong>ready</strong>.</span>
-        </h1>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col-group fl-node-5otjkdb7ymwv" data-node="5otjkdb7ymwv">
-			<div class="fl-col fl-node-lfcpzrn307ho fl-col-bg-color" data-node="lfcpzrn307ho">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-content-ticker fl-node-du18nf4cizyl" data-node="du18nf4cizyl">
-	<div class="fl-module-content fl-node-content">
-		
-<div class="pp-content-ticker-container">
-
-	<div class="pp-content-ticker-heading">
-					
-						<span class="pp-content-ticker-heading-text">
-				Important Updates			</span>
-						</div>
-
-		
-	<div class="pp-content-ticker-wrap">
-		<div class="pp-content-ticker">
-			<div class="swiper-wrapper">
-
-					<div class="pp-content-ticker-item swiper-slide">
-				<div class="pp-content-ticker-content">
-										<div class="pp-content-ticker-item-title-wrap">
-						<h3 class="pp-content-ticker-item-title">
-															<a href="https://prospectschools.schoolmint.net/welcomeback" target="_blank">Applications to enroll for 2026-27 school year open as of October 1!</a>
-													</h3>
-											</div>
-				</div>
-			</div>
-						<div class="pp-content-ticker-item swiper-slide">
-				<div class="pp-content-ticker-content">
-										<div class="pp-content-ticker-item-title-wrap">
-						<h3 class="pp-content-ticker-item-title">
-															<a href="https://www.brooklynprospect.org/schools/windsor-terrace/" target="_blank">New Windsor Terrace Elementary and Middle School opening Fall 2026</a>
-													</h3>
-											</div>
-				</div>
-			</div>
-						<div class="pp-content-ticker-item swiper-slide">
-				<div class="pp-content-ticker-content">
-										<div class="pp-content-ticker-item-title-wrap">
-						<h3 class="pp-content-ticker-item-title">
-															<a href="https://share.hsforms.com/2Ct1GkVuWR2S9OHKUKtP29gq3xi6" target="_blank"><span class="hover-headline">Bring the whole family to our Windsor Terrace Halloween Carnival!</span></a>
-													</h3>
-											</div>
-				</div>
-			</div>
-						<div class="pp-content-ticker-item swiper-slide">
-				<div class="pp-content-ticker-content">
-										<div class="pp-content-ticker-item-title-wrap">
-						<h3 class="pp-content-ticker-item-title">
-															<a href="https://www.brooklynprospect.org/announcing-the-future-home-of-brooklyn-prospect-high-school/" target="_blank">Click here for an exciting announcement about Northside Charter High School's future home!</a>
-													</h3>
-											</div>
-				</div>
-			</div>
-						<div class="pp-content-ticker-item swiper-slide">
-				<div class="pp-content-ticker-content">
-										<div class="pp-content-ticker-item-title-wrap">
-						<h3 class="pp-content-ticker-item-title">
-															<a href="https://www.brooklynprospect.org/wp-content/uploads/2025/09/Prospect-Schools-Student-Achievement-Report-24-25.pdf" target="_blank">Click here to explore the results in our 2024-2025 Student Achievement Brief.</a>
-													</h3>
-											</div>
-				</div>
-			</div>
-			
-			</div>
-		</div>
-	</div>
-
-		<div class="pp-content-ticker-navigation">
-
-		<div class="swiper-button-prev">
-			<span class="fa fa-angle-left"></span>
-		</div>
-		<div class="swiper-button-next">
-			<span class="fa fa-angle-right"></span>
-		</div>
-
-	</div>
-
-	
-</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-full-width fl-row-bg-gradient fl-node-aj78sc0rqfg3 fl-row-default-height fl-row-align-center" data-node="aj78sc0rqfg3">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-lhc1wt4yzvrn" data-node="lhc1wt4yzvrn">
-			<div class="fl-col fl-node-q32c1fsuixpk fl-col-bg-color fl-col-small" data-node="q32c1fsuixpk">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-0bk7jomxaf3w" data-node="0bk7jomxaf3w">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<img fetchpriority="high" decoding="async" class="fl-photo-img wp-image-14209 size-full" src="https://www.brooklynprospect.org/wp-content/uploads/2024/05/Badge-HighSchools-National-Year.png" alt="Badge-HighSchools-National-Year" itemprop="image" height="511" width="520" title="Badge-HighSchools-National-Year" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/05/Badge-HighSchools-National-Year.png 520w, https://www.brooklynprospect.org/wp-content/uploads/2024/05/Badge-HighSchools-National-Year-300x295.png 300w" sizes="(max-width: 520px) 100vw, 520px" />
-					</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-b73zkncta0fg fl-col-bg-color" data-node="b73zkncta0fg">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-nuevtifsolyh" data-node="nuevtifsolyh">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text"><strong>Northside Charter High School</strong> named one of the Best High Schools in 2024!</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-rich-text fl-node-tcuqnj7og8p5" data-node="tcuqnj7og8p5">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-rich-text">
-	<p>Northside Charter High School (NCHS) is proud to announce its inclusion in the 2024 Best High Schools rankings by U.S. News &amp; World Report, the global authority in education rankings.</p>
-</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-bdkgsfpxr5a6 fl-row-default-height fl-row-align-center" data-node="bdkgsfpxr5a6">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-gb7hqyevrk5a" data-node="gb7hqyevrk5a">
-			<div class="fl-col fl-node-84fultdj2x9e fl-col-bg-color fl-col-small" data-node="84fultdj2x9e">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-qn5stdzac2ju fl-animation fl-fade-left" data-node="qn5stdzac2ju" data-animation-delay="0" data-animation-duration="1">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center fl-photo-crop-square" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-13958 size-2048x2048" src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/ProspectSchools20231003_SYESMarketing_112-2-2048x1365-square-c389bb9499204863d32b7a95c4f7c306-qn5stdzac2ju.jpg" alt="ProspectSchools(20231003_SYESMarketing)_112" itemprop="image" height="1365" width="2048" title="ProspectSchools(20231003_SYESMarketing)_112"  />
-					</div>
-	</div>
-	</div>
-</div>
-<style>.fl-node-qn5stdzac2ju.fl-animation:not(.fl-animated){opacity:0}</style></div>
-</div>
-			<div class="fl-col fl-node-o6zj2ed1rusk fl-col-bg-color fl-col-small" data-node="o6zj2ed1rusk">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-qd24mlxapwih" data-node="qd24mlxapwih">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">Welcome to Brooklyn</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-heading fl-node-s4vz7l83ty56" data-node="s4vz7l83ty56">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">Prospect Schools</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-rich-text fl-node-swzif7daqt2c" data-node="swzif7daqt2c">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-rich-text">
-	<p><strong>Welcome to Prospect Schools in Brooklyn.</strong> We are a K-12 college preparatory, IB World School community where excellent teachers prepare a diverse student body to have a positive impact on society and passion for learning. Get to know our schools by exploring our site, or contact us any time to set up a visit to learn more!</p>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-button fl-node-alegsunxk6j4" data-node="alegsunxk6j4">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-wrap fl-button-width-auto fl-button-left fl-button-has-icon">
-			<a href="https://www.brooklynprospect.org/schools/" target="_self" class="fl-button">
-							<span class="fl-button-text">Our Schools</span>
-						<i class="fl-button-icon fl-button-icon-after fas fa-arrow-right" aria-hidden="true"></i>
-			</a>
-</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-y9d3p6vxti2h fl-row-default-height fl-row-align-center" data-node="y9d3p6vxti2h">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-j6xvum1nkqi5 fl-col-group-responsive-reversed" data-node="j6xvum1nkqi5">
-			<div class="fl-col fl-node-b0ro7ins6v32 fl-col-bg-color fl-col-small" data-node="b0ro7ins6v32">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-zd5asf3gnj7k" data-node="zd5asf3gnj7k">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">We are inspired by</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-heading fl-node-nsf42ywv0c5a" data-node="nsf42ywv0c5a">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">The intersection of joy and learning</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-rich-text fl-node-wh4amrvqd6fz" data-node="wh4amrvqd6fz">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-rich-text">
-	<p>Learning is a joyful, lifelong journey. The Prospect Schools curriculum, inspired by the IB World Program, challenges our Prospectors and fosters a vibrant community where diverse cultures thrive.</p>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-button fl-node-7zok8h49mq3r" data-node="7zok8h49mq3r">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-wrap fl-button-width-auto fl-button-left fl-button-has-icon">
-			<a href="https://www.brooklynprospect.org/ib-world-school-program/" target="_self" class="fl-button">
-							<span class="fl-button-text">Our Approach</span>
-						<i class="fl-button-icon fl-button-icon-after fas fa-arrow-right" aria-hidden="true"></i>
-			</a>
-</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-raw1e0f6yxsj fl-col-bg-color fl-col-small" data-node="raw1e0f6yxsj">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-a20v9mexd6fs fl-animation fl-fade-right" data-node="a20v9mexd6fs" data-animation-delay="0" data-animation-duration="1">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center fl-photo-crop-square" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-12953 size-2048x2048" src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/ProspectSchoolsWindsorTerraceMS_OCT1322_127-1-2048x1365-square-03b2beca7f1e0b09ae8d1ead330c0e00-a20v9mexd6fs.jpg" alt="ProspectSchools(WindsorTerraceMS_OCT1322)_127" itemprop="image" height="1365" width="2048" title="ProspectSchools(WindsorTerraceMS_OCT1322)_127"  />
-					</div>
-	</div>
-	</div>
-</div>
-<style>.fl-node-a20v9mexd6fs.fl-animation:not(.fl-animated){opacity:0}</style></div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-bxof458pqhui fl-row-default-height fl-row-align-center" data-node="bxof458pqhui">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-5f2catj8lnmv" data-node="5f2catj8lnmv">
-			<div class="fl-col fl-node-cmpan3xe9u07 fl-col-bg-color fl-col-small" data-node="cmpan3xe9u07">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-jid915fht0ce fl-animation fl-fade-left" data-node="jid915fht0ce" data-animation-delay="0" data-animation-duration="1">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center fl-photo-crop-square" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-13446 size-2048x2048" src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/ProspectSchools20230626_HSGraduation_728-2048x1365-square-e854e0ae74a46552c4fffc263bfdda94-jid915fht0ce.jpg" alt="ProspectSchools(20230626_HSGraduation)_728" itemprop="image" height="1365" width="2048" title="ProspectSchools(20230626_HSGraduation)_728"  />
-					</div>
-	</div>
-	</div>
-</div>
-<style>.fl-node-jid915fht0ce.fl-animation:not(.fl-animated){opacity:0}</style></div>
-</div>
-			<div class="fl-col fl-node-vhuq7gp4arcy fl-col-bg-color fl-col-small" data-node="vhuq7gp4arcy">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-cmyi6ou4edkn" data-node="cmyi6ou4edkn">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">We are Committed to</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-heading fl-node-v5kahqbicdo3" data-node="v5kahqbicdo3">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">The journey from kindergarten to college</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-rich-text fl-node-lm9k3iq40jwg" data-node="lm9k3iq40jwg">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-rich-text">
-	<p>As a K-12 network of schools, it is our goal to grow with your child from the very beginning of their educational journey all the way through their acceptance to college. Our kindergarten, elementary, middle, and high school programs are designed to support student growth at every milestone.</p>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-button fl-node-fp9ozsa5nvbu" data-node="fp9ozsa5nvbu">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-wrap fl-button-width-auto fl-button-left fl-button-has-icon">
-			<a href="https://www.brooklynprospect.org/academic-impact/" target="_self" class="fl-button">
-							<span class="fl-button-text">Our Impact</span>
-						<i class="fl-button-icon fl-button-icon-after fas fa-arrow-right" aria-hidden="true"></i>
-			</a>
-</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-7bsydmuvegfo fl-row-default-height fl-row-align-center" data-node="7bsydmuvegfo">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-uacx7f9yg10d" data-node="uacx7f9yg10d">
-			<div class="fl-col fl-node-ra57sp1mb9g2 fl-col-bg-color" data-node="ra57sp1mb9g2">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-9kz6x3jfesdn" data-node="9kz6x3jfesdn">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-14286 size-full" src="https://www.brooklynprospect.org/wp-content/uploads/2024/07/ps-leaf-seal-simple.png" alt="ps-leaf-seal-simple" itemprop="image" height="1848" width="1853" title="ps-leaf-seal-simple" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/07/ps-leaf-seal-simple.png 1853w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/ps-leaf-seal-simple-300x300.png 300w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/ps-leaf-seal-simple-1024x1021.png 1024w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/ps-leaf-seal-simple-150x150.png 150w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/ps-leaf-seal-simple-768x766.png 768w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/ps-leaf-seal-simple-1536x1532.png 1536w" sizes="auto, (max-width: 1853px) 100vw, 1853px" />
-					</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-
-<div class="fl-col-group fl-node-wpauek6mbq91" data-node="wpauek6mbq91">
-			<div class="fl-col fl-node-08nusiw5co7x fl-col-bg-color" data-node="08nusiw5co7x">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-86zb0jp9vig4" data-node="86zb0jp9vig4">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text"><strong>Prospect</strong> Press</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-pp-content-grid fl-node-ln2bwxf1iadv" data-node="ln2bwxf1iadv">
-	<div class="fl-module-content fl-node-content">
-		<div class="pp-posts-wrapper">
-		
-	<div class="pp-content-posts" style="--items-count: 3;--column-xl: 3;--column-lg: 3;--column-md: 2;--column-sm: 1;">
-		<div class="pp-content-post-grid pp-equal-height pp-css-grid" itemscope="itemscope" itemtype="https://schema.org/Blog" data-paged="1">
-			
-				<div class="pp-content-post pp-content-grid-post pp-grid-style-6 post-15500 post type-post status-publish format-standard hentry category-blog" itemscope itemtype="https://schema.org/BlogPosting" data-id="15500">
-
-	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="http://15500" content="Prospect Schools Students Shine in 24-25 New York State Tests" /><meta itemprop="datePublished" content="2025-09-23" /><meta itemprop="dateModified" content="2025-09-23" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Prospect Schools in Brooklyn, NY"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://www.brooklynprospect.org/author/rwarren/" /><meta itemprop="name" content="Robyn Warren" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>
-	
-					<a class="pp-post-link" href="https://www.brooklynprospect.org/prospect-schools-students-shine-in-24-25-new-york-state-tests/" title="Prospect Schools Students Shine in 24-25 New York State Tests"></a>
-		
-		
-		
-					<div class="pp-content-grid-image pp-post-image">
-    					<div class="pp-post-featured-img">
-				<div
- class="fl-photo fl-photo-align-center fl-photo-crop-portrait" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<img decoding="async" class="fl-photo-img pp-post-img no-lazyload" src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/Prospect-1-819x1024-portrait-4121e9a39a01d5f92f050f1dad6f40bd-.png" alt="" itemprop="image" data-no-lazy="1"  />
-					</div>
-	</div>
-			</div>
-		    
-			
-		
-				<div class="pp-content-post-date pp-post-meta">
-							<span class="pp-post-month">Sep</span>
-				<span class="pp-post-day">23</span>
-					</div>
-			</div>
-		
-		<div class="pp-content-grid-inner pp-content-body clearfix">
-			
-			
-			<div class="pp-content-post-data">
-									<h3 class="pp-content-grid-title pp-post-title" itemprop="headline">
-														Prospect Schools Students Shine in 24-25 New York State Tests											</h3>
-									
-								<div class="pp-content-post-meta pp-post-meta">
-					
-					
-																										</div>
-				
-				
-				
-				
-									<div class="pp-content-grid-content pp-post-content content-type-excerpt">
-    <p>We’re proud to share that Prospect Schools students outperformed city and district averages on the latest New York State tests, achieving strong results in both ELA and Math across our campuses. Overall, our students reached impressive proficiency rates, 79% in ELA and 77% in Math, demonstrating consistently strong results across the network. These achievements reflect&hellip;</p>
-</div>
-				
-				
-				
-				
-			</div>
-			
-					</div>
-
-			</div>
-<div class="pp-content-post pp-content-grid-post pp-post-2n pp-grid-style-6 post-15422 post type-post status-publish format-standard hentry category-blog" itemscope itemtype="https://schema.org/BlogPosting" data-id="15422">
-
-	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="http://15422" content="Building a Strong Start: Prospect Schools Summer Prep" /><meta itemprop="datePublished" content="2025-08-15" /><meta itemprop="dateModified" content="2025-08-15" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Prospect Schools in Brooklyn, NY"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://www.brooklynprospect.org/author/rwarren/" /><meta itemprop="name" content="Robyn Warren" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>
-	
-					<a class="pp-post-link" href="https://www.brooklynprospect.org/building-a-strong-start-prospect-schools-summer-prep/" title="Building a Strong Start: Prospect Schools Summer Prep"></a>
-		
-		
-		
-					<div class="pp-content-grid-image pp-post-image">
-    					<div class="pp-post-featured-img">
-				<div
- class="fl-photo fl-photo-align-center fl-photo-crop-portrait" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<img decoding="async" class="fl-photo-img pp-post-img no-lazyload" src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/DSC00544-1024x683-portrait-63a73b23575577813ffafdb9d515463d-.jpg" alt="" itemprop="image" data-no-lazy="1"  />
-					</div>
-	</div>
-			</div>
-		    
-			
-		
-				<div class="pp-content-post-date pp-post-meta">
-							<span class="pp-post-month">Aug</span>
-				<span class="pp-post-day">15</span>
-					</div>
-			</div>
-		
-		<div class="pp-content-grid-inner pp-content-body clearfix">
-			
-			
-			<div class="pp-content-post-data">
-									<h3 class="pp-content-grid-title pp-post-title" itemprop="headline">
-														Building a Strong Start: Prospect Schools Summer Prep											</h3>
-									
-								<div class="pp-content-post-meta pp-post-meta">
-					
-					
-																										</div>
-				
-				
-				
-				
-									<div class="pp-content-grid-content pp-post-content content-type-excerpt">
-    <p>This summer, Prospect Schools brought together leaders and team members from across the network for a series of trainings and orientations designed to strengthen our collective impact. The Senior Leadership Institute brought together school and network office leaders for a week of professional learning, collaboration, and strategic planning. Leaders explored instructional priorities, school culture goals, and&hellip;</p>
-</div>
-				
-				
-				
-				
-			</div>
-			
-					</div>
-
-			</div>
-<div class="pp-content-post pp-content-grid-post pp-grid-style-6 post-15352 post type-post status-publish format-standard hentry category-blog" itemscope itemtype="https://schema.org/BlogPosting" data-id="15352">
-
-	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="http://15352" content="Northside Charter High School Senior Alexa Rodriguez Named Posse Scholar, Will Attend Vanderbilt University" /><meta itemprop="datePublished" content="2025-06-12" /><meta itemprop="dateModified" content="2025-06-12" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Prospect Schools in Brooklyn, NY"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://www.brooklynprospect.org/author/rwarren/" /><meta itemprop="name" content="Robyn Warren" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>
-	
-					<a class="pp-post-link" href="https://www.brooklynprospect.org/brooklyn-prospect-high-school-senior-alexa-rodriguez-named-posse-scholar-will-attend-vanderbilt-university/" title="Northside Charter High School Senior Alexa Rodriguez Named Posse Scholar, Will Attend Vanderbilt University"></a>
-		
-		
-		
-					<div class="pp-content-grid-image pp-post-image">
-    					<div class="pp-post-featured-img">
-				<div
- class="fl-photo fl-photo-align-center fl-photo-crop-portrait" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<img decoding="async" class="fl-photo-img pp-post-img no-lazyload" src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/AD_4nXcjGZFxCQg73aAaphnLJtosWQLXuCMhrq_Egx6iZX1LydSYkReePPU_UFXSzmkY4755vdL2ZEbhjgVn2y1AIXkfudpn42Dj7bIQ6i3_ntWFS56G79vKfFJ2UArX-HwL8bDfQbb7-portrait-bdb96ebb32b6d4c952ea80c9bd0da1a1-.png" alt="" itemprop="image" data-no-lazy="1"  />
-					</div>
-	</div>
-			</div>
-		    
-			
-		
-				<div class="pp-content-post-date pp-post-meta">
-							<span class="pp-post-month">Jun</span>
-				<span class="pp-post-day">12</span>
-					</div>
-			</div>
-		
-		<div class="pp-content-grid-inner pp-content-body clearfix">
-			
-			
-			<div class="pp-content-post-data">
-									<h3 class="pp-content-grid-title pp-post-title" itemprop="headline">
-														Northside Charter High School Senior Alexa Rodriguez Named Posse Scholar, Will Attend Vanderbilt University											</h3>
-									
-								<div class="pp-content-post-meta pp-post-meta">
-					
-					
-																										</div>
-				
-				
-				
-				
-									<div class="pp-content-grid-content pp-post-content content-type-excerpt">
-    <p>Northside Charter High School senior Alexa Rodriguez has been named a Posse Scholar and will attend Vanderbilt University this fall on a full-tuition scholarship. A driven student with a passion for medicine and a deep sense of community, Alexa is the latest in a growing legacy of Brooklyn Prospect students to receive this prestigious award.&hellip;</p>
-</div>
-				
-				
-				
-				
-			</div>
-			
-					</div>
-
-			</div>
-
-				
-					</div>
-
-		<div class="fl-clear"></div>
-
-		
-				
-		</div><!-- .pp-content-posts -->
-	
-	</div>
-
-	</div>
-</div>
-<div class="fl-module fl-module-button fl-node-b9z7hfprgt6c" data-node="b9z7hfprgt6c">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-wrap fl-button-width-auto fl-button-center fl-button-has-icon">
-			<a href="https://www.brooklynprospect.org/press-room/" target="_blank" class="fl-button" rel="noopener" >
-							<span class="fl-button-text">PRESS ROOM</span>
-						<i class="fl-button-icon fl-button-icon-after fas fa-arrow-right" aria-hidden="true"></i>
-			</a>
-</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-full-width fl-row-bg-gradient fl-node-wfk35u0nqxty fl-row-default-height fl-row-align-center" data-node="wfk35u0nqxty">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-j4mr2lnit5e9" data-node="j4mr2lnit5e9">
-			<div class="fl-col fl-node-s3ikgu46h8cr fl-col-bg-color fl-col-small" data-node="s3ikgu46h8cr">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-1qhtplgdw65c" data-node="1qhtplgdw65c">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">FEATURED VIDEO</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-rich-text fl-node-tp0w4qjbkfvz" data-node="tp0w4qjbkfvz">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-rich-text">
-	<p><strong>Downtown Elementary School (DTES) embarked on their annual "Anytime, Anywhere" adventure, this year exploring the vibrant islands of Trinidad and Tobago.</strong> Each floor of the school became an immersive installation, transporting students to different aspects of the country's geography, history, and culture.</p>
-</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-zqbud3xn907o fl-col-bg-color" data-node="zqbud3xn907o">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-video fl-node-bz9cina8h1pu" data-node="bz9cina8h1pu">
-	<div class="fl-module-content fl-node-content">
-		
-<div class="fl-video fl-embed-video">
-	<iframe loading="lazy" title="Brooklyn Prospect&#039;s Downtown Elementary School &#039;travels&#039; to Trinidad &amp; Tobago" width="500" height="281" src="https://www.youtube.com/embed/xfhowfPZKDA?start=4&feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-2mqty0x5bgkv fl-row-default-height fl-row-align-center" data-node="2mqty0x5bgkv">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-mtfjd5vu1oxs" data-node="mtfjd5vu1oxs">
-			<div class="fl-col fl-node-yr9audqw83xl fl-col-bg-color fl-col-small" data-node="yr9audqw83xl">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-xaienq35mt4f" data-node="xaienq35mt4f">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">Explore</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-heading fl-node-dq0gocajt51e" data-node="dq0gocajt51e">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">Our Schools</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-rich-text fl-node-0xsugfdp8ova" data-node="0xsugfdp8ova">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-rich-text">
-	<p><b>At Prospect Schools in Brooklyn, we offer K-12 options across one high school, three middle schools, and three elementary schools. </b>Click to learn more about each of our schools, and contact us if you have any questions!</p>
-</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-4rkul30q9j15 fl-col-bg-color fl-col-small" data-node="4rkul30q9j15">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-z5yiadnf1j2w" data-node="z5yiadnf1j2w">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<a href="https://www.brooklynprospect.org/our-schools/bpcs-high/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-14270 size-full" src="https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_High_Horizontal_Color-1.png" alt="(PNG)_BP_High_Horizontal_Color" itemprop="image" height="1460" width="3944" title="(PNG)_BP_High_Horizontal_Color" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_High_Horizontal_Color-1.png 3944w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_High_Horizontal_Color-1-300x111.png 300w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_High_Horizontal_Color-1-1024x379.png 1024w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_High_Horizontal_Color-1-768x284.png 768w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_High_Horizontal_Color-1-1536x569.png 1536w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_High_Horizontal_Color-1-2048x758.png 2048w" sizes="auto, (max-width: 3944px) 100vw, 3944px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-<div class="fl-module fl-module-photo fl-node-gqa56dyjfcns" data-node="gqa56dyjfcns">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<a href="https://www.brooklynprospect.org/our-schools/bpcs-high/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-6606 size-1536x1536" src="https://www.brooklynprospect.org/wp-content/uploads/2023/09/HOME-PAGE-ProspectSchoolsBrooklynProspectHighSchool_OCT2522_055-1536x1024.jpg" alt="HOME PAGE ProspectSchools(BrooklynProspectHighSchool_OCT2522)_055" itemprop="image" height="1024" width="1536" title="HOME PAGE ProspectSchools(BrooklynProspectHighSchool_OCT2522)_055" srcset="https://www.brooklynprospect.org/wp-content/uploads/2023/09/HOME-PAGE-ProspectSchoolsBrooklynProspectHighSchool_OCT2522_055-1536x1024.jpg 1536w, https://www.brooklynprospect.org/wp-content/uploads/2023/09/HOME-PAGE-ProspectSchoolsBrooklynProspectHighSchool_OCT2522_055-300x200.jpg 300w, https://www.brooklynprospect.org/wp-content/uploads/2023/09/HOME-PAGE-ProspectSchoolsBrooklynProspectHighSchool_OCT2522_055-1024x682.jpg 1024w, https://www.brooklynprospect.org/wp-content/uploads/2023/09/HOME-PAGE-ProspectSchoolsBrooklynProspectHighSchool_OCT2522_055-768x512.jpg 768w, https://www.brooklynprospect.org/wp-content/uploads/2023/09/HOME-PAGE-ProspectSchoolsBrooklynProspectHighSchool_OCT2522_055.jpg 2000w" sizes="auto, (max-width: 1536px) 100vw, 1536px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-oifuq7p2h6x3 fl-row-default-height fl-row-align-center" data-node="oifuq7p2h6x3">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-gj8od4fv9nqm" data-node="gj8od4fv9nqm">
-			<div class="fl-col fl-node-nu9f1a7c5p4g fl-col-bg-color fl-col-has-cols" data-node="nu9f1a7c5p4g">
-	<div class="fl-col-content fl-node-content">
-<div class="fl-col-group fl-node-eyisjz1v406f fl-col-group-nested" data-node="eyisjz1v406f">
-			<div class="fl-col fl-node-kc6b3s71anoy fl-col-bg-color fl-col-small" data-node="kc6b3s71anoy">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-4r0fd9eihljm" data-node="4r0fd9eihljm">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<a href="https://www.brooklynprospect.org/schools/downtown-middle/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-14259 size-2048x2048" src="https://www.brooklynprospect.org/wp-content/uploads/2024/07/BP_Downtown_Horizontal_Color-2048x758.png" alt="BP_Downtown_Horizontal_Color" itemprop="image" height="758" width="2048" title="BP_Downtown_Horizontal_Color" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/07/BP_Downtown_Horizontal_Color-2048x758.png 2048w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/BP_Downtown_Horizontal_Color-300x111.png 300w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/BP_Downtown_Horizontal_Color-1024x379.png 1024w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/BP_Downtown_Horizontal_Color-768x284.png 768w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/BP_Downtown_Horizontal_Color-1536x569.png 1536w" sizes="auto, (max-width: 2048px) 100vw, 2048px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-<div class="fl-module fl-module-photo fl-node-povemnk4di0z" data-node="povemnk4di0z">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<a href="https://www.brooklynprospect.org/schools/downtown-middle/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-2659 size-1536x1536" src="https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_170-1536x1024.jpg" alt="BrooklynProspect(DowntownES)_170" itemprop="image" height="1024" width="1536" title="BrooklynProspect(DowntownES)_170" srcset="https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_170-1536x1024.jpg 1536w, https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_170-300x200.jpg 300w, https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_170-1024x683.jpg 1024w, https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_170-768x512.jpg 768w, https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_170-2048x1365.jpg 2048w" sizes="auto, (max-width: 1536px) 100vw, 1536px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-0qs9bkyga5v3 fl-col-bg-color fl-col-small" data-node="0qs9bkyga5v3">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-em5c16f08piu" data-node="em5c16f08piu">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<a href="https://www.brooklynprospect.org/our-schools/sunset-yards-middle/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-6131 size-full" src="https://www.brooklynprospect.org/wp-content/uploads/2023/02/Sunset_Yards_Middle_School_FullColor-2.png" alt="Sunset_Yards_Middle_School_FullColor" itemprop="image" height="284" width="721" title="Sunset_Yards_Middle_School_FullColor" srcset="https://www.brooklynprospect.org/wp-content/uploads/2023/02/Sunset_Yards_Middle_School_FullColor-2.png 721w, https://www.brooklynprospect.org/wp-content/uploads/2023/02/Sunset_Yards_Middle_School_FullColor-2-300x118.png 300w" sizes="auto, (max-width: 721px) 100vw, 721px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-<div class="fl-module fl-module-photo fl-node-z40aihx8pbmd" data-node="z40aihx8pbmd">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<a href="https://www.brooklynprospect.org/our-schools/sunset-yards-middle/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-13986 size-1536x1536" src="https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYMSRibbonCutting_093-1-1536x1024.jpg" alt="ProspectSchools(20231003_SYMSRibbonCutting)_093 (1)" itemprop="image" height="1024" width="1536" title="ProspectSchools(20231003_SYMSRibbonCutting)_093 (1)" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYMSRibbonCutting_093-1-1536x1024.jpg 1536w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYMSRibbonCutting_093-1-300x200.jpg 300w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYMSRibbonCutting_093-1-1024x683.jpg 1024w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYMSRibbonCutting_093-1-768x512.jpg 768w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYMSRibbonCutting_093-1-2048x1366.jpg 2048w" sizes="auto, (max-width: 1536px) 100vw, 1536px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-exdzqb1g8r5k fl-col-bg-color fl-col-small" data-node="exdzqb1g8r5k">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-6uknyxmz7io0" data-node="6uknyxmz7io0">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<a href="https://www.brooklynprospect.org/our-schools/clinton-hill-middle/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-14266 size-2048x2048" src="https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Clinton_Hill_Horizontal_Color-2048x758.png" alt="(PNG)_BP_Clinton_Hill_Horizontal_Color" itemprop="image" height="758" width="2048" title="(PNG)_BP_Clinton_Hill_Horizontal_Color" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Clinton_Hill_Horizontal_Color-2048x758.png 2048w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Clinton_Hill_Horizontal_Color-300x111.png 300w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Clinton_Hill_Horizontal_Color-1024x379.png 1024w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Clinton_Hill_Horizontal_Color-768x284.png 768w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Clinton_Hill_Horizontal_Color-1536x568.png 1536w" sizes="auto, (max-width: 2048px) 100vw, 2048px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-<div class="fl-module fl-module-photo fl-node-yg17r2x6fpnz" data-node="yg17r2x6fpnz">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<a href="https://www.brooklynprospect.org/our-schools/clinton-hill-middle/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-6641 size-1536x1536" src="https://www.brooklynprospect.org/wp-content/uploads/2023/09/HomePage_ProspectSchoolsClintonHillMS_OCT1322_054-1536x1024.jpg" alt="HomePage_ProspectSchools(ClintonHillMS_OCT1322)_054" itemprop="image" height="1024" width="1536" title="HomePage_ProspectSchools(ClintonHillMS_OCT1322)_054" srcset="https://www.brooklynprospect.org/wp-content/uploads/2023/09/HomePage_ProspectSchoolsClintonHillMS_OCT1322_054-1536x1024.jpg 1536w, https://www.brooklynprospect.org/wp-content/uploads/2023/09/HomePage_ProspectSchoolsClintonHillMS_OCT1322_054-300x200.jpg 300w, https://www.brooklynprospect.org/wp-content/uploads/2023/09/HomePage_ProspectSchoolsClintonHillMS_OCT1322_054-1024x682.jpg 1024w, https://www.brooklynprospect.org/wp-content/uploads/2023/09/HomePage_ProspectSchoolsClintonHillMS_OCT1322_054-768x512.jpg 768w, https://www.brooklynprospect.org/wp-content/uploads/2023/09/HomePage_ProspectSchoolsClintonHillMS_OCT1322_054.jpg 2000w" sizes="auto, (max-width: 1536px) 100vw, 1536px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-21fsmv5urag6 fl-row-default-height fl-row-align-center" data-node="21fsmv5urag6">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-f9ous1ejik26" data-node="f9ous1ejik26">
-			<div class="fl-col fl-node-t6a5ug04k8vr fl-col-bg-color fl-col-has-cols" data-node="t6a5ug04k8vr">
-	<div class="fl-col-content fl-node-content">
-<div class="fl-col-group fl-node-mnz4eojyv8cf fl-col-group-nested" data-node="mnz4eojyv8cf">
-			<div class="fl-col fl-node-i90v6tb1xjln fl-col-bg-color fl-col-small" data-node="i90v6tb1xjln">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-rep5fsgvo0u9" data-node="rep5fsgvo0u9">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<a href="https://www.brooklynprospect.org/our-schools/downtown-elementary/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-14254 size-full" src="https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Downtown_Elementary_Horizontal_Color.png" alt="(PNG)_BP_Downtown_Elementary_Horizontal_Color" itemprop="image" height="1460" width="3944" title="(PNG)_BP_Downtown_Elementary_Horizontal_Color" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Downtown_Elementary_Horizontal_Color.png 3944w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Downtown_Elementary_Horizontal_Color-300x111.png 300w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Downtown_Elementary_Horizontal_Color-1024x379.png 1024w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Downtown_Elementary_Horizontal_Color-768x284.png 768w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Downtown_Elementary_Horizontal_Color-1536x569.png 1536w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/PNG_BP_Downtown_Elementary_Horizontal_Color-2048x758.png 2048w" sizes="auto, (max-width: 3944px) 100vw, 3944px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-<div class="fl-module fl-module-photo fl-node-352mhqiw1dpe" data-node="352mhqiw1dpe">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<a href="https://www.brooklynprospect.org/our-schools/downtown-elementary/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-2656 size-1536x1536" src="https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_098-e1670236551488-1536x1024.jpg" alt="BrooklynProspect(DowntownES)_098" itemprop="image" height="1024" width="1536" title="BrooklynProspect(DowntownES)_098" srcset="https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_098-e1670236551488-1536x1024.jpg 1536w, https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_098-e1670236551488-300x200.jpg 300w, https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_098-e1670236551488-1024x683.jpg 1024w, https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_098-e1670236551488-768x512.jpg 768w, https://www.brooklynprospect.org/wp-content/uploads/2019/02/BrooklynProspectDowntownES_098-e1670236551488.jpg 1600w" sizes="auto, (max-width: 1536px) 100vw, 1536px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-oux98qnhpv2i fl-col-bg-color fl-col-small" data-node="oux98qnhpv2i">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-mta3unkv1b0w" data-node="mta3unkv1b0w">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<a href="https://www.brooklynprospect.org/our-schools/syes/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-14320 size-full" src="https://www.brooklynprospect.org/wp-content/uploads/2024/07/SYES-logo_horizontal-full-color.png" alt="SYES logo_horizontal-full color" itemprop="image" height="380" width="994" title="SYES logo_horizontal-full color" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/07/SYES-logo_horizontal-full-color.png 994w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/SYES-logo_horizontal-full-color-300x115.png 300w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/SYES-logo_horizontal-full-color-768x294.png 768w" sizes="auto, (max-width: 994px) 100vw, 994px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-<div class="fl-module fl-module-photo fl-node-32un1j7tidaf" data-node="32un1j7tidaf">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<a href="https://www.brooklynprospect.org/our-schools/syes/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-13958 size-1536x1536" src="https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYESMarketing_112-2-1536x1024.jpg" alt="ProspectSchools(20231003_SYESMarketing)_112" itemprop="image" height="1024" width="1536" title="ProspectSchools(20231003_SYESMarketing)_112" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYESMarketing_112-2-1536x1024.jpg 1536w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYESMarketing_112-2-300x200.jpg 300w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYESMarketing_112-2-1024x682.jpg 1024w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYESMarketing_112-2-768x512.jpg 768w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231003_SYESMarketing_112-2-2048x1365.jpg 2048w" sizes="auto, (max-width: 1536px) 100vw, 1536px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-k4jqlhuwfp1t fl-col-bg-color fl-col-small" data-node="k4jqlhuwfp1t">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-5hlbj1go4mq0" data-node="5hlbj1go4mq0">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<a href="https://www.brooklynprospect.org/our-schools/international-elementary-school/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-14262 size-2048x2048" src="https://www.brooklynprospect.org/wp-content/uploads/2024/07/IES_logo_full-color_horizontal-2048x762.png" alt="IES_logo_full color_horizontal" itemprop="image" height="762" width="2048" title="IES_logo_full color_horizontal" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/07/IES_logo_full-color_horizontal-2048x762.png 2048w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/IES_logo_full-color_horizontal-300x112.png 300w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/IES_logo_full-color_horizontal-1024x381.png 1024w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/IES_logo_full-color_horizontal-768x286.png 768w, https://www.brooklynprospect.org/wp-content/uploads/2024/07/IES_logo_full-color_horizontal-1536x571.png 1536w" sizes="auto, (max-width: 2048px) 100vw, 2048px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-<div class="fl-module fl-module-photo fl-node-cvnaguske25d" data-node="cvnaguske25d">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<a href="https://www.brooklynprospect.org/our-schools/international-elementary-school/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-13992 size-1536x1536" src="https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231012_IESRibbonCutting_037-1536x1024.jpg" alt="ProspectSchools(20231012_IESRibbonCutting)_037" itemprop="image" height="1024" width="1536" title="ProspectSchools(20231012_IESRibbonCutting)_037" srcset="https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231012_IESRibbonCutting_037-1536x1024.jpg 1536w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231012_IESRibbonCutting_037-300x200.jpg 300w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231012_IESRibbonCutting_037-1024x683.jpg 1024w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231012_IESRibbonCutting_037-768x512.jpg 768w, https://www.brooklynprospect.org/wp-content/uploads/2024/01/ProspectSchools20231012_IESRibbonCutting_037-2048x1366.jpg 2048w" sizes="auto, (max-width: 1536px) 100vw, 1536px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-full-width fl-row-bg-gradient fl-node-smitpnl71e4v fl-row-default-height fl-row-align-center" data-node="smitpnl71e4v">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-jbkow5mcnvle fl-col-group-equal-height fl-col-group-align-center" data-node="jbkow5mcnvle">
-			<div class="fl-col fl-node-emyl2b5kc93t fl-col-bg-color" data-node="emyl2b5kc93t">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-7woid8vj1p45" data-node="7woid8vj1p45">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">Prospect<br />Stories</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-heading fl-node-zci7mtrl9hvx" data-node="zci7mtrl9hvx">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">Demi Peña-Chavez</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-heading fl-node-sl95k6wyqag2" data-node="sl95k6wyqag2">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<span class="fl-heading-text">Northside Charter High School, Class of 2017<br />Resident Teacher, Kindergarten</span>
-	</h2>
-	</div>
-</div>
-<div class="fl-module fl-module-rich-text fl-node-nvzhlyiar034" data-node="nvzhlyiar034">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-rich-text">
-	<p><strong>Demi Peña-Chavez</strong><span style="font-weight: 400;"><strong> joined Brooklyn Prospect’s second-ever sixth-grade class in 2011.</strong> She graduated from Northside Charter High School in 2017 and took a gap year before studying Communications at SUNY Purchase College. She joined Prospect Schools as a resident teacher in the 2023-24 school year. We were so excited/proud to welcome (back) Demi!</span></p>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-rich-text fl-node-5hp3fbi61qds" data-node="5hp3fbi61qds">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-rich-text">
-	<p><span style="font-weight: 400;">Demi reflects on what she's learned as an educator: <strong>"It's really beautiful to create a classroom environment where kids feel safe to be who they are, where they can learn more about themselves and the world around them.</strong> It's taught me really how lucky I've been my entire life to have such great teachers, and seeing the teachers I work with inspires me to be an even better one.” </span></p>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-button fl-node-faejzkd9ophr" data-node="faejzkd9ophr">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-wrap fl-button-width-full fl-button-left fl-button-has-icon">
-			<a href="https://www.brooklynprospect.org/student-stories/" target="_blank" class="fl-button" rel="noopener" >
-							<span class="fl-button-text">MORE PROSPECT STORIES</span>
-						<i class="fl-button-icon fl-button-icon-after fas fa-arrow-right" aria-hidden="true"></i>
-			</a>
-</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-dutb6zk7s2en fl-col-bg-color fl-col-small" data-node="dutb6zk7s2en">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-18pcm7ixa9zy fl-animation fl-fade-right" data-node="18pcm7ixa9zy" data-animation-delay="0" data-animation-duration="1">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center fl-photo-crop-portrait" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-jpg">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-14116 size-full" src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/Pena-Chavez_Demi-portrait-61e8d8b819a3358917912c8c76479650-18pcm7ixa9zy.jpg" alt="Pena-Chavez_Demi" itemprop="image" height="1874" width="1499" title="Pena-Chavez_Demi"  />
-					</div>
-	</div>
-	</div>
-</div>
-<style>.fl-node-18pcm7ixa9zy.fl-animation:not(.fl-animated){opacity:0}</style></div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-</div>	</div><!-- .fl-post-content -->
-	
-</article>
-
-<!-- .fl-post -->
-		</div>
-	</div>
-</div>
-
-
-	</div><!-- .fl-page-content -->
-	<footer class="fl-builder-content fl-builder-content-43 fl-builder-global-templates-locked" data-post-id="43" data-type="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div class="fl-row fl-row-full-width fl-row-bg-gradient fl-node-5c11edfb84e26 fl-row-default-height fl-row-align-center" data-node="5c11edfb84e26">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-5c11edfb84e8b" data-node="5c11edfb84e8b">
-			<div class="fl-col fl-node-5c11edfb84f53 fl-col-bg-color fl-col-small fl-col-has-cols" data-node="5c11edfb84f53">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-5c11ee8e08e22" data-node="5c11ee8e08e22">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<a href="https://www.brooklynprospect.org/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-12985 size-full" src="https://www.brooklynprospect.org/wp-content/uploads/2018/12/Prospect-Schools-Brooklyn-NY-Seal.png" alt="Prospect Schools Brooklyn NY Seal" itemprop="image" height="2400" width="2400" title="Prospect Schools Brooklyn NY Seal" srcset="https://www.brooklynprospect.org/wp-content/uploads/2018/12/Prospect-Schools-Brooklyn-NY-Seal.png 2400w, https://www.brooklynprospect.org/wp-content/uploads/2018/12/Prospect-Schools-Brooklyn-NY-Seal-300x300.png 300w, https://www.brooklynprospect.org/wp-content/uploads/2018/12/Prospect-Schools-Brooklyn-NY-Seal-1024x1024.png 1024w, https://www.brooklynprospect.org/wp-content/uploads/2018/12/Prospect-Schools-Brooklyn-NY-Seal-150x150.png 150w, https://www.brooklynprospect.org/wp-content/uploads/2018/12/Prospect-Schools-Brooklyn-NY-Seal-768x768.png 768w, https://www.brooklynprospect.org/wp-content/uploads/2018/12/Prospect-Schools-Brooklyn-NY-Seal-1536x1536.png 1536w, https://www.brooklynprospect.org/wp-content/uploads/2018/12/Prospect-Schools-Brooklyn-NY-Seal-2048x2048.png 2048w" sizes="auto, (max-width: 2400px) 100vw, 2400px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-
-<div class="fl-col-group fl-node-7i5wm13svz2x fl-col-group-nested fl-col-group-custom-width" data-node="7i5wm13svz2x">
-			<div class="fl-col fl-node-h2xbv7osu6ij fl-col-bg-color fl-col-small fl-col-small-custom-width" data-node="h2xbv7osu6ij">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-sk4zgjb2fpte" data-node="sk4zgjb2fpte">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-photo fl-photo-align-left" itemscope itemtype="https://schema.org/ImageObject">
-	<div class="fl-photo-content fl-photo-img-png">
-				<a href="https://www.brooklynprospect.org/ib-world-school-program/" target="_self" itemprop="url">
-				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-12986 size-full" src="https://www.brooklynprospect.org/wp-content/uploads/2018/12/ib-world-school-logo-white-solid-rev.png" alt="ib-world-school-logo-white-solid-rev" itemprop="image" height="485" width="494" title="ib-world-school-logo-white-solid-rev" srcset="https://www.brooklynprospect.org/wp-content/uploads/2018/12/ib-world-school-logo-white-solid-rev.png 494w, https://www.brooklynprospect.org/wp-content/uploads/2018/12/ib-world-school-logo-white-solid-rev-300x295.png 300w" sizes="auto, (max-width: 494px) 100vw, 494px" />
-				</a>
-					</div>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-8ow90tiuky53 fl-col-bg-color fl-col-small-custom-width" data-node="8ow90tiuky53">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-603aa8b1e18ad" data-node="603aa8b1e18ad">
-	<div class="fl-module-content fl-node-content">
-		<h2 class="fl-heading">
-		<a
-		href="https://www.brooklynprospect.org/ib-world-school-program/"
-		title="Prospect Schools is a community of high performing, intentionally diverse public charter schools in Brooklyn, NY."
-		target="_self"
-			>
-		<span class="fl-heading-text">Prospect Schools is a community of high performing, intentionally diverse public charter schools in Brooklyn, NY.</span>
-		</a>
-	</h2>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-</div>
-</div>
-			<div class="fl-col fl-node-5c11edfb84f14 fl-col-bg-color fl-col-small" data-node="5c11edfb84f14">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-b64rogx2fdmh" data-node="b64rogx2fdmh">
-	<div class="fl-module-content fl-node-content">
-		<h3 class="fl-heading">
-		<span class="fl-heading-text">Our Schools</span>
-	</h3>
-	</div>
-</div>
-<div class="fl-module fl-module-separator fl-node-vx3941nba8wt" data-node="vx3941nba8wt">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-separator"></div>
-	</div>
-</div>
-<div class="fl-module fl-module-rich-text fl-node-98cfnxmraqby" data-node="98cfnxmraqby">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-rich-text">
-	<p>We have one high school, three middle schools, and three elementary schools across Brooklyn.</p>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-pp-advanced-menu fl-node-a9fjy3nweg5u" data-node="a9fjy3nweg5u">
-	<div class="fl-module-content fl-node-content">
-		<div class="pp-advanced-menu pp-advanced-menu-accordion-collapse pp-menu-default pp-menu-align-left pp-menu-position-below">
-   	   	<div class="pp-clear"></div>
-	<nav class="pp-menu-nav" aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
-		<ul id="menu-mainschoolsmenu-2" class="menu pp-advanced-menu-vertical pp-toggle-arrows"><li id="menu-item-14681" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.brooklynprospect.org/schools/brooklyn-prospect-high-school/"><span class="menu-item-text">Northside Charter High School</span></a></li><li id="menu-item-14676" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.brooklynprospect.org/schools/downtown-elementary/"><span class="menu-item-text">Downtown Elementary School</span></a></li><li id="menu-item-14675" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.brooklynprospect.org/schools/downtown-middle/"><span class="menu-item-text">Downtown Middle School</span></a></li><li id="menu-item-14678" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.brooklynprospect.org/schools/sunset-yards-elementary/"><span class="menu-item-text">Sunset Yards Elementary School</span></a></li><li id="menu-item-14677" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.brooklynprospect.org/schools/sunset-yards-middle/"><span class="menu-item-text">Sunset Yards Middle School</span></a></li><li id="menu-item-14679" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.brooklynprospect.org/schools/international-elementary/"><span class="menu-item-text">International Elementary School</span></a></li><li id="menu-item-14680" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.brooklynprospect.org/schools/clinton-hill-middle/"><span class="menu-item-text">Clinton Hill Middle School</span></a></li><li id="menu-item-15445" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.brooklynprospect.org/schools/windsor-terrace/"><span class="menu-item-text">Windsor Terrace Elementary and Middle School (Opening Fall 2026)</span></a></li></ul>	</nav>
-</div>
-	</div>
-</div>
-</div>
-</div>
-			<div class="fl-col fl-node-5c1326d8110b4 fl-col-bg-color fl-col-small" data-node="5c1326d8110b4">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-an45k2bzxf3u" data-node="an45k2bzxf3u">
-	<div class="fl-module-content fl-node-content">
-		<h3 class="fl-heading">
-		<span class="fl-heading-text">Take Action</span>
-	</h3>
-	</div>
-</div>
-<div class="fl-module fl-module-separator fl-node-jacq9ifh48b1" data-node="jacq9ifh48b1">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-separator"></div>
-	</div>
-</div>
-<div class="fl-module fl-module-button fl-node-l8u2rj0c3t1d" data-node="l8u2rj0c3t1d">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-wrap fl-button-width-full fl-button-left fl-button-has-icon">
-			<a href="https://www.brooklynprospect.org/enroll/" target="_self" class="fl-button">
-					<i class="fl-button-icon fl-button-icon-before fas fa-list-ul" aria-hidden="true"></i>
-						<span class="fl-button-text">ENROLL Your Child</span>
-					</a>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-button fl-node-v2zrk4puh3f0" data-node="v2zrk4puh3f0">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-wrap fl-button-width-full fl-button-left fl-button-has-icon">
-			<a href="https://www.brooklynprospect.org/careers/" target="_self" class="fl-button">
-					<i class="fl-button-icon fl-button-icon-before fas fa-apple-alt" aria-hidden="true"></i>
-						<span class="fl-button-text">Explore CAREERS</span>
-					</a>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-button fl-node-0xy6iocbv8s1" data-node="0xy6iocbv8s1">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-wrap fl-button-width-full fl-button-left fl-button-has-icon">
-			<a href="https://www.brooklynprospect.org/support/" target="_self" class="fl-button">
-					<i class="fl-button-icon fl-button-icon-before fas fa-leaf" aria-hidden="true"></i>
-						<span class="fl-button-text">Make Donation</span>
-					</a>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-button fl-node-i3sdrel2p04v" data-node="i3sdrel2p04v">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-wrap fl-button-width-full fl-button-left fl-button-has-icon">
-			<a href="https://www.brooklynprospect.org/contact/" target="_self" class="fl-button">
-					<i class="fl-button-icon fl-button-icon-before fas fa-phone-alt" aria-hidden="true"></i>
-						<span class="fl-button-text">Contact Us</span>
-					</a>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-button fl-node-ik94sq7cywv2" data-node="ik94sq7cywv2">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-button-wrap fl-button-width-full fl-button-left fl-button-has-icon">
-			<a href="https://www.brooklynprospect.org/join-email-list/" target="_self" class="fl-button">
-					<i class="fl-button-icon fl-button-icon-before fas fa-envelope" aria-hidden="true"></i>
-						<span class="fl-button-text">Join Email List</span>
-					</a>
-</div>
-	</div>
-</div>
-<div class="fl-module fl-module-pp-social-icons fl-node-xhjvz62natkd" data-node="xhjvz62natkd">
-	<div class="fl-module-content fl-node-content">
-		
-<div class="pp-social-icons pp-social-icons-horizontal">
-	<span class="pp-social-icon" itemscope itemtype="https://schema.org/Organization">
-		<link itemprop="url" href="https://www.brooklynprospect.org">
-		<a itemprop="sameAs" href="https://www.instagram.com/prospect_schools" target="_blank" title="Instagram" aria-label="Instagram" role="button" rel="noopener noreferrer external" >
-							<i class="fab fa-instagram"></i>
-					</a>
-	</span>
-		<span class="pp-social-icon" itemscope itemtype="https://schema.org/Organization">
-		<link itemprop="url" href="https://www.brooklynprospect.org">
-		<a itemprop="sameAs" href="https://www.linkedin.com/school/brooklyn-prospect-charter-school/" target="_blank" title="LinkedIn" aria-label="LinkedIn" role="button" rel="noopener noreferrer external" >
-							<i class="fab fa-linkedin"></i>
-					</a>
-	</span>
-		<span class="pp-social-icon" itemscope itemtype="https://schema.org/Organization">
-		<link itemprop="url" href="https://www.brooklynprospect.org">
-		<a itemprop="sameAs" href="https://www.facebook.com/ProspectSchools.org/" target="_blank" title="Facebook" aria-label="Facebook" role="button" rel="noopener noreferrer external" >
-							<i class="fab fa-facebook"></i>
-					</a>
-	</span>
-		<span class="pp-social-icon" itemscope itemtype="https://schema.org/Organization">
-		<link itemprop="url" href="https://www.brooklynprospect.org">
-		<a itemprop="sameAs" href="https://www.brooklynprospect.org/contact/" target="_blank" title="Email" aria-label="Email" role="button" rel="noopener noreferrer external" >
-							<i class="fas fa-envelope"></i>
-					</a>
-	</span>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5c11edfb84c7e fl-row-default-height fl-row-align-center" data-node="5c11edfb84c7e">
-	<div class="fl-row-content-wrap">
-						<div class="fl-row-content fl-row-fixed-width fl-node-content">
-		
-<div class="fl-col-group fl-node-5c11edfb84cf2" data-node="5c11edfb84cf2">
-			<div class="fl-col fl-node-5c11edfb84d6c fl-col-bg-color" data-node="5c11edfb84d6c">
-	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-5c11edfb84dd9" data-node="5c11edfb84dd9">
-	<div class="fl-module-content fl-node-content">
-		<div class="fl-rich-text">
-	<p>© 2024 Prospect Schools in Brooklyn, NY. <a href="https://www.brooklynprospect.org/privacy/">Privacy policy</a></p>
-</div>
-	</div>
-</div>
-</div>
-</div>
-	</div>
-		</div>
-	</div>
-</div>
-</footer>	</div><!-- .fl-page -->
-<script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/bb-theme-child\/*","\/wp-content\/themes\/bb-theme\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-</script>
-<div class="gtranslate_wrapper" id="gt-wrapper-11913312"></div>    <div class="fl-node-n3rmfy9vw1ub brex-mobile-menu-container-node">
-        <div class="brex-mobile-menu-container brex-mobile-menu-left">
-            <ul id="menu-mainmenu" class="brex-mobile-menu-inner"><li id="menu-item-2365" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2365"><a href="https://www.brooklynprospect.org/residents/">Families</a></li>
-<li id="menu-item-12959" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12959"><a href="https://www.brooklynprospect.org/support/">Support</a></li>
-<li id="menu-item-12853" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12853"><a href="https://www.brooklynprospect.org/sunset-yards-elementary-school/">Downtown Campus</a></li>
-</ul>        </div>
-    </div>
-    <link rel='stylesheet' id='fl-builder-google-fonts-6205cf6de9648d29e3e4fa846541dd43-css' href='//fonts.googleapis.com/css?family=Mulish%3A400%2C700%2C200%2C400i%2C700i%2C300%7CPoppins%3A200%2C700%2C400%2C600%2C700i%2C300%7CMontserrat%3A400%2C700%7COpen+Sans%3A400%2C700&#038;ver=6.8.3' media='all' />
-<script src="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/js/yui3.min.js?ver=2.9.4" id="yui3-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/js/fl-slideshow.min.js?ver=2.9.4" id="fl-slideshow-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/js/jquery.imagesloaded.min.js?ver=2.9.4" id="imagesloaded-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/js/jquery.magnificpopup.min.js?ver=2.9.4" id="jquery-magnificpopup-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/js/jquery.waypoints.min.js?ver=2.9.4" id="jquery-waypoints-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/js/jquery.fitvids.min.js?ver=1.2" id="jquery-fitvids-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/plugins/bbpowerpack/assets/js/swiper.min.js?ver=8.4.7" id="jquery-swiper-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/plugins/bbpowerpack/assets/js/isotope.pkgd.min.js?ver=3.0.1" id="jquery-isotope-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/7-layout.js?ver=64c5ae326b291f7bfca58961226e4dfb" id="fl-builder-layout-7-js"></script>
-<script id="leadin-script-loader-js-js-extra">
-var leadin_wordpress = {"userRole":"visitor","pageType":"home","leadinPluginVersion":"11.3.21"};
-</script>
-<script src="https://js.hs-scripts.com/43853406.js?integration=WordPress&amp;ver=11.3.21" id="leadin-script-loader-js-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/plugins/bb-plugin/js/jquery.ba-throttle-debounce.min.js?ver=2.9.4" id="jquery-throttle-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/77e0cb5b86a1c3e4d2fffecce6beda87-layout-bundle.js?ver=2.9.4-1.5.2" id="fl-builder-layout-bundle-77e0cb5b86a1c3e4d2fffecce6beda87-js"></script>
-<script data-cfasync="false" src="https://www.brooklynprospect.org/wp-content/plugins/dflip/assets/js/dflip.min.js?ver=1.5.6" id="dflip-script-js"></script>
-<script id="fl-automator-js-extra">
-var themeopts = {"medium_breakpoint":"992","mobile_breakpoint":"768","lightbox":"enabled","scrollTopPosition":"800"};
-</script>
-<script src="https://www.brooklynprospect.org/wp-content/themes/bb-theme/js/theme.min.js?ver=1.7.17.1" id="fl-automator-js"></script>
-<script src="https://www.brooklynprospect.org/wp-content/uploads/bb-plugin/cache/14687-layout-partial.js?ver=503f3c0fb75f6cf1c175f7cf2c4a3c33" id="fl-builder-layout-14687-js"></script>
-<script id="gt_widget_script_11913312-js-before">
-window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['11913312'] = {"default_language":"en","languages":["en","es","ru","ja","zh-CN","ht","fr","ar","hi","it"],"url_structure":"sub_directory","native_language_names":1,"flag_style":"2d","wrapper_selector":"#gt-wrapper-11913312","alt_flags":{"en":"usa"},"float_switcher_open_direction":"top","switcher_horizontal_position":"left","switcher_vertical_position":"bottom","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const slideshow = document.querySelector('.custom-hero-slideshow');
-    if (!slideshow) {
-      return;
+    function prevSlide() {
+      if (current > 0) {
+        current -= 1;
+        updateView();
+      }
     }
 
-    const slideUrlsAttr = slideshow.dataset.slideUrls || '';
-    const slideUrls = slideUrlsAttr
-      .split(',')
-      .map((url) => url.trim())
-      .filter(Boolean);
+    prevBtn.addEventListener("click", prevSlide);
+    nextBtn.addEventListener("click", nextSlide);
 
-    if (slideUrls.length) {
-      slideshow.innerHTML = '';
-      slideUrls.forEach((url, index) => {
-        const slide = document.createElement('div');
-        slide.className = 'custom-hero-slide';
-        if (index === 0) {
-          slide.classList.add('is-active');
-        }
-        slide.style.backgroundImage = `url('${url}')`;
-        slideshow.appendChild(slide);
-      });
-    }
+    // keyboard navigation
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
 
-    const slides = slideshow.querySelectorAll('.custom-hero-slide');
-    if (slides.length <= 1) {
-      return;
-    }
-
-    let currentIndex = 0;
-
-    const showSlide = (nextIndex) => {
-      slides[currentIndex].classList.remove('is-active');
-      currentIndex = nextIndex;
-      slides[currentIndex].classList.add('is-active');
-    };
-
-    setInterval(() => {
-      const nextIndex = (currentIndex + 1) % slides.length;
-      showSlide(nextIndex);
-    }, 5000);
-  });
-</script>
-<script src="https://www.brooklynprospect.org/wp-content/plugins/gtranslate/js/float.js?ver=6.8.3" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/" data-gt-orig-domain="www.brooklynprospect.org" data-gt-widget-id="11913312" defer></script><script></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98fbdf0e4d687a99',t:'MTc2MDY2Mjk1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    // start on slide 0
+    updateView();
+  </script>
+</body>
 </html>
